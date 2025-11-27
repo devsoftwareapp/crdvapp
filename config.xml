@@ -35,14 +35,14 @@
         <!-- Splash Görselleri -->
         <splash src="res/screen/android/splash.png" density="xxxhdpi"/>
 
-        <!-- 📌 TAM DOSYA ERİŞİM İZİNLERİ -->
+        <!-- 📌 TAM DOSYA ERİŞİM İZİNLERİ (HATASIZ) -->
         <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest">
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-            <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage"/>
+            <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
         </edit-config>
 
-        <!-- SAF DOSYA ERİŞİMİ İÇİN -->
+        <!-- SAF DOSYA ERİŞİMİ -->
         <preference name="AndroidPersistentFileLocation" value="Compatibility" />
 
     </platform>
