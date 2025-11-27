@@ -1,4 +1,4 @@
-name: Build Android with Capacitor Template
+name: Build Android Debug (Capacitor Solid Template)
 
 on:
   workflow_dispatch:
@@ -13,16 +13,16 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Clone capacitor-android-template
+      - name: Clone solidjs capacitor template
         run: |
-          git clone https://github.com/ionic-team/capacitor-android-template.git template
+          git clone https://github.com/ionic-team/capacitor-solidjs-templates.git template
           mv template app
 
-      - name: Copy your web/ as www/
+      - name: Replace web files
         run: |
-          rm -rf app/www
-          mkdir -p app/www
-          cp -r web/* app/www/
+          rm -rf app/solid/public
+          mkdir -p app/solid/public
+          cp -r web/* app/solid/public/
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -34,10 +34,14 @@ jobs:
           cd app
           npm install
 
-      - name: Prepare Android
+      - name: Build web
         run: |
           cd app
-          npm install @capacitor/android
+          npm run build
+
+      - name: Capacitor sync
+        run: |
+          cd app
           npx cap sync android
 
       - name: Build Debug APK
