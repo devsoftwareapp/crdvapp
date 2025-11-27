@@ -10,11 +10,14 @@
         Apache Cordova Team
     </author>
 
+    <!-- Uygulama başlangıç dosyası -->
     <content src="web/index.html" />
 
+    <!-- İzin verilen dış linkler -->
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 
+    <!-- Splash Screen Ayarları -->
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="FadeSplashScreen" value="true" />
@@ -23,12 +26,20 @@
     <preference name="AndroidWindowSplashScreenBackground" value="#ffffff" />
     <preference name="AndroidPostSplashScreenTheme" value="@style/Theme.AppCompat.NoActionBar"/>
 
+    <!-- Android platform icon ve splash -->
     <platform name="android">
         <icon src="res/android/icon.png" />
         <splash src="res/screen/android/splash.png" density="xxxhdpi"/>
     </platform>
 
+    <!-- Gerekli Cordova Pluginleri -->
     <plugin name="cordova-plugin-file" />
     <plugin name="cordova-plugin-android-permissions" />
+
+    <!-- Intent Shim (SAF klasör seçimi için gerekli) -->
+    <plugin name="cordova-plugin-intent" />
+
+    <!-- Android Storage Access Framework uyumlu gelişmiş filepicker -->
+    <plugin name="cordova-plugin-filepicker-android" />
 
 </widget>
