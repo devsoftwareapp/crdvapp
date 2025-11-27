@@ -1,0 +1,55 @@
+name: Build PDF Reader RELEASE
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y openjdk-11-jdk nodejs npm git imagemagick
+
+    - name: Install Cordova
+      run: |
+        sudo npm install -g cordova@latest
+
+    - name: Install project dependencies
+      run: |
+        npm install
+
+    # <<< Splash hazırlama adımı eklendi >>>
+    - name: Generate Android Splash Screens
+      run: |
+        chmod +x ./splash.sh
+        ./splash.sh
+
+    - name: Sign & Build RELEASE APK/AAB
+      run: |
+        chmod +x ./sign.sh
+        ./sign.sh
+      env:
+        KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+
+    - name: Upload RELEASE APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: pdf-reader-release-apk
+        path: ${{ github.workspace }}/platforms/android/app/build/outputs/apk/release/*.apk
+
+    - name: Upload RELEASE AAB
+      uses: actions/upload-artifact@v4
+      with:
+        name: pdf-reader-release-aab
+        path: ${{ github.workspace }}/platforms/android/app/build/outputs/bundle/release/*.aab

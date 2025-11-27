@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>PDF Listesi</title>
+<style>
+    body { font-family: sans-serif; }
+    #pdfList { margin-top: 20px; }
+    .pdfItem {
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 5px;
+        cursor: pointer;
+        border-radius: 6px;
+    }
+</style>
+</head>
+<body>
+
+<h2>PDF Yükle</h2>
+<input type="file" id="pdfInput" accept="application/pdf" />
+
+<h3>PDF Listesi</h3>
+<div id="pdfList"></div>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("pdfInput");
+    const list = document.getElementById("pdfList");
+
+    // PDF seçilince listeye ekle
+    input.addEventListener("change", () => {
+        const file = input.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const base64Data = e.target.result.split(",")[1];
+
+            const item = document.createElement("div");
+            item.className = "pdfItem";
+            item.textContent = file.name;
+
+            // Tıklayınca viewer.html'a PDF verisini gönder
+            item.onclick = () => {
+                sessionStorage.setItem("selectedPdf", base64Data);
+                sessionStorage.setItem("pdfFilename", file.name);
+
+                window.location.href = "viewer.html";
+            };
+
+            list.appendChild(item);
+        };
+
+        reader.readAsDataURL(file);
+    });
+});
+</script>
+
+</body>
+</html>
