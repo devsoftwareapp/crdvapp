@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Target framework: adjust if you need a different Android API -->
+    <TargetFramework>monoandroid14.0</TargetFramework>
+
+    <!-- Paket kimliği -->
+    <ApplicationId>com.devsoftware.pdfreader</ApplicationId>
+
+    <!-- App adı -->
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+    <AndroidApplication>True</AndroidApplication>
+
+    <!-- Minimum ve target SDK -->
+    <AndroidMinSdkVersion>23</AndroidMinSdkVersion>
+    <AndroidTargetSdkVersion>34</AndroidTargetSdkVersion>
+
+    <!-- Build config -->
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <AndroidLinkMode>None</AndroidLinkMode>
+
+    <!-- Destekli ABI'ler (arm64 dahil) -->
+    <AndroidSupportedAbis>arm64-v8a;armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.AndroidX.Core" Version="1.7.0.1" />
+    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.4.1.1" />
+  </ItemGroup>
+
+</Project>
