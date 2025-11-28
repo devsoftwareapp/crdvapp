@@ -15,6 +15,7 @@ dependencies:
   path_provider: ^2.1.1
   path: ^1.8.3
   permission_handler: ^11.0.1
+  device_info_plus: ^12.3.0
 
 dev_dependencies:
   flutter_test:
