@@ -5,6 +5,7 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,7 +47,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> _checkPermission() async {
-    var status = await Permission.storage.status;
+    Permission permission = await _getRequiredPermission();
+    
+    var status = await permission.status;
     setState(() {
       _permissionGranted = status.isGranted;
     });
@@ -56,8 +59,21 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  Future<Permission> _getRequiredPermission() async {
+    if (Platform.isAndroid) {
+      final deviceInfo = DeviceInfoPlugin();
+      final androidInfo = await deviceInfo.androidInfo;
+      if (androidInfo.version.sdkInt >= 33) {
+        return Permission.manageExternalStorage;
+      }
+    }
+    return Permission.storage;
+  }
+
   Future<void> _requestPermission() async {
-    var status = await Permission.storage.request();
+    Permission permission = await _getRequiredPermission();
+    
+    var status = await permission.request();
     setState(() {
       _permissionGranted = status.isGranted;
     });
@@ -106,7 +122,6 @@ class _HomePageState extends State<HomePage> {
         '/storage/emulated/0/DCIM',
         '/storage/emulated/0/Pictures',
         (await getExternalStorageDirectory())?.path,
-        (await getDownloadsDirectory())?.path,
       ];
 
       for (var path in commonPaths) {
