@@ -16,6 +16,18 @@ dependencies:
   path: ^1.8.3
   permission_handler: ^11.0.1
   device_info_plus: ^11.3.0
+  
+  # YENİ EKLENEN PAKETLER - İŞLEVSEL ÖZELLİKLER İÇİN
+  share_plus: ^7.0.0
+  url_launcher: ^6.2.0
+  image_picker: ^1.0.4
+  printing: ^5.11.0
+  open_file: ^3.3.3
+  flutter_email_sender: ^5.2.0
+  connectivity_plus: ^5.0.0
+  cached_network_image: ^3.3.0
+  sqflite: ^2.3.0
+  path_provider_ex: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -42,6 +54,13 @@ flutter:
     - assets/web/viewer.mjs
     - assets/web/images/
     - assets/icon/
+    
+    # --- ÖZEL İKONLAR ---
+    - assets/icon/logo.png
+    - assets/icon/drive.png
+    - assets/icon/onedrive.png
+    - assets/icon/dropbox.png
+    - assets/icon/gmail.png
     
     # --- assets/web/locale/ altındaki tüm dil klasörleri ve dosyalar ---
     - assets/web/locale/locale.json
