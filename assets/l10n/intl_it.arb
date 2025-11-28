@@ -1,0 +1,108 @@
+{
+  "@@locale": "it",
+
+  "cancel": "Annulla",
+  "delete": "Elimina",
+  "rename": "Rinomina",
+  "edit": "Modifica",
+  "print": "Stampa",
+  "share": "Condividi",
+  "move": "Sposta",
+  "allow": "CONSENTI",
+  "create": "Crea",
+
+  "all_files": "Tutti i file",
+  "recent": "Recenti",
+  "favorites": "Preferiti",
+  "tools": "Strumenti",
+  "search_files": "Cerca file...",
+  "sort_by_name": "Ordina per nome",
+  "sort_by_size": "Ordina per dimensione",
+  "sort_by_date": "Ordina per data",
+
+  "language": "Lingua",
+  "about": "Informazioni",
+  "import_file": "Importa file",
+  "dark_light_mode": "Modalità scura/chiara",
+  "all_work_local": "Tutto il lavoro viene eseguito localmente sul tuo dispositivo. Nessun dato viene condiviso o caricato.",
+  "developed_by": "Sviluppato da Devsoftware",
+
+  "select_language": "Seleziona lingua",
+  "search_language": "Cerca lingua...",
+  "no_language_found": "Nessuna lingua trovata per la tua ricerca.",
+
+  "file_imported_successfully": "File importato con successo.",
+  "all_files_root": "Tutti i file (Root)",
+  "move_to_main_directory": "Directory principale dell'applicazione",
+
+  "rename_file": "Rinomina file",
+  "new_file_name": "Nuovo nome file",
+  "rename_folder": "Rinomina cartella",
+  "new_folder_name": "Nuovo nome cartella",
+  "move_file": "Sposta file",
+
+  "create_folder": "Crea cartella",
+  "folder_name": "Nome cartella",
+  "folder_created": "Cartella creata: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Elimina file",
+  "delete_folder": "Elimina cartella",
+  "delete_files": "Elimina file selezionati",
+  "are_you_sure_delete": "Sei sicuro di voler eliminare",
+  "and_all_contents": "e tutti i suoi contenuti?",
+  "file_deleted": "File eliminato.",
+  "folder_deleted": "Cartella eliminata.",
+  "files_deleted_count": "{count, plural, one{1 file eliminato} other{{count} file eliminati}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 elemento} other{{count} elementi}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "Cambia colore cartella",
+  "change_color": "Cambia colore",
+
+  "no_files_found": "Nessun file trovato per \"{query}\"",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Autorizzazione di archiviazione richiesta",
+  "permission_description": "Per salvare i PDF aggiornati sul tuo dispositivo (ad esempio nella cartella Documenti), è necessaria l'autorizzazione 'Accesso a tutti i file'.",
+  "saved_successfully": "salvato con successo",
+  "location": "Posizione",
+  "pdf_save_error": "Errore nel salvataggio del PDF",
+
+  "merge_pdf": "Unisci PDF",
+  "merge_pdf_description": "Unisci più PDF in uno solo",
+  "edit_pages": "Modifica pagine",
+  "edit_pages_description": "Riordina o modifica le pagine del PDF",
+  "extract_text": "Estrai testo",
+  "extract_text_description": "Estrai testo da PDF o immagine usando OCR",
+  "split_pdf": "Dividi PDF",
+  "split_pdf_description": "Dividi PDF in pagine separate",
+  "compress_pdf": "Comprimi PDF",
+  "compress_pdf_description": "Riduci la dimensione del file",
+  "pdf_to_image": "PDF in immagine",
+  "pdf_to_image_description": "Converti PDF in immagini",
+
+  "permission_required_tools": "Autorizzazione richiesta",
+  "permission_description_tools": "Abbiamo bisogno dell'autorizzazione 'Accesso a tutti i file' per salvare i tuoi file PDF e di testo nella cartella Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ {fileName} salvato",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ Impossibile salvare il file: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ Impossibile salvare l'immagine",
+  "file_save_error_short": "Impossibile salvare il file"
+}

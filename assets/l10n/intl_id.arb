@@ -1,0 +1,108 @@
+{
+  "@@locale": "id",
+
+  "cancel": "Batal",
+  "delete": "Hapus",
+  "rename": "Ganti nama",
+  "edit": "Edit",
+  "print": "Cetak",
+  "share": "Bagikan",
+  "move": "Pindahkan",
+  "allow": "IZINKAN",
+  "create": "Buat",
+
+  "all_files": "Semua File",
+  "recent": "Terbaru",
+  "favorites": "Favorit",
+  "tools": "Alat",
+  "search_files": "Cari file...",
+  "sort_by_name": "Urutkan berdasarkan Nama",
+  "sort_by_size": "Urutkan berdasarkan Ukuran",
+  "sort_by_date": "Urutkan berdasarkan Tanggal",
+
+  "language": "Bahasa",
+  "about": "Tentang",
+  "import_file": "Impor File",
+  "dark_light_mode": "Mode Gelap/Terang",
+  "all_work_local": "Semua pekerjaan dilakukan secara lokal di perangkat Anda. Tidak ada data yang dibagikan atau diunggah.",
+  "developed_by": "Dikembangkan oleh Devsoftware",
+
+  "select_language": "Pilih Bahasa",
+  "search_language": "Cari bahasa...",
+  "no_language_found": "Tidak ada bahasa yang ditemukan untuk pencarian Anda.",
+
+  "file_imported_successfully": "File berhasil diimpor.",
+  "all_files_root": "Semua File (Root)",
+  "move_to_main_directory": "Direktori utama aplikasi",
+
+  "rename_file": "Ganti Nama File",
+  "new_file_name": "Nama file baru",
+  "rename_folder": "Ganti Nama Folder",
+  "new_folder_name": "Nama folder baru",
+  "move_file": "Pindahkan File",
+
+  "create_folder": "Buat Folder",
+  "folder_name": "Nama Folder",
+  "folder_created": "Folder dibuat: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Hapus File",
+  "delete_folder": "Hapus Folder",
+  "delete_files": "Hapus File yang Dipilih",
+  "are_you_sure_delete": "Apakah Anda yakin ingin menghapus",
+  "and_all_contents": "dan semua isinya?",
+  "file_deleted": "File dihapus.",
+  "folder_deleted": "Folder dihapus.",
+  "files_deleted_count": "{count, plural, one{1 file dihapus} other{{count} file dihapus}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 item} other{{count} item}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "Ubah Warna Folder",
+  "change_color": "Ubah Warna",
+
+  "no_files_found": "Tidak ada file yang ditemukan untuk \"{query}\"",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Izin Penyimpanan Diperlukan",
+  "permission_description": "Untuk menyimpan PDF yang diperbarui ke perangkat Anda (misalnya di folder Dokumen), kami memerlukan izin 'Akses Semua File'.",
+  "saved_successfully": "berhasil disimpan",
+  "location": "Lokasi",
+  "pdf_save_error": "Kesalahan saat menyimpan PDF",
+
+  "merge_pdf": "Gabungkan PDF",
+  "merge_pdf_description": "Gabungkan beberapa PDF menjadi satu",
+  "edit_pages": "Edit Halaman",
+  "edit_pages_description": "Atur ulang atau edit halaman PDF",
+  "extract_text": "Ekstrak Teks",
+  "extract_text_description": "Ekstrak teks dari PDF atau gambar menggunakan OCR",
+  "split_pdf": "Pisahkan PDF",
+  "split_pdf_description": "Pisahkan PDF menjadi halaman terpisah",
+  "compress_pdf": "Kompres PDF",
+  "compress_pdf_description": "Kurangi ukuran file",
+  "pdf_to_image": "PDF ke Gambar",
+  "pdf_to_image_description": "Konversi PDF menjadi gambar",
+
+  "permission_required_tools": "Izin Diperlukan",
+  "permission_description_tools": "Kami memerlukan izin 'Akses Semua File' untuk menyimpan file PDF dan teks Anda ke folder Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ {fileName} disimpan",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ File tidak dapat disimpan: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ Gambar tidak dapat disimpan",
+  "file_save_error_short": "File tidak dapat disimpan"
+}

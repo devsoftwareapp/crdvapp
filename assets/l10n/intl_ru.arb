@@ -1,0 +1,108 @@
+{
+  "@@locale": "ru",
+
+  "cancel": "Отмена",
+  "delete": "Удалить",
+  "rename": "Переименовать",
+  "edit": "Редактировать",
+  "print": "Печать",
+  "share": "Поделиться",
+  "move": "Переместить",
+  "allow": "Разрешить",
+  "create": "Создать",
+
+  "all_files": "Все файлы",
+  "recent": "Недавние",
+  "favorites": "Избранное",
+  "tools": "Инструменты",
+  "search_files": "Поиск файлов...",
+  "sort_by_name": "Сортировать по имени",
+  "sort_by_size": "Сортировать по размеру",
+  "sort_by_date": "Сортировать по дате",
+
+  "language": "Язык",
+  "about": "О приложении",
+  "import_file": "Импортировать файл",
+  "dark_light_mode": "Светлая/тёмная тема",
+  "all_work_local": "Вся работа выполняется локально на вашем устройстве. Никакие данные не отправляются и не делятся.",
+  "developed_by": "Разработано Devsoftware",
+
+  "select_language": "Выберите язык",
+  "search_language": "Поиск языка...",
+  "no_language_found": "Язык не найден по вашему запросу.",
+
+  "file_imported_successfully": "Файл успешно импортирован.",
+  "all_files_root": "Все файлы (корень)",
+  "move_to_main_directory": "Переместить в главный каталог приложения",
+
+  "rename_file": "Переименовать файл",
+  "new_file_name": "Новое имя файла",
+  "rename_folder": "Переименовать папку",
+  "new_folder_name": "Новое имя папки",
+  "move_file": "Переместить файл",
+
+  "create_folder": "Создать папку",
+  "folder_name": "Имя папки",
+  "folder_created": "Папка создана: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Удалить файл",
+  "delete_folder": "Удалить папку",
+  "delete_files": "Удалить выбранные файлы",
+  "are_you_sure_delete": "Вы уверены, что хотите удалить",
+  "and_all_contents": "и всё его содержимое?",
+  "file_deleted": "Файл удалён.",
+  "folder_deleted": "Папка удалена.",
+  "files_deleted_count": "{count, plural, one{1 файл удалён} few{{count} файла удалено} many{{count} файлов удалено} other{{count} файлов удалено}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 элемент} few{{count} элемента} many{{count} элементов} other{{count} элементов}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "Изменить цвет папки",
+  "change_color": "Изменить цвет",
+
+  "no_files_found": "Файлы не найдены для \"{query}\"",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Требуется разрешение на хранение",
+  "permission_description": "Чтобы сохранить обновленные PDF-файлы на вашем устройстве (например, в папке Documents), нам нужно разрешение 'Полный доступ к файлам'.",
+  "saved_successfully": "Успешно сохранено",
+  "location": "Местоположение",
+  "pdf_save_error": "Ошибка при сохранении PDF",
+
+  "merge_pdf": "Объединить PDF",
+  "merge_pdf_description": "Объединить несколько PDF в один файл",
+  "edit_pages": "Редактировать страницы",
+  "edit_pages_description": "Переставить или изменить страницы PDF",
+  "extract_text": "Извлечь текст",
+  "extract_text_description": "Извлечь текст из PDF или изображения с помощью OCR",
+  "split_pdf": "Разделить PDF",
+  "split_pdf_description": "Разделить PDF на отдельные страницы",
+  "compress_pdf": "Сжать PDF",
+  "compress_pdf_description": "Уменьшить размер файла",
+  "pdf_to_image": "PDF в изображение",
+  "pdf_to_image_description": "Преобразовать PDF в изображения",
+
+  "permission_required_tools": "Необходимо разрешение",
+  "permission_description_tools": "Нужно разрешение 'Полный доступ к файлам', чтобы сохранить ваши PDF и текстовые файлы в папке Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ {fileName} сохранён",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ Не удалось сохранить файл: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ Не удалось сохранить изображение",
+  "file_save_error_short": "Не удалось сохранить файл"
+}

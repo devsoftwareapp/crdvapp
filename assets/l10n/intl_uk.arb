@@ -1,0 +1,110 @@
+{
+  "@@locale": "uk",
+
+  "cancel": "Скасувати",
+  "delete": "Видалити",
+  "rename": "Перейменувати",
+  "edit": "Редагувати",
+  "print": "Друк",
+  "share": "Поділитися",
+  "move": "Перемістити",
+  "allow": "Дозволити",
+  "create": "Створити",
+
+  "all_files": "Усі файли",
+  "recent": "Нещодавні",
+  "favorites": "Улюблені",
+  "tools": "Інструменти",
+  "search_files": "Пошук файлів...",
+  "sort_by_name": "Сортувати за назвою",
+  "sort_by_size": "Сортувати за розміром",
+  "sort_by_date": "Сортувати за датою",
+
+  "language": "Мова",
+  "about": "Про програму",
+  "import_file": "Імпортувати файл",
+  "dark_light_mode": "Темний/Світлий режим",
+  "all_work_local": "Уся робота виконується локально на вашому пристрої. Дані не передаються та не завантажуються.",
+  "developed_by": "Розроблено Devsoftware",
+
+  "select_language": "Вибрати мову",
+  "search_language": "Пошук мови...",
+  "no_language_found": "Мову не знайдено за вашим запитом.",
+
+  "file_imported_successfully": "Файл успішно імпортовано.",
+  "all_files_root": "Усі файли (корінь)",
+  "move_to_main_directory": "Перемістити в основну директорію застосунку",
+
+  "rename_file": "Перейменувати файл",
+  "new_file_name": "Нова назва файлу",
+  "rename_folder": "Перейменувати теку",
+  "new_folder_name": "Нова назва теки",
+  "move_file": "Перемістити файл",
+
+  "create_folder": "Створити теку",
+  "folder_name": "Назва теки",
+  "folder_created": "Теку створено: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Видалити файл",
+  "delete_folder": "Видалити теку",
+  "delete_files": "Видалити вибрані файли",
+  "are_you_sure_delete": "Ви впевнені, що хочете видалити",
+  "and_all_contents": "та весь її вміст?",
+  "file_deleted": "Файл видалено.",
+  "folder_deleted": "Теку видалено.",
+  "files_deleted_count": "{count, plural, one{1 файл видалено} few{{count} файли видалено} many{{count} файлів видалено} other{{count} файлів видалено}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 елемент} few{{count} елементи} many{{count} елементів} other{{count} елементів}}",
+  "@items": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "change_folder_color": "Змінити колір теки",
+  "change_color": "Змінити колір",
+
+  "no_files_found": "Не знайдено файлів для \"{query}\"",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Потрібен дозвіл на доступ до сховища",
+  "permission_description": "Щоб зберігати оновлені PDF-файли на вашому пристрої (наприклад, у папці Документи), потрібен дозвіл 'Доступ до всіх файлів'.",
+  "saved_successfully": "успішно збережено",
+  "location": "Розташування",
+  "pdf_save_error": "Помилка збереження PDF",
+
+  "merge_pdf": "Об’єднати PDF",
+  "merge_pdf_description": "Об’єднати кілька PDF у один файл",
+  "edit_pages": "Редагувати сторінки",
+  "edit_pages_description": "Змінити порядок або відредагувати сторінки PDF",
+  "extract_text": "Витягнути текст",
+  "extract_text_description": "Витягнути текст із PDF або зображення за допомогою OCR",
+  "split_pdf": "Розділити PDF",
+  "split_pdf_description": "Розділити PDF на окремі сторінки",
+  "compress_pdf": "Стиснути PDF",
+  "compress_pdf_description": "Зменшити розмір файлу",
+  "pdf_to_image": "PDF у зображення",
+  "pdf_to_image_description": "Перетворити PDF у зображення",
+
+  "permission_required_tools": "Потрібен дозвіл",
+  "permission_description_tools": "Для збереження ваших PDF та текстових файлів у папці Documents/pdfreadermanager потрібен дозвіл 'Доступ до всіх файлів'.",
+
+  "file_saved_success": "✅ {fileName} збережено",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ Не вдалося зберегти файл: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ Не вдалося зберегти зображення",
+  "file_save_error_short": "Не вдалося зберегти файл"
+}

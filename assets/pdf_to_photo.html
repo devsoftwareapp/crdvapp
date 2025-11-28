@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF → Image</title>
+  <script src="pdf.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #d32f2f;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .description {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .box {
+      background: #f8f9fa;
+      border-left: 4px solid #d32f2f;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      background: #d32f2f;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 10px 5px;
+      transition: background 0.3s;
+    }
+    button:hover { background: #b71c1c; }
+    button:disabled { background: #ccc; cursor: not-allowed; }
+    .status {
+      margin: 15px 0;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .success { background: #d4edda; color: #155724; }
+    .error { background: #f8d7da; color: #721c24; }
+    .info { background: #d1ecf1; color: #0c5460; }
+    #images { display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0; justify-content: center; }
+    .image-container { text-align: center; background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #ddd; }
+    .image-container img { max-width: 200px; max-height: 300px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .download-btn { background: #28a745; padding: 8px 15px; font-size: 14px; margin-top: 10px; }
+    .download-btn:hover { background: #218838; }
+    .progress { width: 100%; height: 20px; background: #e9ecef; border-radius: 10px; margin: 10px 0; overflow: hidden; }
+    .progress-bar { height: 100%; background: #d32f2f; border-radius: 10px; transition: width 0.3s; }
+    .controls { display: flex; gap: 10px; margin: 15px 0; }
+    .batch-download { background: #17a2b8; }
+    .batch-download:hover { background: #138496; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">PDF → Image</h1>
+    <p class="description" id="description">Convert PDF pages to images</p>
+
+    <div class="box">
+      <h3 id="selectFileTitle">Select PDF File</h3>
+      <input type="file" id="pdfFile" accept="application/pdf">
+    </div>
+
+    <div class="box">
+      <h3 id="conversionSettings">Conversion Settings</h3>
+      <label id="imageFormatLabel" for="imageFormat">Image Format:</label>
+      <select id="imageFormat">
+        <option value="jpeg">JPEG</option>
+        <option value="png">PNG</option>
+      </select>
+
+      <label id="imageQualityLabel" for="imageQuality">Image Quality (for JPEG):</label>
+      <select id="imageQuality">
+        <option value="0.9">High</option>
+        <option value="0.7" selected>Medium</option>
+        <option value="0.5">Low</option>
+      </select>
+
+      <label id="imageScaleLabel" for="imageScale">Image Size:</label>
+      <select id="imageScale">
+        <option value="1.0">Small</option>
+        <option value="1.5" selected>Medium</option>
+        <option value="2.0">Large</option>
+        <option value="3.0">Very Large</option>
+      </select>
+
+      <div class="controls">
+        <button id="convertBtn">Convert PDF to Images</button>
+        <button id="batchDownloadBtn" class="batch-download" disabled>Save All</button>
+      </div>
+    </div>
+
+    <div class="progress" style="display: none;">
+      <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+    </div>
+
+    <div id="status" class="status" style="display: none;"></div>
+
+    <div id="images" class="box">
+      <h3 id="convertedImagesTitle">Converted Images</h3>
+      <div id="imagesContainer"></div>
+    </div>
+  </div>
+
+  <script>
+    // 🌍 Load localization file automatically based on browser language
+    async function loadLocale() {
+      const lang = (navigator.language || 'en-US').toLowerCase();
+      try {
+        const res = await fetch('pdf_to_photo-all.json');
+        const allLocales = await res.json();
+        const locale = allLocales[lang] || allLocales[lang.split('-')[0]] || allLocales['en-us'];
+        applyTranslations(locale);
+      } catch (e) {
+        console.error('Locale load error:', e);
+      }
+    }
+
+    function applyTranslations(t) {
+      document.title = t.title;
+      document.getElementById('title').textContent = t.title;
+      document.getElementById('description').textContent = t.description;
+      document.getElementById('selectFileTitle').textContent = t.selectFile;
+      document.getElementById('conversionSettings').textContent = t.conversionSettings;
+      document.getElementById('imageFormatLabel').textContent = t.imageFormat;
+      document.getElementById('imageQualityLabel').textContent = t.imageQuality;
+      document.getElementById('imageScaleLabel').textContent = t.imageSize;
+      document.getElementById('convertBtn').textContent = t.convertBtn;
+      document.getElementById('batchDownloadBtn').textContent = t.saveAllBtn;
+      document.getElementById('convertedImagesTitle').textContent = t.convertedImages;
+    }
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdf.worker.min.js';
+    let convertedImages = [];
+
+    function showStatus(message, type) {
+      const status = document.getElementById('status');
+      status.textContent = message;
+      status.className = `status ${type}`;
+      status.style.display = 'block';
+    }
+
+    function updateProgress(percent) {
+      const progressBar = document.getElementById('progressBar');
+      const progressContainer = document.querySelector('.progress');
+      progressBar.style.width = percent + '%';
+      progressContainer.style.display = 'block';
+    }
+
+    function saveImageToFlutter(imageData, fileName) {
+      if (window.flutter_inappwebview) {
+        window.flutter_inappwebview.callHandler('saveImage', fileName, imageData)
+          .then(() => showStatus(`✅ ${fileName} saved!`, 'success'))
+          .catch(() => showStatus(`❌ ${fileName} failed to save.`, 'error'));
+      } else {
+        const format = fileName.split('.').pop();
+        const link = document.createElement('a');
+        link.href = `data:image/${format};base64,${imageData}`;
+        link.download = fileName;
+        link.click();
+        showStatus(`📥 ${fileName} downloaded!`, 'info');
+      }
+    }
+
+    async function renderPDFtoImages(file, format, quality, scale) {
+      try {
+        const arrayBuffer = await file.arrayBuffer();
+        const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+        const imagesContainer = document.getElementById('imagesContainer');
+        imagesContainer.innerHTML = '';
+        convertedImages = [];
+        showStatus('Converting PDF...', 'info');
+        const totalPages = pdf.numPages;
+
+        for (let i = 1; i <= totalPages; i++) {
+          const page = await pdf.getPage(i);
+          const viewport = page.getViewport({ scale: parseFloat(scale) });
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          await page.render({ canvasContext: ctx, viewport }).promise;
+          const dataURL = canvas.toDataURL(`image/${format}`, parseFloat(quality));
+
+          const imageContainer = document.createElement('div');
+          imageContainer.className = 'image-container';
+          const img = document.createElement('img');
+          img.src = dataURL;
+          const downloadBtn = document.createElement('button');
+          downloadBtn.className = 'download-btn';
+          downloadBtn.textContent = 'Save';
+          downloadBtn.onclick = () => saveImageToFlutter(dataURL.split(',')[1], `page_${i}.${format}`);
+          imageContainer.appendChild(img);
+          imageContainer.appendChild(downloadBtn);
+          imagesContainer.appendChild(imageContainer);
+
+          convertedImages.push({ data: dataURL.split(',')[1], fileName: `page_${i}.${format}` });
+          updateProgress((i / totalPages) * 100);
+          showStatus(`Page ${i}/${totalPages} converted...`, 'info');
+        }
+
+        showStatus(`✅ ${totalPages} pages converted successfully!`, 'success');
+        document.getElementById('batchDownloadBtn').disabled = false;
+
+      } catch (error) {
+        showStatus(`❌ Error: ${error.message}`, 'error');
+      }
+    }
+
+    document.getElementById('convertBtn').addEventListener('click', async () => {
+      const file = document.getElementById('pdfFile').files[0];
+      const format = document.getElementById('imageFormat').value;
+      const quality = document.getElementById('imageQuality').value;
+      const scale = document.getElementById('imageScale').value;
+      if (!file) return showStatus('Please select a PDF file.', 'error');
+      await renderPDFtoImages(file, format, quality, scale);
+    });
+
+    document.getElementById('batchDownloadBtn').addEventListener('click', async () => {
+      if (convertedImages.length === 0) return showStatus('Please convert PDF first!', 'error');
+      showStatus('Saving all images...', 'info');
+      for (const img of convertedImages) saveImageToFlutter(img.data, img.fileName);
+    });
+
+    window.addEventListener('load', loadLocale);
+  </script>
+</body>
+</html>

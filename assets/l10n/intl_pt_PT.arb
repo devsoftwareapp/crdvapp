@@ -1,0 +1,108 @@
+{
+  "@@locale": "pt_PT",
+
+  "cancel": "Cancelar",
+  "delete": "Eliminar",
+  "rename": "Renomear",
+  "edit": "Editar",
+  "print": "Imprimir",
+  "share": "Partilhar",
+  "move": "Mover",
+  "allow": "Permitir",
+  "create": "Criar",
+
+  "all_files": "Todos os ficheiros",
+  "recent": "Recentes",
+  "favorites": "Favoritos",
+  "tools": "Ferramentas",
+  "search_files": "Procurar ficheiros...",
+  "sort_by_name": "Ordenar por nome",
+  "sort_by_size": "Ordenar por tamanho",
+  "sort_by_date": "Ordenar por data",
+
+  "language": "Idioma",
+  "about": "Sobre",
+  "import_file": "Importar ficheiro",
+  "dark_light_mode": "Modo claro/escuro",
+  "all_work_local": "Todo o trabalho é realizado localmente no seu dispositivo. Nenhum dado é partilhado ou enviado.",
+  "developed_by": "Desenvolvido por Devsoftware",
+
+  "select_language": "Selecionar idioma",
+  "search_language": "Procurar idioma...",
+  "no_language_found": "Nenhum idioma encontrado para a sua pesquisa.",
+
+  "file_imported_successfully": "Ficheiro importado com sucesso.",
+  "all_files_root": "Todos os ficheiros (raiz)",
+  "move_to_main_directory": "Mover para o diretório principal da aplicação",
+
+  "rename_file": "Renomear ficheiro",
+  "new_file_name": "Novo nome do ficheiro",
+  "rename_folder": "Renomear pasta",
+  "new_folder_name": "Novo nome da pasta",
+  "move_file": "Mover ficheiro",
+
+  "create_folder": "Criar pasta",
+  "folder_name": "Nome da pasta",
+  "folder_created": "Pasta criada: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Eliminar ficheiro",
+  "delete_folder": "Eliminar pasta",
+  "delete_files": "Eliminar ficheiros selecionados",
+  "are_you_sure_delete": "Tem a certeza de que deseja eliminar",
+  "and_all_contents": "e todo o seu conteúdo?",
+  "file_deleted": "Ficheiro eliminado.",
+  "folder_deleted": "Pasta eliminada.",
+  "files_deleted_count": "{count, plural, one{1 ficheiro eliminado} other{{count} ficheiros eliminados}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 item} other{{count} itens}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "Alterar cor da pasta",
+  "change_color": "Alterar cor",
+
+  "no_files_found": "Nenhum ficheiro encontrado para \"{query}\"",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Permissão de armazenamento necessária",
+  "permission_description": "Para guardar PDFs atualizados no seu dispositivo (por exemplo, na pasta Documentos), precisamos da permissão 'Acesso total a ficheiros'.",
+  "saved_successfully": "Guardado com sucesso",
+  "location": "Localização",
+  "pdf_save_error": "Erro ao guardar o PDF",
+
+  "merge_pdf": "Unir PDF",
+  "merge_pdf_description": "Unir vários PDFs num só ficheiro",
+  "edit_pages": "Editar páginas",
+  "edit_pages_description": "Reorganizar ou editar páginas de PDF",
+  "extract_text": "Extrair texto",
+  "extract_text_description": "Extrair texto de um PDF ou imagem usando OCR",
+  "split_pdf": "Dividir PDF",
+  "split_pdf_description": "Dividir PDF em páginas separadas",
+  "compress_pdf": "Comprimir PDF",
+  "compress_pdf_description": "Reduzir o tamanho do ficheiro",
+  "pdf_to_image": "PDF para imagem",
+  "pdf_to_image_description": "Converter PDF em imagens",
+
+  "permission_required_tools": "Permissão necessária",
+  "permission_description_tools": "Precisamos da permissão \"Acesso total a ficheiros\" para guardar os seus PDFs e ficheiros de texto na pasta Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ {fileName} guardado",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ Não foi possível guardar o ficheiro: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ Não foi possível guardar a imagem",
+  "file_save_error_short": "Não foi possível guardar o ficheiro"
+}

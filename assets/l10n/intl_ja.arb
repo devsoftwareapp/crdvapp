@@ -1,0 +1,108 @@
+{
+  "@@locale": "ja",
+
+  "cancel": "キャンセル",
+  "delete": "削除",
+  "rename": "名前を変更",
+  "edit": "編集",
+  "print": "印刷",
+  "share": "共有",
+  "move": "移動",
+  "allow": "許可",
+  "create": "作成",
+
+  "all_files": "すべてのファイル",
+  "recent": "最近使用した",
+  "favorites": "お気に入り",
+  "tools": "ツール",
+  "search_files": "ファイルを検索...",
+  "sort_by_name": "名前順に並べ替え",
+  "sort_by_size": "サイズ順に並べ替え",
+  "sort_by_date": "日付順に並べ替え",
+
+  "language": "言語",
+  "about": "アプリについて",
+  "import_file": "ファイルをインポート",
+  "dark_light_mode": "ダーク/ライトモード",
+  "all_work_local": "すべての作業はデバイス上でローカルに行われます。データは共有またはアップロードされません。",
+  "developed_by": "Devsoftware によって開発されました",
+
+  "select_language": "言語を選択",
+  "search_language": "言語を検索...",
+  "no_language_found": "該当する言語が見つかりません。",
+
+  "file_imported_successfully": "ファイルが正常にインポートされました。",
+  "all_files_root": "すべてのファイル（ルート）",
+  "move_to_main_directory": "アプリのメインストレージディレクトリ",
+
+  "rename_file": "ファイル名を変更",
+  "new_file_name": "新しいファイル名",
+  "rename_folder": "フォルダー名を変更",
+  "new_folder_name": "新しいフォルダー名",
+  "move_file": "ファイルを移動",
+
+  "create_folder": "フォルダーを作成",
+  "folder_name": "フォルダー名",
+  "folder_created": "フォルダーを作成しました: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "ファイルを削除",
+  "delete_folder": "フォルダーを削除",
+  "delete_files": "選択したファイルを削除",
+  "are_you_sure_delete": "削除してもよろしいですか？",
+  "and_all_contents": "およびそのすべての内容",
+  "file_deleted": "ファイルを削除しました。",
+  "folder_deleted": "フォルダーを削除しました。",
+  "files_deleted_count": "{count, plural, one{1 個のファイルを削除} other{{count} 個のファイルを削除}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 項目} other{{count} 項目}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "フォルダーの色を変更",
+  "change_color": "色を変更",
+
+  "no_files_found": "\"{query}\" に一致するファイルは見つかりませんでした。",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "ストレージアクセスの許可が必要です",
+  "permission_description": "デバイスに更新された PDF を保存するには（例: Documents フォルダー）、'すべてのファイルアクセス' の許可が必要です。",
+  "saved_successfully": "正常に保存されました",
+  "location": "保存場所",
+  "pdf_save_error": "PDF の保存エラー",
+
+  "merge_pdf": "PDF を結合",
+  "merge_pdf_description": "複数の PDF を 1 つに結合",
+  "edit_pages": "ページを編集",
+  "edit_pages_description": "PDF ページを並べ替えまたは編集",
+  "extract_text": "テキストを抽出",
+  "extract_text_description": "OCR を使用して PDF または画像からテキストを抽出",
+  "split_pdf": "PDF を分割",
+  "split_pdf_description": "PDF を複数のページに分割",
+  "compress_pdf": "PDF を圧縮",
+  "compress_pdf_description": "ファイルサイズを縮小",
+  "pdf_to_image": "PDF を画像に変換",
+  "pdf_to_image_description": "PDF を画像に変換",
+
+  "permission_required_tools": "権限が必要です",
+  "permission_description_tools": "Documents/pdfreadermanager フォルダーに PDF およびテキストファイルを保存するには、\"すべてのファイルアクセス\" 権限が必要です。",
+
+  "file_saved_success": "✅ {fileName} を保存しました",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ ファイルを保存できませんでした: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ 画像を保存できませんでした",
+  "file_save_error_short": "ファイルを保存できませんでした"
+}

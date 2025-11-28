@@ -1,0 +1,108 @@
+{
+  "@@locale": "fr",
+
+  "cancel": "Annuler",
+  "delete": "Supprimer",
+  "rename": "Renommer",
+  "edit": "Modifier",
+  "print": "Imprimer",
+  "share": "Partager",
+  "move": "Déplacer",
+  "allow": "AUTORISER",
+  "create": "Créer",
+
+  "all_files": "Tous les fichiers",
+  "recent": "Récents",
+  "favorites": "Favoris",
+  "tools": "Outils",
+  "search_files": "Rechercher des fichiers...",
+  "sort_by_name": "Trier par nom",
+  "sort_by_size": "Trier par taille",
+  "sort_by_date": "Trier par date",
+
+  "language": "Langue",
+  "about": "À propos",
+  "import_file": "Importer un fichier",
+  "dark_light_mode": "Mode sombre/clair",
+  "all_work_local": "Tout le travail est effectué localement sur votre appareil. Aucune donnée n'est partagée ou téléchargée.",
+  "developed_by": "Développé par Devsoftware",
+
+  "select_language": "Sélectionner la langue",
+  "search_language": "Rechercher une langue...",
+  "no_language_found": "Aucune langue trouvée pour votre recherche.",
+
+  "file_imported_successfully": "Fichier importé avec succès.",
+  "all_files_root": "Tous les fichiers (Racine)",
+  "move_to_main_directory": "Répertoire principal de l'application",
+
+  "rename_file": "Renommer le fichier",
+  "new_file_name": "Nouveau nom de fichier",
+  "rename_folder": "Renommer le dossier",
+  "new_folder_name": "Nouveau nom de dossier",
+  "move_file": "Déplacer le fichier",
+
+  "create_folder": "Créer un dossier",
+  "folder_name": "Nom du dossier",
+  "folder_created": "Dossier créé : \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Supprimer le fichier",
+  "delete_folder": "Supprimer le dossier",
+  "delete_files": "Supprimer les fichiers sélectionnés",
+  "are_you_sure_delete": "Êtes-vous sûr de vouloir supprimer",
+  "and_all_contents": "et tout son contenu",
+  "file_deleted": "Fichier supprimé.",
+  "folder_deleted": "Dossier supprimé.",
+  "files_deleted_count": "{count, plural, one{1 fichier supprimé} other{{count} fichiers supprimés}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 élément} other{{count} éléments}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "Changer la couleur du dossier",
+  "change_color": "Changer la couleur",
+
+  "no_files_found": "Aucun fichier trouvé pour \"{query}\"",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Autorisation de stockage requise",
+  "permission_description": "Pour enregistrer les PDF mis à jour sur votre appareil (par exemple dans le dossier Documents), nous avons besoin de l'autorisation 'Accès à tous les fichiers'.",
+  "saved_successfully": "enregistré avec succès",
+  "location": "Emplacement",
+  "pdf_save_error": "Erreur lors de l'enregistrement du PDF",
+
+  "merge_pdf": "Fusionner PDF",
+  "merge_pdf_description": "Fusionner plusieurs fichiers PDF en un seul",
+  "edit_pages": "Modifier les pages",
+  "edit_pages_description": "Réorganiser ou modifier les pages PDF",
+  "extract_text": "Extraire le texte",
+  "extract_text_description": "Extraire le texte d’un PDF ou d’une image à l’aide de l’OCR",
+  "split_pdf": "Diviser le PDF",
+  "split_pdf_description": "Diviser le PDF en pages séparées",
+  "compress_pdf": "Compresser le PDF",
+  "compress_pdf_description": "Réduire la taille du fichier",
+  "pdf_to_image": "PDF en image",
+  "pdf_to_image_description": "Convertir le PDF en images",
+
+  "permission_required_tools": "Autorisation requise",
+  "permission_description_tools": "Nous avons besoin de l’autorisation 'Accès à tous les fichiers' pour enregistrer vos fichiers PDF et texte dans le dossier Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ {fileName} enregistré",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ Le fichier n'a pas pu être enregistré : {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ L'image n'a pas pu être enregistrée",
+  "file_save_error_short": "Le fichier n'a pas pu être enregistré"
+}

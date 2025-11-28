@@ -1,0 +1,135 @@
+{
+  "@@locale": "ar",
+
+  "cancel": "إلغاء",
+  "delete": "حذف",
+  "rename": "إعادة تسمية",
+  "edit": "تحرير",
+  "print": "طباعة",
+  "share": "مشاركة",
+  "move": "نقل",
+  "allow": "السماح",
+  "create": "إنشاء",
+
+  "all_files": "جميع الملفات",
+  "recent": "الأحدث",
+  "favorites": "المفضلة",
+  "tools": "الأدوات",
+  "search_files": "ابحث في الملفات...",
+  "sort_by_name": "الترتيب حسب الاسم",
+  "sort_by_size": "الترتيب حسب الحجم",
+  "sort_by_date": "الترتيب حسب التاريخ",
+
+  "language": "اللغة",
+  "about": "حول التطبيق",
+  "import_file": "استيراد ملف",
+  "dark_light_mode": "الوضع الداكن / الفاتح",
+  "all_work_local": "يتم تنفيذ كل العمل محليًا على جهازك. لا تتم مشاركة أي بيانات أو تحميلها.",
+  "developed_by": "تم التطوير بواسطة Devsoftware",
+
+  "select_language": "اختر اللغة",
+  "search_language": "بحث عن لغة...",
+  "no_language_found": "لم يتم العثور على لغة لبحثك.",
+
+  "file_imported_successfully": "تم استيراد الملف بنجاح.",
+  "all_files_root": "جميع الملفات (الجذر)",
+  "move_to_main_directory": "الدليل الرئيسي لتخزين التطبيق",
+
+  "rename_file": "إعادة تسمية الملف",
+  "new_file_name": "اسم الملف الجديد",
+  "rename_folder": "إعادة تسمية المجلد",
+  "new_folder_name": "اسم المجلد الجديد",
+  "move_file": "نقل الملف",
+
+  "create_folder": "إنشاء مجلد",
+  "folder_name": "اسم المجلد",
+  "folder_created": "تم إنشاء المجلد: \"{name}\"",
+  "@folder_created": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+
+  "delete_file": "حذف الملف",
+  "delete_folder": "حذف المجلد",
+  "delete_files": "حذف الملفات المحددة",
+  "are_you_sure_delete": "هل أنت متأكد أنك تريد حذف",
+  "and_all_contents": "وجميع محتوياته",
+  "file_deleted": "تم حذف الملف.",
+  "folder_deleted": "تم حذف المجلد.",
+  "files_deleted_count": "{count, plural, one{تم حذف ملف واحد} other{تم حذف {count} ملفات}}",
+  "@files_deleted_count": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+
+  "items": "{count, plural, one{عنصر واحد} other{{count} عناصر}}",
+  "@items": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+
+  "change_folder_color": "تغيير لون المجلد",
+  "change_color": "تغيير اللون",
+
+  "no_files_found": "لم يتم العثور على ملفات لـ \"{query}\"",
+  "@no_files_found": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+
+  "permission_required": "إذن الوصول إلى التخزين مطلوب",
+  "permission_description": "لحفظ ملفات PDF المحدثة على جهازك (مثل مجلد المستندات)، نحتاج إلى إذن 'الوصول إلى جميع الملفات'.",
+  "saved_successfully": "تم الحفظ بنجاح",
+  "location": "الموقع",
+  "pdf_save_error": "خطأ في حفظ ملف PDF",
+
+  "merge_pdf": "دمج ملفات PDF",
+  "merge_pdf_description": "دمج ملفات PDF متعددة في ملف واحد",
+  "edit_pages": "تحرير الصفحات",
+  "edit_pages_description": "إعادة ترتيب أو تعديل صفحات PDF",
+  "extract_text": "استخراج النص",
+  "extract_text_description": "استخراج النص من PDF أو صورة باستخدام OCR",
+  "split_pdf": "تقسيم PDF",
+  "split_pdf_description": "تقسيم ملف PDF إلى صفحات منفصلة",
+  "compress_pdf": "ضغط PDF",
+  "compress_pdf_description": "تقليل حجم الملف",
+  "pdf_to_image": "تحويل PDF إلى صورة",
+  "pdf_to_image_description": "تحويل PDF إلى صور",
+
+  "permission_required_tools": "الإذن مطلوب",
+  "permission_description_tools": "نحتاج إلى إذن \"الوصول إلى جميع الملفات\" لحفظ ملفات PDF والنصوص في مجلد Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ تم حفظ {fileName}",
+  "@file_saved_success": {
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+
+  "file_save_error": "❌ تعذر حفظ الملف: {error}",
+  "@file_save_error": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+
+  "image_save_error": "❌ تعذر حفظ الصورة",
+  "file_save_error_short": "تعذر حفظ الملف"
+}

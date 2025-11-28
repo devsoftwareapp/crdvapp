@@ -1,0 +1,108 @@
+{
+  "@@locale": "nl",
+
+  "cancel": "Annuleren",
+  "delete": "Verwijderen",
+  "rename": "Naam wijzigen",
+  "edit": "Bewerken",
+  "print": "Afdrukken",
+  "share": "Delen",
+  "move": "Verplaatsen",
+  "allow": "Toestaan",
+  "create": "Aanmaken",
+
+  "all_files": "Alle bestanden",
+  "recent": "Recent",
+  "favorites": "Favorieten",
+  "tools": "Hulpmiddelen",
+  "search_files": "Bestanden zoeken...",
+  "sort_by_name": "Sorteren op naam",
+  "sort_by_size": "Sorteren op grootte",
+  "sort_by_date": "Sorteren op datum",
+
+  "language": "Taal",
+  "about": "Over",
+  "import_file": "Bestand importeren",
+  "dark_light_mode": "Donkere/licht modus",
+  "all_work_local": "Alle bewerkingen worden lokaal op het apparaat uitgevoerd. Geen gegevens worden gedeeld of geüpload.",
+  "developed_by": "Ontwikkeld door Devsoftware",
+
+  "select_language": "Selecteer taal",
+  "search_language": "Taal zoeken...",
+  "no_language_found": "Geen talen gevonden die overeenkomen met uw zoekopdracht.",
+
+  "file_imported_successfully": "Bestand succesvol geïmporteerd.",
+  "all_files_root": "Alle bestanden (root)",
+  "move_to_main_directory": "Verplaats naar de hoofdmap van de app",
+
+  "rename_file": "Bestand hernoemen",
+  "new_file_name": "Nieuwe bestandsnaam",
+  "rename_folder": "Map hernoemen",
+  "new_folder_name": "Nieuwe mapnaam",
+  "move_file": "Bestand verplaatsen",
+
+  "create_folder": "Map maken",
+  "folder_name": "Mapnaam",
+  "folder_created": "Map aangemaakt: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Bestand verwijderen",
+  "delete_folder": "Map verwijderen",
+  "delete_files": "Geselecteerde bestanden verwijderen",
+  "are_you_sure_delete": "Weet je zeker dat je dit wilt verwijderen?",
+  "and_all_contents": "en alle inhoud",
+  "file_deleted": "Bestand verwijderd.",
+  "folder_deleted": "Map verwijderd.",
+  "files_deleted_count": "{count, plural, one{1 bestand verwijderd} other{{count} bestanden verwijderd}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 item} other{{count} items}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "Mapkleur wijzigen",
+  "change_color": "Kleur wijzigen",
+
+  "no_files_found": "Geen bestanden gevonden voor \"{query}\".",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Toestemming vereist",
+  "permission_description": "Toegang tot alle bestanden is vereist om gewijzigde PDF's op te slaan (bijv. in de Documents-map).",
+  "saved_successfully": "Succesvol opgeslagen",
+  "location": "Locatie",
+  "pdf_save_error": "Fout bij het opslaan van PDF",
+
+  "merge_pdf": "PDF's samenvoegen",
+  "merge_pdf_description": "Voeg meerdere PDF's samen tot één",
+  "edit_pages": "Pagina's bewerken",
+  "edit_pages_description": "Orden of bewerk PDF-pagina's",
+  "extract_text": "Tekst extraheren",
+  "extract_text_description": "Extraheer tekst uit PDF of afbeelding met OCR",
+  "split_pdf": "PDF splitsen",
+  "split_pdf_description": "Splits een PDF in meerdere bestanden",
+  "compress_pdf": "PDF comprimeren",
+  "compress_pdf_description": "Verklein de bestandsgrootte",
+  "pdf_to_image": "PDF naar afbeelding",
+  "pdf_to_image_description": "Converteer PDF-bestanden naar afbeeldingen",
+
+  "permission_required_tools": "Toestemming vereist",
+  "permission_description_tools": "Toegang tot alle bestanden is vereist om PDF- en tekstbestanden op te slaan in de map Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ {fileName} opgeslagen",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ Bestand kon niet worden opgeslagen: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ Afbeelding kon niet worden opgeslagen",
+  "file_save_error_short": "Bestand kan niet worden opgeslagen"
+}

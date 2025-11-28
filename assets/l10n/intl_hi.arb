@@ -1,0 +1,108 @@
+{
+  "@@locale": "hi",
+
+  "cancel": "रद्द करें",
+  "delete": "हटाएं",
+  "rename": "नाम बदलें",
+  "edit": "संपादित करें",
+  "print": "प्रिंट करें",
+  "share": "साझा करें",
+  "move": "स्थानांतरित करें",
+  "allow": "अनुमति दें",
+  "create": "बनाएं",
+
+  "all_files": "सभी फ़ाइलें",
+  "recent": "हाल ही के",
+  "favorites": "पसंदीदा",
+  "tools": "उपकरण",
+  "search_files": "फ़ाइलें खोजें...",
+  "sort_by_name": "नाम से क्रमबद्ध करें",
+  "sort_by_size": "आकार से क्रमबद्ध करें",
+  "sort_by_date": "तारीख से क्रमबद्ध करें",
+
+  "language": "भाषा",
+  "about": "के बारे में",
+  "import_file": "फ़ाइल आयात करें",
+  "dark_light_mode": "डार्क/लाइट मोड",
+  "all_work_local": "सारा कार्य आपके डिवाइस पर स्थानीय रूप से किया जाता है। कोई डेटा साझा या अपलोड नहीं किया जाता।",
+  "developed_by": "डेवसॉफ्टवेयर द्वारा विकसित",
+
+  "select_language": "भाषा चुनें",
+  "search_language": "भाषा खोजें...",
+  "no_language_found": "आपकी खोज के लिए कोई भाषा नहीं मिली।",
+
+  "file_imported_successfully": "फ़ाइल सफलतापूर्वक आयात की गई।",
+  "all_files_root": "सभी फ़ाइलें (रूट)",
+  "move_to_main_directory": "मुख्य ऐप निर्देशिका",
+
+  "rename_file": "फ़ाइल का नाम बदलें",
+  "new_file_name": "नई फ़ाइल का नाम",
+  "rename_folder": "फ़ोल्डर का नाम बदलें",
+  "new_folder_name": "नए फ़ोल्डर का नाम",
+  "move_file": "फ़ाइल स्थानांतरित करें",
+
+  "create_folder": "फ़ोल्डर बनाएं",
+  "folder_name": "फ़ोल्डर का नाम",
+  "folder_created": "फ़ोल्डर बनाया गया: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "फ़ाइल हटाएं",
+  "delete_folder": "फ़ोल्डर हटाएं",
+  "delete_files": "चयनित फ़ाइलें हटाएं",
+  "are_you_sure_delete": "क्या आप वाकई हटाना चाहते हैं",
+  "and_all_contents": "और इसकी सभी सामग्री?",
+  "file_deleted": "फ़ाइल हटाई गई।",
+  "folder_deleted": "फ़ोल्डर हटाया गया।",
+  "files_deleted_count": "{count, plural, one{1 फ़ाइल हटाई गई} other{{count} फ़ाइलें हटाई गईं}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 आइटम} other{{count} आइटम}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "फ़ोल्डर का रंग बदलें",
+  "change_color": "रंग बदलें",
+
+  "no_files_found": "\"{query}\" के लिए कोई फ़ाइल नहीं मिली",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "स्टोरेज अनुमति आवश्यक है",
+  "permission_description": "अपडेटेड PDF को आपके डिवाइस में (जैसे डॉक्युमेंट्स फ़ोल्डर में) सहेजने के लिए हमें 'सभी फ़ाइलों की पहुँच' की अनुमति चाहिए।",
+  "saved_successfully": "सफलतापूर्वक सहेजा गया",
+  "location": "स्थान",
+  "pdf_save_error": "PDF सहेजने में त्रुटि हुई",
+
+  "merge_pdf": "PDF मर्ज करें",
+  "merge_pdf_description": "कई PDF फ़ाइलों को एक में मिलाएं",
+  "edit_pages": "पेज संपादित करें",
+  "edit_pages_description": "PDF पेजों को पुनः व्यवस्थित या संपादित करें",
+  "extract_text": "टेक्स्ट निकालें",
+  "extract_text_description": "OCR के माध्यम से PDF या इमेज से टेक्स्ट निकालें",
+  "split_pdf": "PDF विभाजित करें",
+  "split_pdf_description": "PDF को अलग-अलग पेजों में विभाजित करें",
+  "compress_pdf": "PDF संपीड़ित करें",
+  "compress_pdf_description": "फ़ाइल आकार कम करें",
+  "pdf_to_image": "PDF को इमेज में बदलें",
+  "pdf_to_image_description": "PDF को इमेज में कनवर्ट करें",
+
+  "permission_required_tools": "अनुमति आवश्यक है",
+  "permission_description_tools": "'सभी फ़ाइलों की पहुँच' की अनुमति की आवश्यकता है ताकि आपकी PDF और टेक्स्ट फ़ाइलें Documents/pdfreadermanager में सहेजी जा सकें।",
+
+  "file_saved_success": "✅ {fileName} सहेजा गया",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ फ़ाइल सहेजने में विफल: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ इमेज सहेजने में विफल",
+  "file_save_error_short": "फ़ाइल सहेजने में विफल"
+}

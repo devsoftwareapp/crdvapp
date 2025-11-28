@@ -1,0 +1,98 @@
+{
+  "@@locale": "fa",
+
+  "cancel": "لغو",
+  "delete": "حذف",
+  "rename": "تغییر نام",
+  "edit": "ویرایش",
+  "print": "چاپ",
+  "share": "اشتراک‌گذاری",
+  "move": "انتقال",
+  "allow": "اجازه دادن",
+  "create": "ایجاد",
+
+  "all_files": "همه فایل‌ها",
+  "recent": "اخیراً",
+  "favorites": "موارد دلخواه",
+  "tools": "ابزارها",
+  "search_files": "جستجوی فایل‌ها...",
+  "sort_by_name": "مرتب‌سازی بر اساس نام",
+  "sort_by_size": "مرتب‌سازی بر اساس اندازه",
+  "sort_by_date": "مرتب‌سازی بر اساس تاریخ",
+
+  "language": "زبان",
+  "about": "درباره",
+  "import_file": "وارد کردن فایل",
+  "dark_light_mode": "حالت تاریک/روشن",
+  "all_work_local": "تمام عملیات به‌صورت محلی روی دستگاه شما انجام می‌شود. هیچ داده‌ای به اشتراک گذاشته یا آپلود نمی‌شود.",
+  "developed_by": "توسعه داده‌شده توسط Devsoftware",
+
+  "select_language": "انتخاب زبان",
+  "search_language": "جستجوی زبان...",
+  "no_language_found": "هیچ زبانی برای جستجوی شما یافت نشد.",
+
+  "file_imported_successfully": "فایل با موفقیت وارد شد.",
+  "all_files_root": "همه فایل‌ها (ریشه)",
+  "move_to_main_directory": "دایرکتوری اصلی برنامه",
+
+  "rename_file": "تغییر نام فایل",
+  "new_file_name": "نام جدید فایل",
+  "rename_folder": "تغییر نام پوشه",
+  "new_folder_name": "نام جدید پوشه",
+  "move_file": "انتقال فایل",
+
+  "create_folder": "ایجاد پوشه",
+  "folder_name": "نام پوشه",
+  "folder_created": "پوشه ایجاد شد: \"{name}\"",
+  "@folder_created": { "placeholders": { "name": { "type": "String" } } },
+
+  "delete_file": "حذف فایل",
+  "delete_folder": "حذف پوشه",
+  "delete_files": "حذف فایل‌های انتخاب‌شده",
+  "are_you_sure_delete": "آیا مطمئن هستید که می‌خواهید حذف کنید؟",
+  "and_all_contents": "و تمام محتوای آن",
+  "file_deleted": "فایل حذف شد.",
+  "folder_deleted": "پوشه حذف شد.",
+  "files_deleted_count": "{count, plural, one{۱ فایل حذف شد} other{{count} فایل حذف شد}}",
+  "@files_deleted_count": { "placeholders": { "count": { "type": "int" } } },
+
+  "items": "{count, plural, one{۱ مورد} other{{count} مورد}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "تغییر رنگ پوشه",
+  "change_color": "تغییر رنگ",
+
+  "no_files_found": "هیچ فایلی برای \"{query}\" یافت نشد",
+  "@no_files_found": { "placeholders": { "query": { "type": "String" } } },
+
+  "permission_required": "مجوز دسترسی به حافظه لازم است",
+  "permission_description": "برای ذخیره PDF های به‌روزرسانی شده در دستگاه شما (مثلاً در پوشه اسناد)، به مجوز 'دسترسی به تمام فایل‌ها' نیاز داریم.",
+  "saved_successfully": "با موفقیت ذخیره شد",
+  "location": "مکان",
+  "pdf_save_error": "خطا در ذخیره PDF",
+
+  "merge_pdf": "ادغام PDF",
+  "merge_pdf_description": "ادغام چند PDF در یک فایل",
+  "edit_pages": "ویرایش صفحات",
+  "edit_pages_description": "تغییر ترتیب یا ویرایش صفحات PDF",
+  "extract_text": "استخراج متن",
+  "extract_text_description": "استخراج متن از PDF یا تصویر با استفاده از OCR",
+  "split_pdf": "تقسیم PDF",
+  "split_pdf_description": "تقسیم PDF به صفحات جداگانه",
+  "compress_pdf": "فشرده‌سازی PDF",
+  "compress_pdf_description": "کاهش اندازه فایل",
+  "pdf_to_image": "PDF به تصویر",
+  "pdf_to_image_description": "تبدیل PDF به تصاویر",
+
+  "permission_required_tools": "مجوز لازم است",
+  "permission_description_tools": "برای ذخیره فایل‌های PDF و متنی در پوشه Documents/pdfreadermanager به مجوز 'دسترسی به تمام فایل‌ها' نیاز داریم.",
+
+  "file_saved_success": "✅ {fileName} ذخیره شد",
+  "@file_saved_success": { "placeholders": { "fileName": { "type": "String" } } },
+
+  "file_save_error": "❌ فایل ذخیره نشد: {error}",
+  "@file_save_error": { "placeholders": { "error": { "type": "String" } } },
+
+  "image_save_error": "❌ تصویر ذخیره نشد",
+  "file_save_error_short": "فایل ذخیره نشد"
+}

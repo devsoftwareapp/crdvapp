@@ -1,0 +1,135 @@
+{
+  "@@locale": "ckb",
+
+  "cancel": "هەڵوەشاندنەوە",
+  "delete": "سڕینەوە",
+  "rename": "ناوگۆڕین",
+  "edit": "دەستکاری",
+  "print": "چاپکردن",
+  "share": "هاوبەشی",
+  "move": "گواستنەوە",
+  "allow": "ڕێگەدان",
+  "create": "دروستکردن",
+
+  "all_files": "هەموو پەڕگەکان",
+  "recent": "دوایین",
+  "favorites": "دڵخوازەکان",
+  "tools": "ئامرازەکان",
+  "search_files": "گەڕان لە پەڕگەکان...",
+  "sort_by_name": "پۆلێنکردن بە ناو",
+  "sort_by_size": "پۆلێنکردن بە قەبارە",
+  "sort_by_date": "پۆلێنکردن بە بەروار",
+
+  "language": "زمان",
+  "about": "دەربارە",
+  "import_file": "هێنانی پەڕگە",
+  "dark_light_mode": "دۆخی تاریک / ڕووناک",
+  "all_work_local": "هەموو کارەکان بە شێوەی ناوخۆیی لەسەر ئامێرەکەت ئەنجام دەدرێت. هیچ زانیاریەک نەنێردرێت.",
+  "developed_by": "پەرەسەند کراوە لەلایەن Devsoftware",
+
+  "select_language": "زمانێک هەلبژێرە",
+  "search_language": "گەڕان بۆ زمان...",
+  "no_language_found": "هیچ زمانێک نەدۆزرایەوە.",
+
+  "file_imported_successfully": "پەڕگە بەسەرکەوتووی هاتە ناوەوە.",
+  "all_files_root": "هەموو پەڕگەکان (ڕەگ)",
+  "move_to_main_directory": "بوخچەی سەرەکی پاشەکەوتکردن",
+
+  "rename_file": "ناوی پەڕگە بگۆڕە",
+  "new_file_name": "ناوی نوێی پەڕگە",
+  "rename_folder": "ناوی بوخچە بگۆڕە",
+  "new_folder_name": "ناوی نوێی بوخچە",
+  "move_file": "پەڕگە بگوازەوە",
+
+  "create_folder": "بوخچەیەک دروست بکە",
+  "folder_name": "ناوی بوخچە",
+  "folder_created": "بوخچە دروست کرا: \"{name}\"",
+  "@folder_created": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+
+  "delete_file": "سڕینەوەی پەڕگە",
+  "delete_folder": "سڕینەوەی بوخچە",
+  "delete_files": "سڕینەوەی پەڕگە دیاریکراوەکان",
+  "are_you_sure_delete": "دڵنیایت دەتەوێت بیسریتەوە",
+  "and_all_contents": "و هەموو ناوەڕۆکی ئەوە",
+  "file_deleted": "پەڕگە سڕایەوە.",
+  "folder_deleted": "بوخچە سڕایەوە.",
+  "files_deleted_count": "{count, plural, one{پەڕگەیەک سڕایەوە} other{{count} پەڕگە سڕرانەوە}}",
+  "@files_deleted_count": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  },
+
+  "items": "{count, plural, one{یەک شت} other{{count} شت}}",
+  "@items": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+
+  "change_folder_color": "گۆڕینی ڕەنگی بوخچە",
+  "change_color": "گۆڕینی ڕەنگ",
+
+  "no_files_found": "هیچ پەڕگەیەک نەدۆزرایەوە بۆ \"{query}\"",
+  "@no_files_found": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+
+  "permission_required": "پێویستە بە مۆڵەت",
+  "permission_description": "بۆ پاشەکەوتکردنی PDF گۆڕدراوەکانت لەسەر ئامێرەکەت (بۆ نموونە لە بوخچەی Documents)، پێویستە بە مۆڵەتی 'دەستگەیشتنی هەموو پەڕگەکان'.",
+  "saved_successfully": "بەسەرکەوتووی پاشەکەوت کرا",
+  "location": "شوێن",
+  "pdf_save_error": "هەڵەی پاشەکەوتکردنی PDF",
+
+  "merge_pdf": "تێکەڵکردنی PDF",
+  "merge_pdf_description": "چند PDF یەکبکەرەوە بۆ یەک پەڕگە",
+  "edit_pages": "دەستکاری پەڕەکان",
+  "edit_pages_description": "پێڕستکردن یان دەستکاری پەڕەکان",
+  "extract_text": "دەرخستنی دەق",
+  "extract_text_description": "دەق دەرخە لە PDF یان وێنە بە بەکارهێنانی OCR",
+  "split_pdf": "پارچەکردنی PDF",
+  "split_pdf_description": "PDF بپارێزە بۆ پەڕە جیاوازەکان",
+  "compress_pdf": "کەمکردنەوەی قەبارەی PDF",
+  "compress_pdf_description": "کەمکردنەوەی قەبارەی پەڕگە",
+  "pdf_to_image": "گۆڕینی PDF بۆ وێنە",
+  "pdf_to_image_description": "گۆڕینی پەڕگەی PDF بۆ وێنەکان",
+
+  "permission_required_tools": "پێویستە بە مۆڵەت",
+  "permission_description_tools": "پێویستە بە مۆڵەتی \"دەستگەیشتنی هەموو پەڕگەکان\" بۆ پاشەکەوتکردنی پەڕگەکانت لە بوخچەی Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ {fileName} پاشەکەوت کرا",
+  "@file_saved_success": {
+    "placeholders": {
+      "fileName": {
+        "type": "String"
+      }
+    }
+  },
+
+  "file_save_error": "❌ نەتوانرا پەڕگە پاشەکەوت بکرێت: {error}",
+  "@file_save_error": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+
+  "image_save_error": "❌ نەتوانرا وێنە پاشەکەوت بکرێت",
+  "file_save_error_short": "نەتوانرا پەڕگە پاشەکەوت بکرێت"
+}

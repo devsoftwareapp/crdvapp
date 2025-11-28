@@ -1,0 +1,108 @@
+{
+  "@@locale": "sv",
+
+  "cancel": "Avbryt",
+  "delete": "Radera",
+  "rename": "Byt namn",
+  "edit": "Redigera",
+  "print": "Skriv ut",
+  "share": "Dela",
+  "move": "Flytta",
+  "allow": "Tillåt",
+  "create": "Skapa",
+
+  "all_files": "Alla filer",
+  "recent": "Senaste",
+  "favorites": "Favoriter",
+  "tools": "Verktyg",
+  "search_files": "Sök filer...",
+  "sort_by_name": "Sortera efter namn",
+  "sort_by_size": "Sortera efter storlek",
+  "sort_by_date": "Sortera efter datum",
+
+  "language": "Språk",
+  "about": "Om",
+  "import_file": "Importera fil",
+  "dark_light_mode": "Mörkt/Ljust läge",
+  "all_work_local": "Allt arbete görs lokalt på din enhet. Ingen data delas eller laddas upp.",
+  "developed_by": "Utvecklad av Devsoftware",
+
+  "select_language": "Välj språk",
+  "search_language": "Sök språk...",
+  "no_language_found": "Inget språk hittades för din sökning.",
+
+  "file_imported_successfully": "Filen importerades framgångsrikt.",
+  "all_files_root": "Alla filer (Rot)",
+  "move_to_main_directory": "Flytta till huvudmapp för appen",
+
+  "rename_file": "Byt namn på fil",
+  "new_file_name": "Nytt filnamn",
+  "rename_folder": "Byt namn på mapp",
+  "new_folder_name": "Nytt mappnamn",
+  "move_file": "Flytta fil",
+
+  "create_folder": "Skapa mapp",
+  "folder_name": "Mappnamn",
+  "folder_created": "Mapp skapad: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Radera fil",
+  "delete_folder": "Radera mapp",
+  "delete_files": "Radera valda filer",
+  "are_you_sure_delete": "Är du säker på att du vill radera",
+  "and_all_contents": "och allt dess innehåll?",
+  "file_deleted": "Filen har raderats.",
+  "folder_deleted": "Mappen har raderats.",
+  "files_deleted_count": "{count, plural, one{1 fil raderad} other{{count} filer raderade}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 objekt} other{{count} objekt}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "Ändra mappfärg",
+  "change_color": "Ändra färg",
+
+  "no_files_found": "Inga filer hittades för \"{query}\"",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Lagringsbehörighet krävs",
+  "permission_description": "För att spara uppdaterade PDF-filer på din enhet (t.ex. i Dokument-mappen) behöver vi behörigheten 'Fullständig filåtkomst'.",
+  "saved_successfully": "Sparad framgångsrikt",
+  "location": "Plats",
+  "pdf_save_error": "Fel vid sparande av PDF",
+
+  "merge_pdf": "Sammanfoga PDF",
+  "merge_pdf_description": "Sammanfoga flera PDF-filer till en",
+  "edit_pages": "Redigera sidor",
+  "edit_pages_description": "Ordna om eller redigera PDF-sidor",
+  "extract_text": "Extrahera text",
+  "extract_text_description": "Extrahera text från PDF eller bild med OCR",
+  "split_pdf": "Dela PDF",
+  "split_pdf_description": "Dela PDF i separata sidor",
+  "compress_pdf": "Komprimera PDF",
+  "compress_pdf_description": "Minska filstorlek",
+  "pdf_to_image": "PDF till bild",
+  "pdf_to_image_description": "Konvertera PDF till bilder",
+
+  "permission_required_tools": "Behörighet krävs",
+  "permission_description_tools": "Vi behöver 'Fullständig filåtkomst'-behörighet för att spara dina PDF- och textfiler i mappen Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ {fileName} sparad",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ Filen kunde inte sparas: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ Bilden kunde inte sparas",
+  "file_save_error_short": "Filen kunde inte sparas"
+}

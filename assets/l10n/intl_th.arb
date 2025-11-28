@@ -1,0 +1,108 @@
+{
+  "@@locale": "th",
+
+  "cancel": "ยกเลิก",
+  "delete": "ลบ",
+  "rename": "เปลี่ยนชื่อ",
+  "edit": "แก้ไข",
+  "print": "พิมพ์",
+  "share": "แชร์",
+  "move": "ย้าย",
+  "allow": "อนุญาต",
+  "create": "สร้าง",
+
+  "all_files": "ไฟล์ทั้งหมด",
+  "recent": "ล่าสุด",
+  "favorites": "รายการโปรด",
+  "tools": "เครื่องมือ",
+  "search_files": "ค้นหาไฟล์...",
+  "sort_by_name": "เรียงตามชื่อ",
+  "sort_by_size": "เรียงตามขนาด",
+  "sort_by_date": "เรียงตามวันที่",
+
+  "language": "ภาษา",
+  "about": "เกี่ยวกับ",
+  "import_file": "นำเข้าไฟล์",
+  "dark_light_mode": "โหมดมืด/สว่าง",
+  "all_work_local": "งานทั้งหมดดำเนินการภายในอุปกรณ์ของคุณ ข้อมูลจะไม่ถูกอัปโหลดหรือแบ่งปัน",
+  "developed_by": "พัฒนาโดย Devsoftware",
+
+  "select_language": "เลือกภาษา",
+  "search_language": "ค้นหาภาษา...",
+  "no_language_found": "ไม่พบภาษาที่คุณค้นหา",
+
+  "file_imported_successfully": "นำเข้าไฟล์สำเร็จแล้ว",
+  "all_files_root": "ไฟล์ทั้งหมด (รูท)",
+  "move_to_main_directory": "โฟลเดอร์หลักของแอปพลิเคชัน",
+
+  "rename_file": "เปลี่ยนชื่อไฟล์",
+  "new_file_name": "ชื่อไฟล์ใหม่",
+  "rename_folder": "เปลี่ยนชื่อโฟลเดอร์",
+  "new_folder_name": "ชื่อโฟลเดอร์ใหม่",
+  "move_file": "ย้ายไฟล์",
+
+  "create_folder": "สร้างโฟลเดอร์",
+  "folder_name": "ชื่อโฟลเดอร์",
+  "folder_created": "สร้างโฟลเดอร์แล้ว: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "ลบไฟล์",
+  "delete_folder": "ลบโฟลเดอร์",
+  "delete_files": "ลบไฟล์ที่เลือก",
+  "are_you_sure_delete": "คุณแน่ใจหรือไม่ว่าต้องการลบ",
+  "and_all_contents": "และเนื้อหาทั้งหมดของมัน",
+  "file_deleted": "ลบไฟล์แล้ว",
+  "folder_deleted": "ลบโฟลเดอร์แล้ว",
+  "files_deleted_count": "{count, plural, one{ลบไฟล์ 1 ไฟล์แล้ว} other{ลบไฟล์ {count} ไฟล์แล้ว}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 รายการ} other{{count} รายการ}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "เปลี่ยนสีโฟลเดอร์",
+  "change_color": "เปลี่ยนสี",
+
+  "no_files_found": "ไม่พบไฟล์สำหรับ \"{query}\"",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "ต้องการสิทธิ์เข้าถึงที่เก็บข้อมูล",
+  "permission_description": "ในการบันทึก PDF ที่อัปเดตในอุปกรณ์ของคุณ (เช่น ในโฟลเดอร์เอกสาร) เราต้องการสิทธิ์ 'เข้าถึงไฟล์ทั้งหมด'",
+  "saved_successfully": "บันทึกสำเร็จแล้ว",
+  "location": "ตำแหน่งที่ตั้ง",
+  "pdf_save_error": "เกิดข้อผิดพลาดในการบันทึก PDF",
+
+  "merge_pdf": "รวม PDF",
+  "merge_pdf_description": "รวมไฟล์ PDF หลายไฟล์เป็นไฟล์เดียว",
+  "edit_pages": "แก้ไขหน้า",
+  "edit_pages_description": "จัดเรียงหรือแก้ไขหน้า PDF",
+  "extract_text": "แยกข้อความ",
+  "extract_text_description": "แยกข้อความจาก PDF หรือรูปภาพด้วย OCR",
+  "split_pdf": "แยก PDF",
+  "split_pdf_description": "แยก PDF ออกเป็นหน้าๆ",
+  "compress_pdf": "บีบอัด PDF",
+  "compress_pdf_description": "ลดขนาดไฟล์",
+  "pdf_to_image": "PDF เป็นรูปภาพ",
+  "pdf_to_image_description": "แปลง PDF เป็นรูปภาพ",
+
+  "permission_required_tools": "ต้องการสิทธิ์",
+  "permission_description_tools": "เราต้องการสิทธิ์ 'เข้าถึงไฟล์ทั้งหมด' เพื่อบันทึกไฟล์ PDF และข้อความของคุณในโฟลเดอร์ Documents/pdfreadermanager",
+
+  "file_saved_success": "✅ บันทึก {fileName} แล้ว",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ ไม่สามารถบันทึกไฟล์ได้: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ ไม่สามารถบันทึกรูปภาพได้",
+  "file_save_error_short": "ไม่สามารถบันทึกไฟล์ได้"
+}

@@ -1,0 +1,122 @@
+{
+  "@@locale": "el",
+
+  "cancel": "Ακύρωση",
+  "delete": "Διαγραφή",
+  "rename": "Μετονομασία",
+  "edit": "Επεξεργασία",
+  "print": "Εκτύπωση",
+  "share": "Κοινή χρήση",
+  "move": "Μετακίνηση",
+  "allow": "Επιτρέπω",
+  "create": "Δημιουργία",
+
+  "all_files": "Όλα τα αρχεία",
+  "recent": "Πρόσφατα",
+  "favorites": "Αγαπημένα",
+  "tools": "Εργαλεία",
+  "search_files": "Αναζήτηση αρχείων...",
+  "sort_by_name": "Ταξινόμηση κατά όνομα",
+  "sort_by_size": "Ταξινόμηση κατά μέγεθος",
+  "sort_by_date": "Ταξινόμηση κατά ημερομηνία",
+
+  "language": "Γλώσσα",
+  "about": "Σχετικά",
+  "import_file": "Εισαγωγή αρχείου",
+  "dark_light_mode": "Σκοτεινή/Φωτεινή λειτουργία",
+  "all_work_local": "Όλες οι λειτουργίες εκτελούνται τοπικά στη συσκευή σας. Δεν κοινοποιούνται ή ανεβαίνουν δεδομένα.",
+  "developed_by": "Αναπτύχθηκε από την Devsoftware",
+
+  "select_language": "Επιλογή γλώσσας",
+  "search_language": "Αναζήτηση γλώσσας...",
+  "no_language_found": "Δεν βρέθηκε γλώσσα για την αναζήτηση σας.",
+
+  "file_imported_successfully": "Το αρχείο εισήχθη με επιτυχία.",
+  "all_files_root": "Όλα τα αρχεία (Ρίζα)",
+  "move_to_main_directory": "Κύριος φάκελος αποθήκευσης εφαρμογής",
+
+  "rename_file": "Μετονομασία αρχείου",
+  "new_file_name": "Νέο όνομα αρχείου",
+  "rename_folder": "Μετονομασία φακέλου",
+  "new_folder_name": "Νέο όνομα φακέλου",
+  "move_file": "Μετακίνηση αρχείου",
+
+  "create_folder": "Δημιουργία φακέλου",
+  "folder_name": "Όνομα φακέλου",
+  "folder_created": "Ο φάκελος δημιουργήθηκε: \"{name}\"",
+  "@folder_created": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+
+  "delete_file": "Διαγραφή αρχείου",
+  "delete_folder": "Διαγραφή φακέλου",
+  "delete_files": "Διαγραφή επιλεγμένων αρχείων",
+  "are_you_sure_delete": "Είστε βέβαιοι ότι θέλετε να διαγράψετε",
+  "and_all_contents": "και όλο το περιεχόμενό του;",
+  "file_deleted": "Το αρχείο διαγράφηκε.",
+  "folder_deleted": "Ο φάκελος διαγράφηκε.",
+  "files_deleted_count": "{count, plural, one{1 αρχείο διαγράφηκε} other{{count} αρχεία διαγράφηκαν}}",
+  "@files_deleted_count": {
+    "placeholders": {
+      "count": { "type": "int", "format": "compact" }
+    }
+  },
+
+  "items": "{count, plural, one{1 στοιχείο} other{{count} στοιχεία}}",
+  "@items": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+
+  "change_folder_color": "Αλλαγή χρώματος φακέλου",
+  "change_color": "Αλλαγή χρώματος",
+
+  "no_files_found": "Δεν βρέθηκαν αρχεία για \"{query}\"",
+  "@no_files_found": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+
+  "permission_required": "Απαιτείται άδεια αποθήκευσης",
+  "permission_description": "Για να αποθηκεύσουμε ενημερωμένα PDF στη συσκευή σας (π.χ. στο φάκελο Έγγραφα), χρειαζόμαστε δικαίωμα 'Πλήρης πρόσβαση σε όλα τα αρχεία'.",
+  "saved_successfully": "αποθηκεύτηκε με επιτυχία",
+  "location": "Τοποθεσία",
+  "pdf_save_error": "Σφάλμα κατά την αποθήκευση PDF",
+
+  "merge_pdf": "Συγχώνευση PDF",
+  "merge_pdf_description": "Συγχώνευση πολλών αρχείων PDF σε ένα",
+  "edit_pages": "Επεξεργασία σελίδων",
+  "edit_pages_description": "Αναδιάταξη ή επεξεργασία σελίδων PDF",
+  "extract_text": "Εξαγωγή κειμένου",
+  "extract_text_description": "Εξαγωγή κειμένου από PDF ή εικόνα χρησιμοποιώντας OCR",
+  "split_pdf": "Διαχωρισμός PDF",
+  "split_pdf_description": "Διαχωρισμός PDF σε ξεχωριστές σελίδες",
+  "compress_pdf": "Συμπίεση PDF",
+  "compress_pdf_description": "Μείωση μεγέθους αρχείου",
+  "pdf_to_image": "PDF σε εικόνα",
+  "pdf_to_image_description": "Μετατροπή PDF σε εικόνες",
+
+  "permission_required_tools": "Απαιτείται άδεια",
+  "permission_description_tools": "Χρειαζόμαστε δικαίωμα 'Πλήρης πρόσβαση σε όλα τα αρχεία' για να αποθηκεύσουμε τα PDF και τα αρχεία κειμένου σας στο φάκελο Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ Το {fileName} αποθηκεύτηκε",
+  "@file_saved_success": {
+    "placeholders": {
+      "fileName": { "type": "String" }
+    }
+  },
+
+  "file_save_error": "❌ Το αρχείο δεν ήταν δυνατό να αποθηκευτεί: {error}",
+  "@file_save_error": {
+    "placeholders": {
+      "error": { "type": "String" }
+    }
+  },
+
+  "image_save_error": "❌ Η εικόνα δεν ήταν δυνατό να αποθηκευτεί",
+  "file_save_error_short": "Το αρχείο δεν ήταν δυνατό να αποθηκευτεί"
+}

@@ -1,0 +1,122 @@
+{
+  "@@locale": "en_US",
+
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "rename": "Rename",
+  "edit": "Edit",
+  "print": "Print",
+  "share": "Share",
+  "move": "Move",
+  "allow": "ALLOW",
+  "create": "Create",
+
+  "all_files": "All Files",
+  "recent": "Recent",
+  "favorites": "Favorites",
+  "tools": "Tools",
+  "search_files": "Search files...",
+  "sort_by_name": "Sort by Name",
+  "sort_by_size": "Sort by Size",
+  "sort_by_date": "Sort by Date",
+
+  "language": "Language",
+  "about": "About",
+  "import_file": "Import File",
+  "dark_light_mode": "Dark/Light Mode",
+  "all_work_local": "All work is done locally on your device. No data is shared or uploaded.",
+  "developed_by": "Developed by Devsoftware",
+
+  "select_language": "Select Language",
+  "search_language": "Search language...",
+  "no_language_found": "No language found for your search.",
+
+  "file_imported_successfully": "File imported successfully.",
+  "all_files_root": "All Files (Root)",
+  "move_to_main_directory": "Main application storage directory",
+
+  "rename_file": "Rename File",
+  "new_file_name": "New file name",
+  "rename_folder": "Rename Folder",
+  "new_folder_name": "New folder name",
+  "move_file": "Move File",
+
+  "create_folder": "Create Folder",
+  "folder_name": "Folder Name",
+  "folder_created": "Folder created: \"{name}\"",
+  "@folder_created": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+
+  "delete_file": "Delete File",
+  "delete_folder": "Delete Folder",
+  "delete_files": "Delete Selected Files",
+  "are_you_sure_delete": "Are you sure you want to delete",
+  "and_all_contents": "and all its contents",
+  "file_deleted": "File deleted.",
+  "folder_deleted": "Folder deleted.",
+  "files_deleted_count": "{count, plural, one{1 file deleted} other{{count} files deleted}}",
+  "@files_deleted_count": {
+    "placeholders": {
+      "count": { "type": "int", "format": "compact" }
+    }
+  },
+
+  "items": "{count, plural, one{1 item} other{{count} items}}",
+  "@items": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+
+  "change_folder_color": "Change Folder Color",
+  "change_color": "Change Color",
+
+  "no_files_found": "No files found for \"{query}\"",
+  "@no_files_found": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+
+  "permission_required": "Storage Permission Required",
+  "permission_description": "To save updated PDFs on your device (e.g., in the Documents folder), we need 'All Files Access' permission.",
+  "saved_successfully": "saved successfully",
+  "location": "Location",
+  "pdf_save_error": "PDF save error",
+
+  "merge_pdf": "Merge PDF",
+  "merge_pdf_description": "Merge multiple PDFs into one",
+  "edit_pages": "Edit Pages",
+  "edit_pages_description": "Reorder or edit PDF pages",
+  "extract_text": "Extract Text",
+  "extract_text_description": "Extract text from PDF or image using OCR",
+  "split_pdf": "Split PDF",
+  "split_pdf_description": "Split PDF into separate pages",
+  "compress_pdf": "Compress PDF",
+  "compress_pdf_description": "Reduce file size",
+  "pdf_to_image": "PDF to Image",
+  "pdf_to_image_description": "Convert PDF to images",
+
+  "permission_required_tools": "Permission Required",
+  "permission_description_tools": "We need \"All files access\" permission to save your PDF and text files to the Documents/pdfreadermanager folder.",
+
+  "file_saved_success": "✅ {fileName} saved",
+  "@file_saved_success": {
+    "placeholders": {
+      "fileName": { "type": "String" }
+    }
+  },
+
+  "file_save_error": "❌ File could not be saved: {error}",
+  "@file_save_error": {
+    "placeholders": {
+      "error": { "type": "String" }
+    }
+  },
+
+  "image_save_error": "❌ Image could not be saved",
+  "file_save_error_short": "File could not be saved"
+}

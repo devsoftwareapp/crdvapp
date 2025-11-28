@@ -1,0 +1,122 @@
+{
+  "@@locale": "cs",
+
+  "cancel": "Zrušit",
+  "delete": "Smazat",
+  "rename": "Přejmenovat",
+  "edit": "Upravit",
+  "print": "Tisk",
+  "share": "Sdílet",
+  "move": "Přesunout",
+  "allow": "Povolit",
+  "create": "Vytvořit",
+
+  "all_files": "Všechny soubory",
+  "recent": "Nedávné",
+  "favorites": "Oblíbené",
+  "tools": "Nástroje",
+  "search_files": "Hledat soubory...",
+  "sort_by_name": "Seřadit podle názvu",
+  "sort_by_size": "Seřadit podle velikosti",
+  "sort_by_date": "Seřadit podle data",
+
+  "language": "Jazyk",
+  "about": "O aplikaci",
+  "import_file": "Importovat soubor",
+  "dark_light_mode": "Tmavý/Světlý režim",
+  "all_work_local": "Veškerá práce je prováděna lokálně na vašem zařízení. Žádná data nejsou odesílána ani sdílena.",
+  "developed_by": "Vyvinuto společností Devsoftware",
+
+  "select_language": "Vyberte jazyk",
+  "search_language": "Hledat jazyk...",
+  "no_language_found": "Nebyly nalezeny žádné jazyky.",
+
+  "file_imported_successfully": "Soubor byl úspěšně importován.",
+  "all_files_root": "Všechny soubory (kořen)",
+  "move_to_main_directory": "Hlavní adresář aplikace",
+
+  "rename_file": "Přejmenovat soubor",
+  "new_file_name": "Nový název souboru",
+  "rename_folder": "Přejmenovat složku",
+  "new_folder_name": "Nový název složky",
+  "move_file": "Přesunout soubor",
+
+  "create_folder": "Vytvořit složku",
+  "folder_name": "Název složky",
+  "folder_created": "Složka vytvořena: \"{name}\"",
+  "@folder_created": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+
+  "delete_file": "Smazat soubor",
+  "delete_folder": "Smazat složku",
+  "delete_files": "Smazat vybrané soubory",
+  "are_you_sure_delete": "Opravdu chcete smazat",
+  "and_all_contents": "a veškerý jeho obsah?",
+  "file_deleted": "Soubor byl smazán.",
+  "folder_deleted": "Složka byla smazána.",
+  "files_deleted_count": "{count, plural, one{1 soubor smazán} other{{count} souborů smazáno}}",
+  "@files_deleted_count": {
+    "placeholders": {
+      "count": { "type": "int", "format": "compact" }
+    }
+  },
+
+  "items": "{count, plural, one{1 položka} other{{count} položek}}",
+  "@items": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+
+  "change_folder_color": "Změnit barvu složky",
+  "change_color": "Změnit barvu",
+
+  "no_files_found": "Nebyly nalezeny žádné soubory pro \"{query}\"",
+  "@no_files_found": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+
+  "permission_required": "Požadováno oprávnění k úložišti",
+  "permission_description": "Pro uložení upravených PDF na vaše zařízení (např. do složky Dokumenty) potřebujeme oprávnění 'Přístup ke všem souborům'.",
+  "saved_successfully": "úspěšně uloženo",
+  "location": "Umístění",
+  "pdf_save_error": "Chyba při ukládání PDF",
+
+  "merge_pdf": "Sloučit PDF",
+  "merge_pdf_description": "Sloučit více PDF do jednoho",
+  "edit_pages": "Upravit stránky",
+  "edit_pages_description": "Změnit pořadí nebo upravit stránky PDF",
+  "extract_text": "Extrahovat text",
+  "extract_text_description": "Extrahovat text z PDF nebo obrázku pomocí OCR",
+  "split_pdf": "Rozdělit PDF",
+  "split_pdf_description": "Rozdělit PDF na jednotlivé stránky",
+  "compress_pdf": "Komprimovat PDF",
+  "compress_pdf_description": "Zmenšit velikost souboru",
+  "pdf_to_image": "PDF na obrázek",
+  "pdf_to_image_description": "Převést PDF na obrázky",
+
+  "permission_required_tools": "Vyžadováno oprávnění",
+  "permission_description_tools": "Potřebujeme oprávnění 'Přístup ke všem souborům' pro ukládání PDF a textových souborů do složky Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ {fileName} uložen",
+  "@file_saved_success": {
+    "placeholders": {
+      "fileName": { "type": "String" }
+    }
+  },
+
+  "file_save_error": "❌ Soubor se nepodařilo uložit: {error}",
+  "@file_save_error": {
+    "placeholders": {
+      "error": { "type": "String" }
+    }
+  },
+
+  "image_save_error": "❌ Obrázek se nepodařilo uložit",
+  "file_save_error_short": "Soubor se nepodařilo uložit"
+}

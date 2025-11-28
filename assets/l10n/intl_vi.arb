@@ -1,0 +1,110 @@
+{
+  "@@locale": "vi",
+
+  "cancel": "Hủy",
+  "delete": "Xóa",
+  "rename": "Đổi tên",
+  "edit": "Chỉnh sửa",
+  "print": "In",
+  "share": "Chia sẻ",
+  "move": "Di chuyển",
+  "allow": "Cho phép",
+  "create": "Tạo",
+
+  "all_files": "Tất cả tệp",
+  "recent": "Gần đây",
+  "favorites": "Yêu thích",
+  "tools": "Công cụ",
+  "search_files": "Tìm kiếm tệp...",
+  "sort_by_name": "Sắp xếp theo tên",
+  "sort_by_size": "Sắp xếp theo kích thước",
+  "sort_by_date": "Sắp xếp theo ngày",
+
+  "language": "Ngôn ngữ",
+  "about": "Giới thiệu",
+  "import_file": "Nhập tệp",
+  "dark_light_mode": "Chế độ Tối/Sáng",
+  "all_work_local": "Tất cả công việc được thực hiện cục bộ trên thiết bị của bạn. Không có dữ liệu nào được chia sẻ hoặc tải lên.",
+  "developed_by": "Phát triển bởi Devsoftware",
+
+  "select_language": "Chọn ngôn ngữ",
+  "search_language": "Tìm kiếm ngôn ngữ...",
+  "no_language_found": "Không tìm thấy ngôn ngữ phù hợp.",
+
+  "file_imported_successfully": "Tệp đã được nhập thành công.",
+  "all_files_root": "Tất cả tệp (Thư mục gốc)",
+  "move_to_main_directory": "Thư mục lưu trữ chính của ứng dụng",
+
+  "rename_file": "Đổi tên tệp",
+  "new_file_name": "Tên tệp mới",
+  "rename_folder": "Đổi tên thư mục",
+  "new_folder_name": "Tên thư mục mới",
+  "move_file": "Di chuyển tệp",
+
+  "create_folder": "Tạo thư mục",
+  "folder_name": "Tên thư mục",
+  "folder_created": "Đã tạo thư mục: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Xóa tệp",
+  "delete_folder": "Xóa thư mục",
+  "delete_files": "Xóa các tệp đã chọn",
+  "are_you_sure_delete": "Bạn có chắc muốn xóa",
+  "and_all_contents": "và toàn bộ nội dung của nó không?",
+  "file_deleted": "Đã xóa tệp.",
+  "folder_deleted": "Đã xóa thư mục.",
+  "files_deleted_count": "{count, plural, one{1 tệp đã bị xóa} other{{count} tệp đã bị xóa}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 mục} other{{count} mục}}",
+  "@items": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "change_folder_color": "Thay đổi màu thư mục",
+  "change_color": "Thay đổi màu",
+
+  "no_files_found": "Không tìm thấy tệp cho \"{query}\"",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Yêu cầu quyền truy cập bộ nhớ",
+  "permission_description": "Để lưu các tệp PDF đã cập nhật trên thiết bị của bạn (ví dụ: trong thư mục Tài liệu), chúng tôi cần quyền 'Truy cập tất cả tệp'.",
+  "saved_successfully": "đã lưu thành công",
+  "location": "Vị trí",
+  "pdf_save_error": "Lỗi lưu PDF",
+
+  "merge_pdf": "Gộp PDF",
+  "merge_pdf_description": "Gộp nhiều tệp PDF thành một",
+  "edit_pages": "Chỉnh sửa trang",
+  "edit_pages_description": "Sắp xếp lại hoặc chỉnh sửa các trang PDF",
+  "extract_text": "Trích xuất văn bản",
+  "extract_text_description": "Trích xuất văn bản từ PDF hoặc hình ảnh bằng OCR",
+  "split_pdf": "Tách PDF",
+  "split_pdf_description": "Tách PDF thành các trang riêng lẻ",
+  "compress_pdf": "Nén PDF",
+  "compress_pdf_description": "Giảm kích thước tệp",
+  "pdf_to_image": "PDF sang Hình ảnh",
+  "pdf_to_image_description": "Chuyển đổi PDF thành hình ảnh",
+
+  "permission_required_tools": "Yêu cầu quyền",
+  "permission_description_tools": "Chúng tôi cần quyền 'Truy cập tất cả tệp' để lưu các tệp PDF và văn bản của bạn vào thư mục Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ Đã lưu {fileName}",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ Không thể lưu tệp: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ Không thể lưu hình ảnh",
+  "file_save_error_short": "Không thể lưu tệp"
+}

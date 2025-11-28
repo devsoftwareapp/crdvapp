@@ -1,0 +1,86 @@
+name: Flutter Android Build
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+      KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+      KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+      KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+
+    steps:
+      # 1️⃣ Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2️⃣ Java 17 Kur
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # 3️⃣ Setup Flutter
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.3'
+
+      # 4️⃣ Flutter dependencies
+      - name: Flutter pub get
+        run: flutter pub get
+
+      # 5️⃣ 📱 UYGULAMA İKONLARINI OLUŞTUR (YENİ EKLENDİ)
+      - name: Generate app icons
+        run: |
+          flutter pub add dev:flutter_launcher_icons
+          flutter pub run flutter_launcher_icons:main
+
+      # 6️⃣ 🔐 BASE64'ten KEYSTORE ÇÖZ
+      - name: Decode Keystore
+        run: |
+          echo "$KEYSTORE_BASE64" | base64 -d > android/keystore.jks
+
+      # 7️⃣ 🔐 KEY.PROPERTIES OLUŞTUR
+      - name: Create key.properties
+        run: |
+          cat > android/key.properties << EOF
+          storePassword=$KEYSTORE_PASSWORD
+          keyPassword=$KEY_PASSWORD
+          keyAlias=$KEY_ALIAS
+          storeFile=../keystore.jks
+          EOF
+
+      # 8️⃣ 🏗️ IMZALI RELEASE APK (SADECE ARM64)
+      - name: Build Release APK ARM64
+        run: flutter build apk --release --target-platform android-arm64
+
+      # 9️⃣ 🏗️ IMZALI RELEASE AAB
+      - name: Build Release AAB
+        run: flutter build appbundle --release
+
+      # 🔟 📦 APK ARTIFACT (SADECE ARM64)
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-arm64-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+
+      # 1️⃣1️⃣ 📦 AAB ARTIFACT
+      - name: Upload AAB Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-aab
+          path: build/app/outputs/bundle/release/app-release.aab
+
+      # 1️⃣2️⃣ 🧹 TEMİZLİK
+      - name: Cleanup
+        if: always()
+        run: rm -f android/keystore.jks android/key.properties

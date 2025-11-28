@@ -1,0 +1,108 @@
+{
+  "@@locale": "no",
+
+  "cancel": "Avbryt",
+  "delete": "Slett",
+  "rename": "Gi nytt navn",
+  "edit": "Rediger",
+  "print": "Skriv ut",
+  "share": "Del",
+  "move": "Flytt",
+  "allow": "Tillat",
+  "create": "Opprett",
+
+  "all_files": "Alle filer",
+  "recent": "Nylige",
+  "favorites": "Favoritter",
+  "tools": "Verktøy",
+  "search_files": "Søk i filer...",
+  "sort_by_name": "Sorter etter navn",
+  "sort_by_size": "Sorter etter størrelse",
+  "sort_by_date": "Sorter etter dato",
+
+  "language": "Språk",
+  "about": "Om",
+  "import_file": "Importer fil",
+  "dark_light_mode": "Mørk/lys modus",
+  "all_work_local": "Alt arbeid utføres lokalt på enheten din. Ingen data deles eller lastes opp.",
+  "developed_by": "Utviklet av Devsoftware",
+
+  "select_language": "Velg språk",
+  "search_language": "Søk etter språk...",
+  "no_language_found": "Ingen språk funnet som samsvarer med søket ditt.",
+
+  "file_imported_successfully": "Filen ble importert.",
+  "all_files_root": "Alle filer (rotmappe)",
+  "move_to_main_directory": "Flytt til hovedmappen til appen",
+
+  "rename_file": "Gi nytt navn til fil",
+  "new_file_name": "Nytt filnavn",
+  "rename_folder": "Gi nytt navn til mappe",
+  "new_folder_name": "Nytt mappenavn",
+  "move_file": "Flytt fil",
+
+  "create_folder": "Opprett mappe",
+  "folder_name": "Mappenavn",
+  "folder_created": "Mappe opprettet: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Slett fil",
+  "delete_folder": "Slett mappe",
+  "delete_files": "Slett valgte filer",
+  "are_you_sure_delete": "Er du sikker på at du vil slette dette?",
+  "and_all_contents": "og alt innholdet",
+  "file_deleted": "Fil slettet.",
+  "folder_deleted": "Mappe slettet.",
+  "files_deleted_count": "{count, plural, one{1 fil slettet} other{{count} filer slettet}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 element} other{{count} elementer}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "Endre mappefarge",
+  "change_color": "Endre farge",
+
+  "no_files_found": "Ingen filer funnet for \"{query}\".",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Lagringstillatelse kreves",
+  "permission_description": "For å lagre oppdaterte PDF-filer på enheten (f.eks. i Dokumenter-mappen) kreves tillatelse til tilgang til alle filer.",
+  "saved_successfully": "Lagret",
+  "location": "Plassering",
+  "pdf_save_error": "Feil ved lagring av PDF",
+
+  "merge_pdf": "Slå sammen PDF",
+  "merge_pdf_description": "Slå sammen flere PDF-filer til én",
+  "edit_pages": "Rediger sider",
+  "edit_pages_description": "Endre rekkefølgen eller rediger PDF-sider",
+  "extract_text": "Trekk ut tekst",
+  "extract_text_description": "Trekk ut tekst fra PDF eller bilde ved hjelp av OCR",
+  "split_pdf": "Del PDF",
+  "split_pdf_description": "Del en PDF i flere filer",
+  "compress_pdf": "Komprimer PDF",
+  "compress_pdf_description": "Reduser filstørrelse",
+  "pdf_to_image": "PDF til bilde",
+  "pdf_to_image_description": "Konverter PDF-filer til bilder",
+
+  "permission_required_tools": "Tillatelse kreves",
+  "permission_description_tools": "Vi trenger tilgang til alle filer for å lagre PDF- og tekstfiler i mappen Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ {fileName} lagret",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ Filen kunne ikke lagres: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ Bildet kunne ikke lagres",
+  "file_save_error_short": "Filen kunne ikke lagres"
+}

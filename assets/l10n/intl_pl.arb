@@ -1,0 +1,108 @@
+{
+  "@@locale": "pl",
+
+  "cancel": "Anuluj",
+  "delete": "Usuń",
+  "rename": "Zmień nazwę",
+  "edit": "Edytuj",
+  "print": "Drukuj",
+  "share": "Udostępnij",
+  "move": "Przenieś",
+  "allow": "Zezwól",
+  "create": "Utwórz",
+
+  "all_files": "Wszystkie pliki",
+  "recent": "Ostatnie",
+  "favorites": "Ulubione",
+  "tools": "Narzędzia",
+  "search_files": "Szukaj plików...",
+  "sort_by_name": "Sortuj według nazwy",
+  "sort_by_size": "Sortuj według rozmiaru",
+  "sort_by_date": "Sortuj według daty",
+
+  "language": "Język",
+  "about": "O aplikacji",
+  "import_file": "Importuj plik",
+  "dark_light_mode": "Tryb jasny/ciemny",
+  "all_work_local": "Cała praca wykonywana jest lokalnie na Twoim urządzeniu. Żadne dane nie są udostępniane ani przesyłane.",
+  "developed_by": "Opracowane przez Devsoftware",
+
+  "select_language": "Wybierz język",
+  "search_language": "Szukaj języka...",
+  "no_language_found": "Nie znaleziono języka pasującego do wyszukiwania.",
+
+  "file_imported_successfully": "Plik został pomyślnie zaimportowany.",
+  "all_files_root": "Wszystkie pliki (katalog główny)",
+  "move_to_main_directory": "Przenieś do głównego katalogu aplikacji",
+
+  "rename_file": "Zmień nazwę pliku",
+  "new_file_name": "Nowa nazwa pliku",
+  "rename_folder": "Zmień nazwę folderu",
+  "new_folder_name": "Nowa nazwa folderu",
+  "move_file": "Przenieś plik",
+
+  "create_folder": "Utwórz folder",
+  "folder_name": "Nazwa folderu",
+  "folder_created": "Folder utworzony: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Usuń plik",
+  "delete_folder": "Usuń folder",
+  "delete_files": "Usuń wybrane pliki",
+  "are_you_sure_delete": "Czy na pewno chcesz usunąć",
+  "and_all_contents": "oraz całą jego zawartość",
+  "file_deleted": "Plik usunięty.",
+  "folder_deleted": "Folder usunięty.",
+  "files_deleted_count": "{count, plural, one{1 plik usunięty} other{{count} plików usuniętych}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 element} other{{count} elementów}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "Zmień kolor folderu",
+  "change_color": "Zmień kolor",
+
+  "no_files_found": "Nie znaleziono plików dla \"{query}\"",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Wymagane uprawnienia do pamięci",
+  "permission_description": "Aby zapisać zaktualizowane pliki PDF na urządzeniu (np. w folderze Dokumenty), potrzebne są uprawnienia „Pełny dostęp do plików”.",
+  "saved_successfully": "Zapisano pomyślnie",
+  "location": "Lokalizacja",
+  "pdf_save_error": "Błąd zapisu PDF",
+
+  "merge_pdf": "Scal PDF",
+  "merge_pdf_description": "Scal wiele plików PDF w jeden",
+  "edit_pages": "Edytuj strony",
+  "edit_pages_description": "Zmień kolejność lub edytuj strony PDF",
+  "extract_text": "Wyodrębnij tekst",
+  "extract_text_description": "Wyodrębnij tekst z PDF lub obrazu za pomocą OCR",
+  "split_pdf": "Podziel PDF",
+  "split_pdf_description": "Podziel PDF na osobne strony",
+  "compress_pdf": "Kompresuj PDF",
+  "compress_pdf_description": "Zmniejsz rozmiar pliku",
+  "pdf_to_image": "PDF na obraz",
+  "pdf_to_image_description": "Konwertuj PDF na obrazy",
+
+  "permission_required_tools": "Wymagane uprawnienia",
+  "permission_description_tools": "Potrzebujemy „pełnego dostępu do plików”, aby zapisać Twoje pliki PDF i tekstowe w folderze Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ Zapisano {fileName}",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ Nie można zapisać pliku: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ Nie można zapisać obrazu",
+  "file_save_error_short": "Nie można zapisać pliku"
+}

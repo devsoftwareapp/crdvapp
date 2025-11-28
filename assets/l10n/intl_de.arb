@@ -1,0 +1,122 @@
+{
+  "@@locale": "de",
+
+  "cancel": "Abbrechen",
+  "delete": "Löschen",
+  "rename": "Umbenennen",
+  "edit": "Bearbeiten",
+  "print": "Drucken",
+  "share": "Teilen",
+  "move": "Verschieben",
+  "allow": "Erlauben",
+  "create": "Erstellen",
+
+  "all_files": "Alle Dateien",
+  "recent": "Zuletzt verwendet",
+  "favorites": "Favoriten",
+  "tools": "Werkzeuge",
+  "search_files": "Dateien durchsuchen...",
+  "sort_by_name": "Nach Name sortieren",
+  "sort_by_size": "Nach Größe sortieren",
+  "sort_by_date": "Nach Datum sortieren",
+
+  "language": "Sprache",
+  "about": "Über",
+  "import_file": "Datei importieren",
+  "dark_light_mode": "Dunkel-/Hellmodus",
+  "all_work_local": "Alle Arbeiten werden lokal auf deinem Gerät ausgeführt. Keine Daten werden geteilt oder hochgeladen.",
+  "developed_by": "Entwickelt von Devsoftware",
+
+  "select_language": "Sprache auswählen",
+  "search_language": "Sprache suchen...",
+  "no_language_found": "Keine Sprache gefunden.",
+
+  "file_imported_successfully": "Datei erfolgreich importiert.",
+  "all_files_root": "Alle Dateien (Stammverzeichnis)",
+  "move_to_main_directory": "Hauptanwendungsverzeichnis",
+
+  "rename_file": "Datei umbenennen",
+  "new_file_name": "Neuer Dateiname",
+  "rename_folder": "Ordner umbenennen",
+  "new_folder_name": "Neuer Ordnername",
+  "move_file": "Datei verschieben",
+
+  "create_folder": "Ordner erstellen",
+  "folder_name": "Ordnername",
+  "folder_created": "Ordner erstellt: \"{name}\"",
+  "@folder_created": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+
+  "delete_file": "Datei löschen",
+  "delete_folder": "Ordner löschen",
+  "delete_files": "Ausgewählte Dateien löschen",
+  "are_you_sure_delete": "Möchtest du wirklich löschen",
+  "and_all_contents": "und alle Inhalte?",
+  "file_deleted": "Datei gelöscht.",
+  "folder_deleted": "Ordner gelöscht.",
+  "files_deleted_count": "{count, plural, one{1 Datei gelöscht} other{{count} Dateien gelöscht}}",
+  "@files_deleted_count": {
+    "placeholders": {
+      "count": { "type": "int", "format": "compact" }
+    }
+  },
+
+  "items": "{count, plural, one{1 Element} other{{count} Elemente}}",
+  "@items": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+
+  "change_folder_color": "Ordnerfarbe ändern",
+  "change_color": "Farbe ändern",
+
+  "no_files_found": "Keine Dateien gefunden für \"{query}\"",
+  "@no_files_found": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+
+  "permission_required": "Speicherberechtigung erforderlich",
+  "permission_description": "Um aktualisierte PDFs auf deinem Gerät zu speichern (z. B. im Dokumente-Ordner), benötigen wir die Berechtigung 'Zugriff auf alle Dateien'.",
+  "saved_successfully": "erfolgreich gespeichert",
+  "location": "Speicherort",
+  "pdf_save_error": "Fehler beim Speichern der PDF",
+
+  "merge_pdf": "PDFs zusammenführen",
+  "merge_pdf_description": "Mehrere PDFs zu einer zusammenführen",
+  "edit_pages": "Seiten bearbeiten",
+  "edit_pages_description": "PDF-Seiten neu anordnen oder bearbeiten",
+  "extract_text": "Text extrahieren",
+  "extract_text_description": "Text aus PDF oder Bild mit OCR extrahieren",
+  "split_pdf": "PDF teilen",
+  "split_pdf_description": "PDF in einzelne Seiten aufteilen",
+  "compress_pdf": "PDF komprimieren",
+  "compress_pdf_description": "Dateigröße reduzieren",
+  "pdf_to_image": "PDF zu Bild",
+  "pdf_to_image_description": "PDF in Bilder umwandeln",
+
+  "permission_required_tools": "Berechtigung erforderlich",
+  "permission_description_tools": "Wir benötigen die Berechtigung 'Zugriff auf alle Dateien', um deine PDF- und Textdateien im Ordner Documents/pdfreadermanager zu speichern.",
+
+  "file_saved_success": "✅ {fileName} gespeichert",
+  "@file_saved_success": {
+    "placeholders": {
+      "fileName": { "type": "String" }
+    }
+  },
+
+  "file_save_error": "❌ Datei konnte nicht gespeichert werden: {error}",
+  "@file_save_error": {
+    "placeholders": {
+      "error": { "type": "String" }
+    }
+  },
+
+  "image_save_error": "❌ Bild konnte nicht gespeichert werden",
+  "file_save_error_short": "Datei konnte nicht gespeichert werden"
+}

@@ -1,0 +1,122 @@
+{
+  "@@locale": "da",
+
+  "cancel": "Annuller",
+  "delete": "Slet",
+  "rename": "Omdøb",
+  "edit": "Rediger",
+  "print": "Udskriv",
+  "share": "Del",
+  "move": "Flyt",
+  "allow": "Tillad",
+  "create": "Opret",
+
+  "all_files": "Alle filer",
+  "recent": "Seneste",
+  "favorites": "Favoritter",
+  "tools": "Værktøjer",
+  "search_files": "Søg efter filer...",
+  "sort_by_name": "Sorter efter navn",
+  "sort_by_size": "Sorter efter størrelse",
+  "sort_by_date": "Sorter efter dato",
+
+  "language": "Sprog",
+  "about": "Om",
+  "import_file": "Importer fil",
+  "dark_light_mode": "Mørk/lys tilstand",
+  "all_work_local": "Alt arbejde udføres lokalt på din enhed. Ingen data deles eller uploades.",
+  "developed_by": "Udviklet af Devsoftware",
+
+  "select_language": "Vælg sprog",
+  "search_language": "Søg efter sprog...",
+  "no_language_found": "Ingen sprog fundet.",
+
+  "file_imported_successfully": "Fil importeret med succes.",
+  "all_files_root": "Alle filer (rod)",
+  "move_to_main_directory": "Hovedapplikationsmappe",
+
+  "rename_file": "Omdøb fil",
+  "new_file_name": "Nyt filnavn",
+  "rename_folder": "Omdøb mappe",
+  "new_folder_name": "Nyt mappenavn",
+  "move_file": "Flyt fil",
+
+  "create_folder": "Opret mappe",
+  "folder_name": "Mappenavn",
+  "folder_created": "Mappe oprettet: \"{name}\"",
+  "@folder_created": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+
+  "delete_file": "Slet fil",
+  "delete_folder": "Slet mappe",
+  "delete_files": "Slet valgte filer",
+  "are_you_sure_delete": "Er du sikker på, at du vil slette",
+  "and_all_contents": "og alt dets indhold?",
+  "file_deleted": "Fil slettet.",
+  "folder_deleted": "Mappe slettet.",
+  "files_deleted_count": "{count, plural, one{1 fil slettet} other{{count} filer slettet}}",
+  "@files_deleted_count": {
+    "placeholders": {
+      "count": { "type": "int", "format": "compact" }
+    }
+  },
+
+  "items": "{count, plural, one{1 element} other{{count} elementer}}",
+  "@items": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+
+  "change_folder_color": "Skift mappefarve",
+  "change_color": "Skift farve",
+
+  "no_files_found": "Ingen filer fundet for \"{query}\"",
+  "@no_files_found": {
+    "placeholders": {
+      "query": { "type": "String" }
+    }
+  },
+
+  "permission_required": "Lagringstilladelse påkrævet",
+  "permission_description": "For at gemme opdaterede PDF-filer på din enhed (f.eks. i Dokumenter), kræves 'Adgang til alle filer'-tilladelse.",
+  "saved_successfully": "gemt med succes",
+  "location": "Placering",
+  "pdf_save_error": "Fejl ved lagring af PDF",
+
+  "merge_pdf": "Flet PDF",
+  "merge_pdf_description": "Flet flere PDF-filer til én",
+  "edit_pages": "Rediger sider",
+  "edit_pages_description": "Omarranger eller rediger PDF-sider",
+  "extract_text": "Udtræk tekst",
+  "extract_text_description": "Udtræk tekst fra PDF eller billede ved hjælp af OCR",
+  "split_pdf": "Opdel PDF",
+  "split_pdf_description": "Opdel PDF i separate sider",
+  "compress_pdf": "Komprimer PDF",
+  "compress_pdf_description": "Reducer filstørrelse",
+  "pdf_to_image": "PDF til billede",
+  "pdf_to_image_description": "Konverter PDF til billeder",
+
+  "permission_required_tools": "Tilladelse påkrævet",
+  "permission_description_tools": "Vi har brug for 'Adgang til alle filer'-tilladelse for at gemme dine PDF- og tekstfiler i mappen Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ {fileName} gemt",
+  "@file_saved_success": {
+    "placeholders": {
+      "fileName": { "type": "String" }
+    }
+  },
+
+  "file_save_error": "❌ Filen kunne ikke gemmes: {error}",
+  "@file_save_error": {
+    "placeholders": {
+      "error": { "type": "String" }
+    }
+  },
+
+  "image_save_error": "❌ Billedet kunne ikke gemmes",
+  "file_save_error_short": "Filen kunne ikke gemmes"
+}

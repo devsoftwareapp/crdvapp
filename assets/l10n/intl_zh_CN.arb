@@ -1,0 +1,110 @@
+{
+  "@@locale": "zh_CN",
+
+  "cancel": "取消",
+  "delete": "删除",
+  "rename": "重命名",
+  "edit": "编辑",
+  "print": "打印",
+  "share": "分享",
+  "move": "移动",
+  "allow": "允许",
+  "create": "创建",
+
+  "all_files": "所有文件",
+  "recent": "最近",
+  "favorites": "收藏",
+  "tools": "工具",
+  "search_files": "搜索文件...",
+  "sort_by_name": "按名称排序",
+  "sort_by_size": "按大小排序",
+  "sort_by_date": "按日期排序",
+
+  "language": "语言",
+  "about": "关于",
+  "import_file": "导入文件",
+  "dark_light_mode": "深色/浅色模式",
+  "all_work_local": "所有操作均在您的设备上本地完成。不会共享或上传任何数据。",
+  "developed_by": "由 Devsoftware 开发",
+
+  "select_language": "选择语言",
+  "search_language": "搜索语言...",
+  "no_language_found": "未找到匹配的语言。",
+
+  "file_imported_successfully": "文件导入成功。",
+  "all_files_root": "所有文件（根目录）",
+  "move_to_main_directory": "主应用程序存储目录",
+
+  "rename_file": "重命名文件",
+  "new_file_name": "新文件名",
+  "rename_folder": "重命名文件夹",
+  "new_folder_name": "新文件夹名",
+  "move_file": "移动文件",
+
+  "create_folder": "创建文件夹",
+  "folder_name": "文件夹名称",
+  "folder_created": "已创建文件夹: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "删除文件",
+  "delete_folder": "删除文件夹",
+  "delete_files": "删除所选文件",
+  "are_you_sure_delete": "您确定要删除吗",
+  "and_all_contents": "以及其所有内容？",
+  "file_deleted": "文件已删除。",
+  "folder_deleted": "文件夹已删除。",
+  "files_deleted_count": "{count, plural, one{已删除 1 个文件} other{已删除 {count} 个文件}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 项} other{{count} 项}}",
+  "@items": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "change_folder_color": "更改文件夹颜色",
+  "change_color": "更改颜色",
+
+  "no_files_found": "未找到与 \"{query}\" 匹配的文件",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "需要存储权限",
+  "permission_description": "要在您的设备上保存更新的 PDF 文件（例如在 Documents 文件夹中），我们需要“所有文件访问”权限。",
+  "saved_successfully": "保存成功",
+  "location": "位置",
+  "pdf_save_error": "PDF 保存错误",
+
+  "merge_pdf": "合并 PDF",
+  "merge_pdf_description": "将多个 PDF 合并为一个",
+  "edit_pages": "编辑页面",
+  "edit_pages_description": "重新排序或编辑 PDF 页面",
+  "extract_text": "提取文本",
+  "extract_text_description": "使用 OCR 从 PDF 或图像中提取文本",
+  "split_pdf": "拆分 PDF",
+  "split_pdf_description": "将 PDF 拆分为单独的页面",
+  "compress_pdf": "压缩 PDF",
+  "compress_pdf_description": "减小文件大小",
+  "pdf_to_image": "PDF 转图片",
+  "pdf_to_image_description": "将 PDF 转换为图像",
+
+  "permission_required_tools": "需要权限",
+  "permission_description_tools": "我们需要“所有文件访问”权限，以将您的 PDF 和文本文件保存到 Documents/pdfreadermanager 文件夹中。",
+
+  "file_saved_success": "✅ {fileName} 已保存",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ 无法保存文件: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ 无法保存图片",
+  "file_save_error_short": "无法保存文件"
+}

@@ -1,0 +1,108 @@
+{
+  "@@locale": "es",
+
+  "cancel": "Cancelar",
+  "delete": "Eliminar",
+  "rename": "Renombrar",
+  "edit": "Editar",
+  "print": "Imprimir",
+  "share": "Compartir",
+  "move": "Mover",
+  "allow": "PERMITIR",
+  "create": "Crear",
+
+  "all_files": "Todos los archivos",
+  "recent": "Recientes",
+  "favorites": "Favoritos",
+  "tools": "Herramientas",
+  "search_files": "Buscar archivos...",
+  "sort_by_name": "Ordenar por nombre",
+  "sort_by_size": "Ordenar por tamaño",
+  "sort_by_date": "Ordenar por fecha",
+
+  "language": "Idioma",
+  "about": "Acerca de",
+  "import_file": "Importar archivo",
+  "dark_light_mode": "Modo oscuro/claro",
+  "all_work_local": "Todo el trabajo se realiza localmente en tu dispositivo. No se comparte ni se sube ningún dato.",
+  "developed_by": "Desarrollado por Devsoftware",
+
+  "select_language": "Seleccionar idioma",
+  "search_language": "Buscar idioma...",
+  "no_language_found": "No se encontró ningún idioma para tu búsqueda.",
+
+  "file_imported_successfully": "Archivo importado correctamente.",
+  "all_files_root": "Todos los archivos (Raíz)",
+  "move_to_main_directory": "Directorio principal de la aplicación",
+
+  "rename_file": "Renombrar archivo",
+  "new_file_name": "Nuevo nombre de archivo",
+  "rename_folder": "Renombrar carpeta",
+  "new_folder_name": "Nuevo nombre de carpeta",
+  "move_file": "Mover archivo",
+
+  "create_folder": "Crear carpeta",
+  "folder_name": "Nombre de carpeta",
+  "folder_created": "Carpeta creada: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Eliminar archivo",
+  "delete_folder": "Eliminar carpeta",
+  "delete_files": "Eliminar archivos seleccionados",
+  "are_you_sure_delete": "¿Estás seguro de que deseas eliminar",
+  "and_all_contents": "y todo su contenido?",
+  "file_deleted": "Archivo eliminado.",
+  "folder_deleted": "Carpeta eliminada.",
+  "files_deleted_count": "{count, plural, one{1 archivo eliminado} other{{count} archivos eliminados}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 elemento} other{{count} elementos}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "Cambiar color de carpeta",
+  "change_color": "Cambiar color",
+
+  "no_files_found": "No se encontraron archivos para \"{query}\"",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Permiso de almacenamiento requerido",
+  "permission_description": "Para guardar los PDF actualizados en tu dispositivo (por ejemplo, en la carpeta Documentos), necesitamos permiso de 'Acceso a todos los archivos'.",
+  "saved_successfully": "guardado correctamente",
+  "location": "Ubicación",
+  "pdf_save_error": "Error al guardar el PDF",
+
+  "merge_pdf": "Combinar PDF",
+  "merge_pdf_description": "Combina varios PDF en uno solo",
+  "edit_pages": "Editar páginas",
+  "edit_pages_description": "Reordenar o editar páginas del PDF",
+  "extract_text": "Extraer texto",
+  "extract_text_description": "Extrae texto de PDF o imagen usando OCR",
+  "split_pdf": "Dividir PDF",
+  "split_pdf_description": "Divide un PDF en páginas separadas",
+  "compress_pdf": "Comprimir PDF",
+  "compress_pdf_description": "Reducir el tamaño del archivo",
+  "pdf_to_image": "PDF a imagen",
+  "pdf_to_image_description": "Convierte PDF en imágenes",
+
+  "permission_required_tools": "Permiso requerido",
+  "permission_description_tools": "Necesitamos permiso de 'Acceso a todos los archivos' para guardar tus archivos PDF y de texto en la carpeta Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ {fileName} guardado",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ No se pudo guardar el archivo: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ No se pudo guardar la imagen",
+  "file_save_error_short": "No se pudo guardar el archivo"
+}

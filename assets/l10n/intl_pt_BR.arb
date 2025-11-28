@@ -1,0 +1,108 @@
+{
+  "@@locale": "pt_BR",
+
+  "cancel": "Cancelar",
+  "delete": "Excluir",
+  "rename": "Renomear",
+  "edit": "Editar",
+  "print": "Imprimir",
+  "share": "Compartilhar",
+  "move": "Mover",
+  "allow": "Permitir",
+  "create": "Criar",
+
+  "all_files": "Todos os arquivos",
+  "recent": "Recentes",
+  "favorites": "Favoritos",
+  "tools": "Ferramentas",
+  "search_files": "Procurar arquivos...",
+  "sort_by_name": "Ordenar por nome",
+  "sort_by_size": "Ordenar por tamanho",
+  "sort_by_date": "Ordenar por data",
+
+  "language": "Idioma",
+  "about": "Sobre",
+  "import_file": "Importar arquivo",
+  "dark_light_mode": "Modo claro/escuro",
+  "all_work_local": "Todo o processamento é feito localmente no seu dispositivo. Nenhum dado é compartilhado ou enviado.",
+  "developed_by": "Desenvolvido por Devsoftware",
+
+  "select_language": "Selecionar idioma",
+  "search_language": "Pesquisar idioma...",
+  "no_language_found": "Nenhum idioma encontrado para sua pesquisa.",
+
+  "file_imported_successfully": "Arquivo importado com sucesso.",
+  "all_files_root": "Todos os arquivos (raiz)",
+  "move_to_main_directory": "Mover para o diretório principal do aplicativo",
+
+  "rename_file": "Renomear arquivo",
+  "new_file_name": "Novo nome do arquivo",
+  "rename_folder": "Renomear pasta",
+  "new_folder_name": "Novo nome da pasta",
+  "move_file": "Mover arquivo",
+
+  "create_folder": "Criar pasta",
+  "folder_name": "Nome da pasta",
+  "folder_created": "Pasta criada: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Excluir arquivo",
+  "delete_folder": "Excluir pasta",
+  "delete_files": "Excluir arquivos selecionados",
+  "are_you_sure_delete": "Tem certeza de que deseja excluir",
+  "and_all_contents": "e todo o seu conteúdo?",
+  "file_deleted": "Arquivo excluído.",
+  "folder_deleted": "Pasta excluída.",
+  "files_deleted_count": "{count, plural, one{1 arquivo excluído} other{{count} arquivos excluídos}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 item} other{{count} itens}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "Alterar cor da pasta",
+  "change_color": "Alterar cor",
+
+  "no_files_found": "Nenhum arquivo encontrado para \"{query}\"",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Permissão de armazenamento necessária",
+  "permission_description": "Para salvar arquivos PDF atualizados no seu dispositivo (por exemplo, na pasta Documentos), precisamos da permissão 'Acesso total a arquivos'.",
+  "saved_successfully": "Salvo com sucesso",
+  "location": "Localização",
+  "pdf_save_error": "Erro ao salvar o PDF",
+
+  "merge_pdf": "Mesclar PDF",
+  "merge_pdf_description": "Mesclar vários PDFs em um único arquivo",
+  "edit_pages": "Editar páginas",
+  "edit_pages_description": "Reorganizar ou editar páginas de PDF",
+  "extract_text": "Extrair texto",
+  "extract_text_description": "Extrair texto de PDF ou imagem usando OCR",
+  "split_pdf": "Dividir PDF",
+  "split_pdf_description": "Dividir PDF em páginas separadas",
+  "compress_pdf": "Comprimir PDF",
+  "compress_pdf_description": "Reduzir o tamanho do arquivo",
+  "pdf_to_image": "PDF para imagem",
+  "pdf_to_image_description": "Converter PDF em imagens",
+
+  "permission_required_tools": "Permissão necessária",
+  "permission_description_tools": "Precisamos da permissão \"Acesso total a arquivos\" para salvar seus PDFs e arquivos de texto na pasta Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ {fileName} salvo",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ Não foi possível salvar o arquivo: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ Não foi possível salvar a imagem",
+  "file_save_error_short": "Não foi possível salvar o arquivo"
+}

@@ -1,0 +1,108 @@
+{
+  "@@locale": "fi",
+
+  "cancel": "Peruuta",
+  "delete": "Poista",
+  "rename": "Nimeä uudelleen",
+  "edit": "Muokkaa",
+  "print": "Tulosta",
+  "share": "Jaa",
+  "move": "Siirrä",
+  "allow": "SALLI",
+  "create": "Luo",
+
+  "all_files": "Kaikki tiedostot",
+  "recent": "Viimeisimmät",
+  "favorites": "Suosikit",
+  "tools": "Työkalut",
+  "search_files": "Etsi tiedostoja...",
+  "sort_by_name": "Järjestä nimen mukaan",
+  "sort_by_size": "Järjestä koon mukaan",
+  "sort_by_date": "Järjestä päivämäärän mukaan",
+
+  "language": "Kieli",
+  "about": "Tietoa",
+  "import_file": "Tuo tiedosto",
+  "dark_light_mode": "Tumma/vaalea tila",
+  "all_work_local": "Kaikki työ tehdään paikallisesti laitteellasi. Tietoja ei jaeta tai ladata.",
+  "developed_by": "Kehittänyt Devsoftware",
+
+  "select_language": "Valitse kieli",
+  "search_language": "Hae kieltä...",
+  "no_language_found": "Haullasi ei löytynyt kieliä.",
+
+  "file_imported_successfully": "Tiedosto tuotu onnistuneesti.",
+  "all_files_root": "Kaikki tiedostot (juuri)",
+  "move_to_main_directory": "Sovelluksen pääkansio",
+
+  "rename_file": "Nimeä tiedosto uudelleen",
+  "new_file_name": "Uusi tiedostonimi",
+  "rename_folder": "Nimeä kansio uudelleen",
+  "new_folder_name": "Uusi kansion nimi",
+  "move_file": "Siirrä tiedosto",
+
+  "create_folder": "Luo kansio",
+  "folder_name": "Kansion nimi",
+  "folder_created": "Kansio luotu: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Poista tiedosto",
+  "delete_folder": "Poista kansio",
+  "delete_files": "Poista valitut tiedostot",
+  "are_you_sure_delete": "Haluatko varmasti poistaa",
+  "and_all_contents": "ja kaiken sen sisällön?",
+  "file_deleted": "Tiedosto poistettu.",
+  "folder_deleted": "Kansio poistettu.",
+  "files_deleted_count": "{count, plural, one{1 tiedosto poistettu} other{{count} tiedostoa poistettu}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 kohde} other{{count} kohdetta}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "Vaihda kansion väri",
+  "change_color": "Vaihda väri",
+
+  "no_files_found": "Ei löytynyt tiedostoja haulle \"{query}\"",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Tallennusoikeus vaaditaan",
+  "permission_description": "Tallentaaksesi päivitetyt PDF-tiedostot laitteellesi (esim. Documents-kansioon), tarvitsemme 'Kaikkien tiedostojen käyttöoikeuden'.",
+  "saved_successfully": "tallennettu onnistuneesti",
+  "location": "Sijainti",
+  "pdf_save_error": "PDF:n tallennusvirhe",
+
+  "merge_pdf": "Yhdistä PDF",
+  "merge_pdf_description": "Yhdistä useita PDF-tiedostoja yhdeksi",
+  "edit_pages": "Muokkaa sivuja",
+  "edit_pages_description": "Järjestä tai muokkaa PDF-sivuja",
+  "extract_text": "Poimi teksti",
+  "extract_text_description": "Poimi teksti PDF:stä tai kuvasta OCR:n avulla",
+  "split_pdf": "Jaa PDF",
+  "split_pdf_description": "Jaa PDF erillisiksi sivuiksi",
+  "compress_pdf": "Pakkaa PDF",
+  "compress_pdf_description": "Pienennä tiedoston kokoa",
+  "pdf_to_image": "PDF kuvaksi",
+  "pdf_to_image_description": "Muunna PDF kuvaksi",
+
+  "permission_required_tools": "Lupa vaaditaan",
+  "permission_description_tools": "Tarvitsemme 'Kaikkien tiedostojen käyttöoikeuden' tallentaaksemme PDF- ja tekstitiedostot kansioon Documents/pdfreadermanager.",
+
+  "file_saved_success": "✅ {fileName} tallennettu",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ Tiedostoa ei voitu tallentaa: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ Kuvaa ei voitu tallentaa",
+  "file_save_error_short": "Tiedostoa ei voitu tallentaa"
+}

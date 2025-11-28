@@ -1,0 +1,110 @@
+{
+  "@@locale": "zh_TW",
+
+  "cancel": "取消",
+  "delete": "刪除",
+  "rename": "重新命名",
+  "edit": "編輯",
+  "print": "列印",
+  "share": "分享",
+  "move": "移動",
+  "allow": "允許",
+  "create": "建立",
+
+  "all_files": "所有檔案",
+  "recent": "最近",
+  "favorites": "我的最愛",
+  "tools": "工具",
+  "search_files": "搜尋檔案...",
+  "sort_by_name": "按名稱排序",
+  "sort_by_size": "按大小排序",
+  "sort_by_date": "按日期排序",
+
+  "language": "語言",
+  "about": "關於",
+  "import_file": "匯入檔案",
+  "dark_light_mode": "深色/淺色模式",
+  "all_work_local": "所有操作均在您的裝置上本地完成。不會共享或上傳任何資料。",
+  "developed_by": "由 Devsoftware 開發",
+
+  "select_language": "選擇語言",
+  "search_language": "搜尋語言...",
+  "no_language_found": "找不到符合的語言。",
+
+  "file_imported_successfully": "檔案匯入成功。",
+  "all_files_root": "所有檔案（根目錄）",
+  "move_to_main_directory": "主要應用程式儲存目錄",
+
+  "rename_file": "重新命名檔案",
+  "new_file_name": "新檔案名稱",
+  "rename_folder": "重新命名資料夾",
+  "new_folder_name": "新資料夾名稱",
+  "move_file": "移動檔案",
+
+  "create_folder": "建立資料夾",
+  "folder_name": "資料夾名稱",
+  "folder_created": "已建立資料夾：「{name}」",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "刪除檔案",
+  "delete_folder": "刪除資料夾",
+  "delete_files": "刪除所選檔案",
+  "are_you_sure_delete": "您確定要刪除嗎",
+  "and_all_contents": "以及其所有內容？",
+  "file_deleted": "檔案已刪除。",
+  "folder_deleted": "資料夾已刪除。",
+  "files_deleted_count": "{count, plural, one{已刪除 1 個檔案} other{已刪除 {count} 個檔案}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 個項目} other{{count} 個項目}}",
+  "@items": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "change_folder_color": "更改資料夾顏色",
+  "change_color": "更改顏色",
+
+  "no_files_found": "找不到與「{query}」相符的檔案",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "需要儲存權限",
+  "permission_description": "若要在您的裝置上儲存更新的 PDF（例如在 Documents 資料夾中），我們需要「所有檔案存取」權限。",
+  "saved_successfully": "儲存成功",
+  "location": "位置",
+  "pdf_save_error": "PDF 儲存錯誤",
+
+  "merge_pdf": "合併 PDF",
+  "merge_pdf_description": "將多個 PDF 合併為一個",
+  "edit_pages": "編輯頁面",
+  "edit_pages_description": "重新排序或編輯 PDF 頁面",
+  "extract_text": "擷取文字",
+  "extract_text_description": "使用 OCR 從 PDF 或圖片中擷取文字",
+  "split_pdf": "分割 PDF",
+  "split_pdf_description": "將 PDF 分割成單獨的頁面",
+  "compress_pdf": "壓縮 PDF",
+  "compress_pdf_description": "減少檔案大小",
+  "pdf_to_image": "PDF 轉圖片",
+  "pdf_to_image_description": "將 PDF 轉換成圖片",
+
+  "permission_required_tools": "需要權限",
+  "permission_description_tools": "我們需要「所有檔案存取」權限，以將您的 PDF 和文字檔案儲存到 Documents/pdfreadermanager 資料夾中。",
+
+  "file_saved_success": "✅ {fileName} 已儲存",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ 無法儲存檔案：{error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ 無法儲存圖片",
+  "file_save_error_short": "無法儲存檔案"
+}

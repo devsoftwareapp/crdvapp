@@ -1,0 +1,110 @@
+{
+  "@@locale": "tr",
+
+  "cancel": "İptal",
+  "delete": "Sil",
+  "rename": "Yeniden Adlandır",
+  "edit": "Düzenle",
+  "print": "Yazdır",
+  "share": "Paylaş",
+  "move": "Taşı",
+  "allow": "İzin Ver",
+  "create": "Oluştur",
+
+  "all_files": "Tüm Dosyalar",
+  "recent": "Son",
+  "favorites": "Favoriler",
+  "tools": "Araçlar",
+  "search_files": "Dosya ara...",
+  "sort_by_name": "İsme Göre Sırala",
+  "sort_by_size": "Boyuta Göre Sırala",
+  "sort_by_date": "Tarihe Göre Sırala",
+
+  "language": "Dil",
+  "about": "Hakkında",
+  "import_file": "Dosya İçe Aktar",
+  "dark_light_mode": "Karanlık/Aydınlık Mod",
+  "all_work_local": "Tüm işlemler cihazınızda yerel olarak gerçekleştirilir. Hiçbir veri paylaşılmaz veya yüklenmez.",
+  "developed_by": "Geliştirici: Devsoftware",
+
+  "select_language": "Dil Seç",
+  "search_language": "Dil ara...",
+  "no_language_found": "Aradığınız dile ait sonuç bulunamadı.",
+
+  "file_imported_successfully": "Dosya başarıyla içe aktarıldı.",
+  "all_files_root": "Tüm Dosyalar (Kök)",
+  "move_to_main_directory": "Ana uygulama dizinine taşı",
+
+  "rename_file": "Dosyayı Yeniden Adlandır",
+  "new_file_name": "Yeni dosya adı",
+  "rename_folder": "Klasörü Yeniden Adlandır",
+  "new_folder_name": "Yeni klasör adı",
+  "move_file": "Dosyayı Taşı",
+
+  "create_folder": "Klasör Oluştur",
+  "folder_name": "Klasör Adı",
+  "folder_created": "Klasör oluşturuldu: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "Dosyayı Sil",
+  "delete_folder": "Klasörü Sil",
+  "delete_files": "Seçilen Dosyaları Sil",
+  "are_you_sure_delete": "Silmek istediğinizden emin misiniz",
+  "and_all_contents": "ve tüm içeriğiyle birlikte?",
+  "file_deleted": "Dosya silindi.",
+  "folder_deleted": "Klasör silindi.",
+  "files_deleted_count": "{count, plural, one{1 dosya silindi} other{{count} dosya silindi}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1 öğe} other{{count} öğe}}",
+  "@items": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "change_folder_color": "Klasör Rengini Değiştir",
+  "change_color": "Rengi Değiştir",
+
+  "no_files_found": "\"{query}\" için dosya bulunamadı",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "Depolama İzni Gerekli",
+  "permission_description": "Cihazınıza güncellenmiş PDF’leri kaydedebilmemiz için (örneğin Belgeler klasörüne) 'Tüm Dosyalara Erişim' iznine ihtiyacımız var.",
+  "saved_successfully": "başarıyla kaydedildi",
+  "location": "Konum",
+  "pdf_save_error": "PDF kaydedilemedi",
+
+  "merge_pdf": "PDF Birleştir",
+  "merge_pdf_description": "Birden fazla PDF’yi tek bir dosyada birleştir",
+  "edit_pages": "Sayfaları Düzenle",
+  "edit_pages_description": "PDF sayfalarını düzenle veya yeniden sırala",
+  "extract_text": "Metin Çıkar",
+  "extract_text_description": "OCR kullanarak PDF veya görselden metin çıkar",
+  "split_pdf": "PDF Böl",
+  "split_pdf_description": "PDF’yi ayrı sayfalara böl",
+  "compress_pdf": "PDF Sıkıştır",
+  "compress_pdf_description": "Dosya boyutunu küçült",
+  "pdf_to_image": "PDF'den Görsel",
+  "pdf_to_image_description": "PDF’yi görsellere dönüştür",
+
+  "permission_required_tools": "İzin Gerekli",
+  "permission_description_tools": "PDF ve metin dosyalarınızı Documents/pdfreadermanager klasörüne kaydetmek için 'Tüm dosyalara erişim' izni gereklidir.",
+
+  "file_saved_success": "✅ {fileName} kaydedildi",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ Dosya kaydedilemedi: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ Görsel kaydedilemedi",
+  "file_save_error_short": "Dosya kaydedilemedi"
+}

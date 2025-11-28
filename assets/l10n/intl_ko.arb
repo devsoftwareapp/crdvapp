@@ -1,0 +1,108 @@
+{
+  "@@locale": "ko",
+
+  "cancel": "취소",
+  "delete": "삭제",
+  "rename": "이름 바꾸기",
+  "edit": "편집",
+  "print": "인쇄",
+  "share": "공유",
+  "move": "이동",
+  "allow": "허용",
+  "create": "생성",
+
+  "all_files": "모든 파일",
+  "recent": "최근",
+  "favorites": "즐겨찾기",
+  "tools": "도구",
+  "search_files": "파일 검색...",
+  "sort_by_name": "이름순 정렬",
+  "sort_by_size": "크기순 정렬",
+  "sort_by_date": "날짜순 정렬",
+
+  "language": "언어",
+  "about": "정보",
+  "import_file": "파일 가져오기",
+  "dark_light_mode": "다크/라이트 모드",
+  "all_work_local": "모든 작업은 기기 내에서 로컬로 수행됩니다. 데이터는 공유되거나 업로드되지 않습니다.",
+  "developed_by": "Devsoftware에서 개발함",
+
+  "select_language": "언어 선택",
+  "search_language": "언어 검색...",
+  "no_language_found": "검색 결과에 해당하는 언어가 없습니다.",
+
+  "file_imported_successfully": "파일이 성공적으로 가져왔습니다.",
+  "all_files_root": "모든 파일 (루트)",
+  "move_to_main_directory": "앱의 메인 저장 디렉터리로 이동",
+
+  "rename_file": "파일 이름 바꾸기",
+  "new_file_name": "새 파일 이름",
+  "rename_folder": "폴더 이름 바꾸기",
+  "new_folder_name": "새 폴더 이름",
+  "move_file": "파일 이동",
+
+  "create_folder": "폴더 생성",
+  "folder_name": "폴더 이름",
+  "folder_created": "폴더가 생성되었습니다: \"{name}\"",
+  "@folder_created": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+
+  "delete_file": "파일 삭제",
+  "delete_folder": "폴더 삭제",
+  "delete_files": "선택한 파일 삭제",
+  "are_you_sure_delete": "정말로 삭제하시겠습니까?",
+  "and_all_contents": "및 모든 내용",
+  "file_deleted": "파일이 삭제되었습니다.",
+  "folder_deleted": "폴더가 삭제되었습니다.",
+  "files_deleted_count": "{count, plural, one{1개의 파일이 삭제됨} other{{count}개의 파일이 삭제됨}}",
+  "@files_deleted_count": {
+    "placeholders": { "count": { "type": "int", "format": "compact" } }
+  },
+
+  "items": "{count, plural, one{1개 항목} other{{count}개 항목}}",
+  "@items": { "placeholders": { "count": { "type": "int" } } },
+
+  "change_folder_color": "폴더 색상 변경",
+  "change_color": "색상 변경",
+
+  "no_files_found": "\"{query}\"에 해당하는 파일이 없습니다.",
+  "@no_files_found": {
+    "placeholders": { "query": { "type": "String" } }
+  },
+
+  "permission_required": "저장소 권한 필요",
+  "permission_description": "기기에 수정된 PDF를 저장하려면 (예: Documents 폴더) '모든 파일 액세스' 권한이 필요합니다.",
+  "saved_successfully": "성공적으로 저장되었습니다",
+  "location": "위치",
+  "pdf_save_error": "PDF 저장 오류",
+
+  "merge_pdf": "PDF 병합",
+  "merge_pdf_description": "여러 PDF를 하나로 병합",
+  "edit_pages": "페이지 편집",
+  "edit_pages_description": "PDF 페이지를 정렬하거나 수정",
+  "extract_text": "텍스트 추출",
+  "extract_text_description": "OCR을 사용하여 PDF 또는 이미지에서 텍스트 추출",
+  "split_pdf": "PDF 분할",
+  "split_pdf_description": "PDF를 여러 페이지로 분할",
+  "compress_pdf": "PDF 압축",
+  "compress_pdf_description": "파일 크기 줄이기",
+  "pdf_to_image": "PDF를 이미지로 변환",
+  "pdf_to_image_description": "PDF를 이미지로 변환",
+
+  "permission_required_tools": "권한 필요",
+  "permission_description_tools": "Documents/pdfreadermanager 폴더에 PDF 및 텍스트 파일을 저장하려면 '모든 파일 액세스' 권한이 필요합니다.",
+
+  "file_saved_success": "✅ {fileName} 저장됨",
+  "@file_saved_success": {
+    "placeholders": { "fileName": { "type": "String" } }
+  },
+
+  "file_save_error": "❌ 파일을 저장할 수 없습니다: {error}",
+  "@file_save_error": {
+    "placeholders": { "error": { "type": "String" } }
+  },
+
+  "image_save_error": "❌ 이미지를 저장할 수 없습니다",
+  "file_save_error_short": "파일을 저장할 수 없습니다"
+}

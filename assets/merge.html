@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="t_title">Merge PDF</title>
+  <script src="pdf-lib.min.js"></script>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+    .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    h1 { color: #d32f2f; text-align: center; margin-bottom: 10px; }
+    .description { text-align: center; color: #666; margin-bottom: 30px; }
+    .box { background: #f8f9fa; border-left: 4px solid #d32f2f; border-radius: 8px; padding: 20px; margin: 20px 0; }
+    input[type="file"] { width: 100%; padding: 12px; margin: 10px 0; border: 2px dashed #d32f2f; border-radius: 8px; background: #fff; }
+    button { background: #d32f2f; color: white; border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; width: 100%; margin: 10px 0; transition: background 0.3s; }
+    button:hover { background: #b71c1c; }
+    button:disabled { background: #ccc; cursor: not-allowed; }
+    .file-list { margin: 15px 0; max-height: 200px; overflow-y: auto; }
+    .file-item { background: #e9ecef; padding: 10px; margin: 5px 0; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; }
+    .remove-btn { background: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+    .status { margin: 15px 0; padding: 10px; border-radius: 5px; text-align: center; }
+    .success { background: #d4edda; color: #155724; }
+    .error { background: #f8d7da; color: #721c24; }
+    .info { background: #d1ecf1; color: #0c5460; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="t_title_h1">Merge PDF</h1>
+    <p class="description" id="t_desc">Combine multiple PDF files into a single file</p>
+    
+    <div class="box">
+      <h3 id="t_select">Select files to merge:</h3>
+      <input type="file" id="mergeFiles" accept="application/pdf" multiple>
+      <div class="file-list" id="fileList"></div>
+      <button id="mergeBtn">Merge and Save PDFs</button>
+    </div>
+
+    <div id="status" class="status" style="display: none;"></div>
+  </div>
+
+  <script>
+    async function loadLocale() {
+      const deviceLang = (navigator.language || "en-us").toLowerCase();
+      const shortLang = deviceLang.split('-')[0];
+      console.log("🌐 Tarayıcı dili:", deviceLang);
+
+      try {
+        const res = await fetch("merge-all.json");
+        const allLocales = await res.json();
+
+        const t =
+          allLocales[deviceLang] ||
+          allLocales[shortLang] ||
+          allLocales["en-us"];
+
+        if (t) {
+          applyLocale(t);
+          console.log("✅ Yüklenen dil:", deviceLang);
+        } else {
+          console.warn("⚠️ Dil bulunamadı, en-us kullanılıyor");
+          applyLocale(allLocales["en-us"]);
+        }
+      } catch (err) {
+        console.error("❌ Locale yükleme hatası:", err);
+      }
+    }
+
+    function applyLocale(t) {
+      document.title = t.title;
+      document.getElementById("t_title_h1").textContent = t.title;
+      document.getElementById("t_desc").textContent = t.description;
+      document.getElementById("t_select").textContent = t.selectFiles;
+      document.getElementById("mergeBtn").textContent = t.mergeBtn;
+      window.t = t;
+    }
+
+    loadLocale();
+
+    let selectedFiles = [];
+
+    document.getElementById('mergeFiles').addEventListener('change', function(e) {
+      const files = Array.from(e.target.files);
+      selectedFiles = [...selectedFiles, ...files];
+      updateFileList();
+    });
+
+    function updateFileList() {
+      const fileList = document.getElementById('fileList');
+      fileList.innerHTML = '';
+      selectedFiles.forEach((file, index) => {
+        const fileItem = document.createElement('div');
+        fileItem.className = 'file-item';
+        fileItem.innerHTML = `
+          <span>${file.name}</span>
+          <button class="remove-btn" onclick="removeFile(${index})">${window.t?.remove || 'Remove'}</button>
+        `;
+        fileList.appendChild(fileItem);
+      });
+    }
+
+    function removeFile(index) {
+      selectedFiles.splice(index, 1);
+      updateFileList();
+    }
+
+    function showStatus(message, type) {
+      const status = document.getElementById('status');
+      status.textContent = message;
+      status.className = `status ${type}`;
+      status.style.display = 'block';
+    }
+
+    document.getElementById('mergeBtn').addEventListener('click', async () => {
+      if (selectedFiles.length < 2) {
+        showStatus(window.t?.errorSelect || 'Please select at least 2 PDF files!', 'error');
+        return;
+      }
+
+      try {
+        showStatus(window.t?.statusMerging || 'Merging PDFs...', 'info');
+        const mergedPdf = await PDFLib.PDFDocument.create();
+
+        for (let file of selectedFiles) {
+          const bytes = await file.arrayBuffer();
+          const pdf = await PDFLib.PDFDocument.load(bytes);
+          const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+          copiedPages.forEach(p => mergedPdf.addPage(p));
+        }
+
+        const mergedBytes = await mergedPdf.save();
+
+        if (window.flutter_inappwebview) {
+          const blob = new Blob([mergedBytes], { type: 'application/pdf' });
+          const reader = new FileReader();
+          reader.onloadend = function() {
+            const base64 = reader.result.split(',')[1];
+            window.flutter_inappwebview.callHandler('saveFile', 'merged_pdf.pdf', base64);
+          };
+          reader.readAsDataURL(blob);
+        }
+
+        showStatus(window.t?.statusSuccess || 'PDF successfully merged! Saved to Download folder.', 'success');
+      } catch (error) {
+        console.error("PDF merge error:", error);
+        showStatus((window.t?.statusError || 'An error occurred while merging PDFs: ') + error.message, 'error');
+      }
+    });
+  </script>
+</body>
+</html>

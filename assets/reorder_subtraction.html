@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Pages</title>
+  <script src="pdf-lib.min.js"></script>
+  <script src="pdf.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #d32f2f;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .description {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .box {
+      background: #f8f9fa;
+      border-left: 4px solid #d32f2f;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      background: #d32f2f;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 10px 5px;
+      transition: background 0.3s;
+    }
+    button:hover { background: #b71c1c; }
+    button:disabled { background: #ccc; cursor: not-allowed; }
+    .delete-btn {
+      background: #dc3545;
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+    .delete-btn:hover { background: #c82333; }
+    #thumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 20px;
+      min-height: 150px;
+      border: 3px dashed #d32f2f;
+      border-radius: 10px;
+      background: rgba(211, 47, 47, 0.05);
+      margin: 20px 0;
+    }
+    .thumb {
+      position: relative;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: grab;
+      transition: all 0.2s ease;
+    }
+    .thumb:hover {
+      border-color: #d32f2f;
+      transform: translateY(-2px);
+    }
+    .thumb img {
+      width: 120px;
+      height: auto;
+      display: block;
+    }
+    .page-number {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .status {
+      margin: 15px 0;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .success { background: #d4edda; color: #155724; }
+    .error { background: #f8d7da; color: #721c24; }
+    .info { background: #d1ecf1; color: #0c5460; }
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Edit Pages</h1>
+    <p class="description" id="description">Reorder or delete pages</p>
+    
+    <div class="box">
+      <h3 id="selectFileTitle">Select PDF File</h3>
+      <input type="file" id="reorderFile" accept="application/pdf">
+    </div>
+
+    <div class="box">
+      <h3 id="editSectionTitle">Edit Pages</h3>
+      <p id="editInstruction">Drag and drop to reorder pages or use delete button to remove</p>
+      <div id="thumbs"><span id="uploadPlaceholder">Upload PDF file</span></div>
+      
+      <div class="controls">
+        <button id="downloadBtn" disabled>Save New PDF</button>
+        <button id="resetBtn" style="background:#6c757d;">Reset</button>
+      </div>
+    </div>
+
+    <div id="status" class="status" style="display:none;"></div>
+  </div>
+
+  <script>
+    // 🌍 Load locale automatically
+    async function loadLocale() {
+      const lang = (navigator.language || 'en-US').toLowerCase();
+      try {
+        const res = await fetch('reorder_subtraction-all.json');
+        const allLocales = await res.json();
+        const locale = allLocales[lang] || allLocales[lang.split('-')[0]] || allLocales['en-us'];
+        applyTranslations(locale);
+      } catch (e) {
+        console.error('Locale load error:', e);
+      }
+    }
+
+    function applyTranslations(t) {
+      document.title = t.title;
+      document.getElementById('title').textContent = t.title;
+      document.getElementById('description').textContent = t.description;
+      document.getElementById('selectFileTitle').textContent = t.selectFile;
+      document.getElementById('editSectionTitle').textContent = t.editSection;
+      document.getElementById('editInstruction').textContent = t.editInstruction;
+      document.getElementById('uploadPlaceholder').textContent = t.uploadPlaceholder;
+      document.getElementById('downloadBtn').textContent = t.saveBtn;
+      document.getElementById('resetBtn').textContent = t.resetBtn;
+    }
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+    let pdfDoc = null, pdfPages = [], reorderedPages = [], originalFile = null;
+
+    const reorderFile = document.getElementById("reorderFile");
+    const thumbsContainer = document.getElementById("thumbs");
+    const downloadBtn = document.getElementById("downloadBtn");
+    const resetBtn = document.getElementById("resetBtn");
+
+    function showStatus(message, type) {
+      const status = document.getElementById('status');
+      status.textContent = message;
+      status.className = `status ${type}`;
+      status.style.display = 'block';
+    }
+
+    reorderFile.addEventListener("change", async e => {
+      const file = e.target.files[0];
+      if (!file) return;
+      originalFile = file;
+      try {
+        showStatus('Loading PDF...', 'info');
+        const arrayBuffer = await file.arrayBuffer();
+        pdfDoc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+        thumbsContainer.innerHTML = "";
+        pdfPages = Array.from({ length: pdfDoc.numPages }, (_, i) => i + 1);
+        reorderedPages = [...pdfPages];
+        for (let i = 0; i < pdfDoc.numPages; i++) await renderThumbnail(i);
+        enableDragAndDrop();
+        downloadBtn.disabled = false;
+        showStatus('PDF loaded. You can now edit pages.', 'success');
+      } catch (error) {
+        console.error("PDF loading error:", error);
+        showStatus('Error loading PDF.', 'error');
+      }
+    });
+
+    async function renderThumbnail(pageIndex) {
+      const page = await pdfDoc.getPage(pageIndex + 1);
+      const viewport = page.getViewport({ scale: 0.15 });
+      const canvas = document.createElement("canvas");
+      const context = canvas.getContext("2d");
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      await page.render({ canvasContext: context, viewport }).promise;
+      const thumb = document.createElement("div");
+      thumb.className = "thumb";
+      thumb.draggable = true;
+      thumb.dataset.index = pageIndex + 1;
+
+      const img = document.createElement("img");
+      img.src = canvas.toDataURL();
+      thumb.appendChild(img);
+
+      const pageNumber = document.createElement("div");
+      pageNumber.className = "page-number";
+      pageNumber.textContent = pageIndex + 1;
+      thumb.appendChild(pageNumber);
+
+      const delBtn = document.createElement("button");
+      delBtn.className = "delete-btn";
+      delBtn.innerHTML = '🗑 Delete';
+      delBtn.title = "Delete Page";
+      delBtn.onclick = (e) => {
+        e.stopPropagation();
+        if (confirm("Are you sure you want to delete this page?")) {
+          thumb.remove();
+          reorderedPages = reorderedPages.filter(p => p !== pageIndex + 1);
+          updateThumbnailNumbers();
+        }
+      };
+      thumb.appendChild(delBtn);
+      thumbsContainer.appendChild(thumb);
+    }
+
+    function enableDragAndDrop() {
+      const thumbs = document.querySelectorAll(".thumb");
+      let draggedItem = null;
+      thumbs.forEach(thumb => {
+        thumb.addEventListener("dragstart", e => {
+          draggedItem = thumb;
+          thumb.classList.add("dragging");
+          e.dataTransfer.effectAllowed = "move";
+        });
+        thumb.addEventListener("dragend", () => thumb.classList.remove("dragging"));
+        thumb.addEventListener("dragover", e => e.preventDefault());
+        thumb.addEventListener("drop", e => {
+          e.preventDefault();
+          if (draggedItem && thumb !== draggedItem) {
+            const thumbsArray = Array.from(thumbsContainer.children);
+            const fromIndex = thumbsArray.indexOf(draggedItem);
+            const toIndex = thumbsArray.indexOf(thumb);
+            if (fromIndex < toIndex) thumbsContainer.insertBefore(draggedItem, thumb.nextSibling);
+            else thumbsContainer.insertBefore(draggedItem, thumb);
+            updatePageOrder();
+          }
+        });
+      });
+    }
+
+    function updatePageOrder() {
+      const thumbs = Array.from(thumbsContainer.children);
+      reorderedPages = thumbs.map(thumb => parseInt(thumb.dataset.index));
+      updateThumbnailNumbers();
+    }
+
+    function updateThumbnailNumbers() {
+      document.querySelectorAll(".thumb").forEach((thumb, index) => {
+        const pageNumber = thumb.querySelector(".page-number");
+        if (pageNumber) pageNumber.textContent = index + 1;
+      });
+    }
+
+    downloadBtn.addEventListener("click", async () => {
+      if (reorderedPages.length === 0) return showStatus("Please keep at least one page!", "error");
+      try {
+        downloadBtn.disabled = true;
+        downloadBtn.textContent = "Saving...";
+        showStatus("Saving PDF...", "info");
+        const originalArrayBuffer = await originalFile.arrayBuffer();
+        const srcDoc = await PDFLib.PDFDocument.load(originalArrayBuffer);
+        const newDoc = await PDFLib.PDFDocument.create();
+        for (const pageNum of reorderedPages) {
+          const [copiedPage] = await newDoc.copyPages(srcDoc, [pageNum - 1]);
+          newDoc.addPage(copiedPage);
+        }
+        const pdfBytes = await newDoc.save();
+        if (window.flutter_inappwebview) {
+          const blob = new Blob([pdfBytes], { type: "application/pdf" });
+          const reader = new FileReader();
+          reader.onloadend = function() {
+            const base64 = reader.result.split(',')[1];
+            window.flutter_inappwebview.callHandler('saveFile', 'edited_pdf.pdf', base64);
+          };
+          reader.readAsDataURL(blob);
+        }
+        showStatus("PDF successfully saved! Saved to Download folder.", "success");
+      } catch (error) {
+        console.error("PDF creation error:", error);
+        showStatus("Error saving PDF.", "error");
+      } finally {
+        downloadBtn.disabled = false;
+        downloadBtn.textContent = "Save New PDF";
+      }
+    });
+
+    resetBtn.addEventListener("click", () => {
+      if (!pdfDoc) return;
+      reorderedPages = [...pdfPages];
+      thumbsContainer.innerHTML = "";
+      pdfPages.forEach(async (_, i) => await renderThumbnail(i));
+      enableDragAndDrop();
+      showStatus("Page order reset.", "info");
+    });
+
+    window.addEventListener('load', loadLocale);
+  </script>
+</body>
+</html>
