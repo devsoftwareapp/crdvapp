@@ -41,6 +41,7 @@ flutter:
     - assets/web/viewer.html
     - assets/web/viewer.mjs
     - assets/web/images/
+    - assets/icon/
     
     # --- assets/web/locale/ altındaki tüm dil klasörleri ve dosyalar ---
     - assets/web/locale/locale.json
