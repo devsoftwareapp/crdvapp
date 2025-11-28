@@ -7,29 +7,53 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 
+// Intent handling için
+import 'package:flutter/services.dart';
+
+// Intent channel - Mevcut MainActivity ile uyumlu
+final MethodChannel _intentChannel = MethodChannel('app.channel.shared/data');
+final MethodChannel _pdfViewerChannel = MethodChannel('pdf_viewer_channel');
+
+// Initial intent'i almak için fonksiyon
+Future<Map<String, dynamic>?> _getInitialIntent() async {
+  try {
+    final intentData = await _intentChannel.invokeMethod('getInitialIntent');
+    return intentData != null ? Map<String, dynamic>.from(intentData) : null;
+  } catch (e) {
+    print('Intent error: $e');
+    return null;
+  }
+}
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
   await InAppWebViewController.setWebContentsDebuggingEnabled(true);
   
-  runApp(PdfManagerApp());
+  final initialIntent = await _getInitialIntent();
+  
+  runApp(PdfManagerApp(initialIntent: initialIntent));
 }
 
 class PdfManagerApp extends StatelessWidget {
-  const PdfManagerApp({super.key});
+  final Map<String, dynamic>? initialIntent;
+
+  const PdfManagerApp({super.key, this.initialIntent});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'PDF Reader',
       theme: ThemeData(primarySwatch: Colors.red),
-      home: HomePage(),
+      home: HomePage(initialIntent: initialIntent),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final Map<String, dynamic>? initialIntent;
+
+  const HomePage({super.key, this.initialIntent});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -44,6 +68,110 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _checkPermission();
+    
+    // Intent listener'ı kur
+    _intentChannel.setMethodCallHandler(_handleIntentMethodCall);
+    
+    // Intent'i işle - GECİKMELİ olarak
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _handleInitialIntent();
+    });
+  }
+
+  // YENİ: Intent method call handler
+  Future<dynamic> _handleIntentMethodCall(MethodCall call) async {
+    print('📱 Method call received: ${call.method}');
+    
+    if (call.method == 'onNewIntent') {
+      final intentData = Map<String, dynamic>.from(call.arguments);
+      print('🔄 New intent received: $intentData');
+      _processExternalPdfIntent(intentData);
+    }
+    
+    return null;
+  }
+
+  // YENİ METOD: External intent işleme
+  void _handleInitialIntent() {
+    if (widget.initialIntent != null && widget.initialIntent!.isNotEmpty) {
+      print('📱 Initial intent received: ${widget.initialIntent}');
+      _processExternalPdfIntent(widget.initialIntent!);
+    }
+  }
+
+  // YENİ METOD: External intent işleme
+  void _processExternalPdfIntent(Map<String, dynamic> intentData) {
+    final action = intentData['action'];
+    final data = intentData['data'];
+    final uri = intentData['uri'];
+    
+    print('📄 Processing EXTERNAL PDF intent: $uri');
+    
+    try {
+      if ((action == 'android.intent.action.VIEW' || action == 'android.intent.action.SEND') && uri != null) {
+        print('🎯 Opening external PDF: $uri');
+        
+        // Hemen PDF viewer'a git
+        _openExternalPdf(uri);
+      }
+    } catch (e) {
+      print('💥 External PDF intent processing error: $e');
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('❌ PDF açılırken hata: $e')),
+        );
+      }
+    }
+  }
+
+  // YENİ METOD: External PDF açma
+  void _openExternalPdf(String uri) async {
+    try {
+      String filePath = uri;
+      
+      // content:// URI ise file path'e çevir
+      if (uri.startsWith('content://')) {
+        print('🔄 Converting content URI to file path: $uri');
+        filePath = await _pdfViewerChannel.invokeMethod('convertContentUri', {'uri': uri});
+        print('✅ Converted file path: $filePath');
+      }
+      
+      await Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => ViewerScreen(
+            fileUri: filePath,
+            fileName: _extractFileNameFromUri(uri),
+          ),
+        ),
+      );
+    } catch (e) {
+      print('❌ Open external PDF error: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('❌ PDF açılırken hata: $e')),
+      );
+    }
+  }
+
+  // URI'den dosya adını çıkar
+  String _extractFileNameFromUri(String uri) {
+    try {
+      final uriObj = Uri.parse(uri);
+      final segments = uriObj.pathSegments;
+      if (segments.isNotEmpty) {
+        String fileName = segments.last;
+        if (fileName.contains('?')) {
+          fileName = fileName.split('?').first;
+        }
+        if (!fileName.toLowerCase().endsWith('.pdf')) {
+          fileName = '$fileName.pdf';
+        }
+        return fileName;
+      }
+    } catch (e) {
+      print('Error parsing URI: $e');
+    }
+    return 'document_${DateTime.now().millisecondsSinceEpoch}.pdf';
   }
 
   Future<void> _checkPermission() async {
@@ -271,12 +399,14 @@ class _HomePageState extends State<HomePage> {
 }
 
 class ViewerScreen extends StatefulWidget {
-  final File file;
+  final File? file;
+  final String? fileUri;
   final String fileName;
 
   const ViewerScreen({
     super.key,
-    required this.file,
+    this.file,
+    this.fileUri,
     required this.fileName,
   });
 
@@ -290,11 +420,25 @@ class _ViewerScreenState extends State<ViewerScreen> {
 
   String _viewerUrl() {
     try {
-      String fileUri = Uri.file(widget.file.path).toString();
+      String fileUri;
+      
+      if (widget.fileUri != null) {
+        // External intent ile gelen URI
+        fileUri = widget.fileUri!;
+      } else if (widget.file != null) {
+        // Internal dosya
+        fileUri = Uri.file(widget.file!.path).toString();
+      } else {
+        throw Exception('No file or URI provided');
+      }
+      
       final encodedFileUri = Uri.encodeComponent(fileUri);
       final viewerUrl = 'file:///android_asset/flutter_assets/assets/web/viewer.html?file=$encodedFileUri';
+      
+      print('🌐 Viewer URL: $viewerUrl');
       return viewerUrl;
     } catch (e) {
+      print('❌ URI creation error: $e');
       return 'file:///android_asset/flutter_assets/assets/web/viewer.html';
     }
   }
