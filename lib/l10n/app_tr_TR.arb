@@ -1,0 +1,213 @@
+{
+  "@@locale": "tr_TR",
+  
+  // App & General
+  "appTitle": "PDF Okuyucu",
+  "appSubtitle": "Görüntüleyici & Editör",
+  "devSoftware": "Dev Software",
+  "version": "Sürüm",
+  "close": "Kapat",
+  "cancel": "İptal",
+  "save": "Kaydet",
+  "delete": "Sil",
+  "share": "Paylaş",
+  "print": "Yazdır",
+  "rename": "Yeniden Adlandır",
+  "search": "Ara",
+  "loading": "Yükleniyor...",
+  "error": "Hata",
+  "success": "Başarılı",
+  "warning": "Uyarı",
+  "info": "Bilgi",
+  
+  // Main Tabs
+  "home": "Ana Sayfa",
+  "tools": "Araçlar", 
+  "files": "Dosyalar",
+  
+  // Home Sub Tabs
+  "onDevice": "Cihazda",
+  "recent": "Son Kullanılanlar",
+  "favorites": "Favoriler",
+  
+  // Drawer Menu
+  "about": "Hakkında",
+  "helpAndSupport": "Yardım ve Destek",
+  "languages": "Diller",
+  "privacy": "Gizlilik",
+  
+  // File Operations
+  "fileSelection": "Dosya Seçimi",
+  "pickFile": "Dosya Seç",
+  "scanAgain": "Yeniden Tara",
+  "fileNotFound": "Dosya Bulunamadı",
+  "fileDeleted": "Dosya Silindi",
+  "fileRenamed": "Dosya Yeniden Adlandırıldı",
+  "fileShared": "Dosya Paylaşıldı",
+  "filePrinted": "Dosya Yazdırıldı",
+  "fileSaved": "Dosya Kaydedildi",
+  
+  // Search & Filter
+  "searchPdfs": "PDF dosyalarında ara...",
+  "searchHistory": "Arama Geçmişi",
+  "clearHistory": "Geçmişi Temizle",
+  "noResults": "Sonuç Bulunamadı",
+  "searchResults": "Arama Sonuçları",
+  
+  // Permissions
+  "permissionRequired": "İzin Gerekli",
+  "fileAccessPermission": "Dosya Erişim İzni",
+  "grantPermission": "İzin Ver",
+  "goToSettings": "Ayarlara Git",
+  "permissionDenied": "İzin Reddedildi",
+  "permissionGranted": "İzin Verildi",
+  
+  // FAB Menu
+  "selectFile": "Dosya Seç",
+  "scan": "Tara",
+  "fromImage": "Görselden",
+  
+  // Cloud Services
+  "cloudStorage": "Bulut Depolama",
+  "emailIntegration": "E-posta Entegrasyonu",
+  "pdfsFromEmails": "E-postalardaki PDF'ler",
+  "browseForMoreFiles": "Daha Fazla Dosya İçin Göz Atın",
+  
+  // Tools Screen
+  "pdfMerger": "PDF Birleştirme",
+  "pdfSigner": "PDF İmzala", 
+  "pdfCompressor": "PDF'yi Sıkıştır",
+  "imageToPdf": "Resimden PDF'ye",
+  "textToSpeech": "Sesli Okuma",
+  "ocrTextExtraction": "OCR Metin Çıkarma",
+  "pdfToImage": "PDF'den Resme",
+  "addTextToPdf": "PDF'ye Metin Ekle",
+  "organizePages": "PDF Sayfalarını Organize Et",
+  "addImageToPdf": "PDF'ye Resim Ekle",
+  
+  // Tool Loading States
+  "toolLoading": "Araç Yükleniyor...",
+  "mergerLoading": "PDF Birleştirici Yükleniyor...",
+  "signerLoading": "PDF İmzalayıcı Yükleniyor...",
+  "compressorLoading": "PDF Sıkıştırıcı Yükleniyor...",
+  "imageConverterLoading": "Resim Dönüştürücü Yükleniyor...",
+  "ttsLoading": "Sesli Okuyucu Yükleniyor...",
+  "ocrLoading": "OCR Yükleniyor...",
+  "pdfToImageLoading": "PDF'den Resme Dönüştürücü Yükleniyor...",
+  "textEditorLoading": "Metin Editörü Yükleniyor...",
+  "pageOrganizerLoading": "Sayfa Organizatörü Yükleniyor...",
+  "imageInserterLoading": "Resim Ekleme Aracı Yükleniyor...",
+  
+  // Viewer Screen
+  "pdfViewer": "PDF Görüntüleyici",
+  "pdfLoading": "PDF Yükleniyor...",
+  "page": "Sayfa",
+  "of": "/",
+  "zoomIn": "Yakınlaştır",
+  "zoomOut": "Uzaklaştır",
+  "fitToWidth": "Genişliğe Sığdır",
+  "fitToPage": "Sayfaya Sığdır",
+  "actualSize": "Gerçek Boyut",
+  
+  // About Dialog
+  "aboutPdfReader": "PDF Reader Hakkında",
+  "advancedPdfViewing": "Gelişmiş PDF görüntüleme ve yönetim uygulaması.",
+  "technologiesUsed": "Kullanılan Teknolojiler",
+  "licenseInfo": "Lisans Bilgileri",
+  "openSourceTechnologies": "Bu uygulama açık kaynak kodlu teknolojiler kullanılarak geliştirilmiştir.",
+  
+  // Help & Support
+  "helpSupport": "Yardım ve Destek",
+  "describeIssue": "Sorununuzu veya önerinizi bize iletin:",
+  "yourEmail": "E-posta Adresiniz",
+  "yourMessage": "Mesajınız",
+  "send": "Gönder",
+  "fillAllFields": "Lütfen tüm alanları doldurun",
+  "messageRedirecting": "Mesajınız e-posta uygulamasına yönlendiriliyor...",
+  
+  // Language Settings
+  "languageSettings": "Dil Ayarları",
+  "appLanguage": "Uygulama Dili",
+  "pdfViewerLanguage": "PDF Görüntüleyici Dili",
+  "systemLanguage": "Sistem Dili (Önerilen)",
+  "deviceLanguage": "Cihaz Dili",
+  "changeLanguage": "Dili Değiştir",
+  "languageChanged": "Dil değiştirildi",
+  "restartRequired": "Değişikliklerin etkili olması için uygulamanın yeniden başlatılması gerekiyor",
+  "restartLater": "Daha Sonra",
+  "restartNow": "Yeniden Başlat",
+  
+  // Privacy
+  "privacyPolicy": "Gizlilik Politikası",
+  "comingSoon": "Yakında",
+  "featureComingSoon": "Bu özellik yakında eklenecek! 🚀",
+  
+  // Notifications & Alerts
+  "pdfSavedSuccess": "PDF başarıyla kaydedildi",
+  "pdfSaveError": "PDF kaydedilirken hata",
+  "pdfOpenError": "PDF açılırken hata",
+  "fileShareError": "Dosya paylaşım hatası",
+  "printError": "Yazdırma hatası",
+  "renameError": "Yeniden adlandırma hatası",
+  "deleteError": "Silme hatası",
+  "permissionError": "İzin hatası",
+  
+  // Empty States
+  "noPdfFiles": "PDF dosyası bulunamadı",
+  "noRecentFiles": "Henüz son açılan dosya yok",
+  "noFavorites": "Henüz favori dosyanız yok",
+  "noSearchResults": "Arama sonucu bulunamadı",
+  
+  // File Info
+  "fileSize": "Dosya Boyutu",
+  "modifiedDate": "Değiştirilme Tarihi",
+  "fileInfo": "Dosya Bilgisi",
+  
+  // Confirmation Dialogs
+  "confirmDelete": "Silmeyi Onayla",
+  "deleteConfirmation": "\"{fileName}\" dosyasını silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+  "confirmRename": "Yeniden Adlandırmayı Onayla",
+  "newFileName": "Yeni dosya adı",
+  
+  // Cloud Service Names
+  "googleDrive": "Google Drive",
+  "oneDrive": "OneDrive", 
+  "dropbox": "Dropbox",
+  "gmail": "Gmail",
+  
+  // Feature Tags
+  "premium": "Premium",
+  "new": "Yeni",
+  "popular": "Popüler",
+  
+  "@appTitle": {
+    "description": "Ana uygulama başlığı"
+  },
+  "@home": {
+    "description": "Ana sayfa sekme başlığı"
+  },
+  "@tools": {
+    "description": "Araçlar sekme başlığı"
+  },
+  "@files": {
+    "description": "Dosyalar sekme başlığı"
+  },
+  "@searchPdfs": {
+    "description": "Arama alanı placeholder metni"
+  },
+  "@pdfViewer": {
+    "description": "PDF görüntüleyici ekran başlığı"
+  },
+  "@about": {
+    "description": "Drawer'daki hakkında bölümü"
+  },
+  "@helpAndSupport": {
+    "description": "Yardım ve destek bölümü"
+  },
+  "@languages": {
+    "description": "Dil ayarları"
+  },
+  "@privacy": {
+    "description": "Gizlilik politikası"
+  }
+}
