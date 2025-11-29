@@ -576,6 +576,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     }
   }
 
+  // Bu metod artık ToolsScreen'den de erişilebilir
   void _openViewer(String path) async {
     try {
       final file = File(path);
@@ -1052,8 +1053,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
-  // _buildToolsTab SİLİNDİ, artık ToolsScreen kullanılıyor
-
   void _showComingSoon(String feature) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -1526,7 +1525,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           physics: NeverScrollableScrollPhysics(),
           children: [
             _buildHomeContent(),
-            ToolsScreen(onPickFile: _pickPdfFile), // Burası güncellendi
+            ToolsScreen(
+              onPickFile: _pickPdfFile,
+              onOpenViewer: _openViewer, // YENİ: ToolsScreen'e viewer açma yetkisi verildi
+            ),
             _buildFilesTab(),
           ],
         ),
