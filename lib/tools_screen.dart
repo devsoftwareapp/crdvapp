@@ -73,7 +73,15 @@ class _TtsControlPanelState extends State<TtsControlPanel> {
   @override
   void initState() {
     super.initState();
-    _speechRate = widget.ttsService.flutterTts.getSpeechRate ?? 0.5;
+    _loadCurrentSpeechRate();
+  }
+
+  Future<void> _loadCurrentSpeechRate() async {
+    // FlutterTts'de getSpeechRate getter'ı yok, bu yüzden varsayılan değer kullanıyoruz
+    // Veya bir callback ile mevcut değeri alabiliriz
+    setState(() {
+      _speechRate = 0.5; // Varsayılan değer
+    });
   }
 
   @override
@@ -113,7 +121,7 @@ class _TtsControlPanelState extends State<TtsControlPanel> {
                     if (widget.ttsService.isPlaying) {
                       widget.ttsService.pause();
                     } else {
-                      widget.ttsService.resume();
+                      widget.ttsService.speak(); // resume yerine speak kullan
                     }
                   },
                   icon: Icon(
@@ -362,6 +370,7 @@ class TtsService {
   final BuildContext context;
   bool isPlaying = false;
   bool showControlPanel = false;
+  String? _currentText;
 
   TtsService(this.context) {
     _initTts();
@@ -409,10 +418,20 @@ class TtsService {
     });
   }
 
-  Future<void> resume() async {
-    await flutterTts.resume();
+  Future<void> speak() async {
+    if (_currentText != null) {
+      await flutterTts.speak(_currentText!);
+      _updateState(() {
+        isPlaying = true;
+      });
+    }
+  }
+
+  Future<void> stop() async {
+    await flutterTts.stop();
     _updateState(() {
-      isPlaying = true;
+      isPlaying = false;
+      showControlPanel = false;
     });
   }
 
@@ -461,6 +480,9 @@ class TtsService {
         return;
       }
       
+      // Metni sakla
+      _currentText = text;
+      
       // Metin okuma
       int resultTts = await flutterTts.speak(text);
       if (resultTts == 1) {
@@ -490,10 +512,12 @@ class TtsService {
 
 class ToolsScreen extends StatefulWidget {
   final VoidCallback onPickFile;
+  final Function(String) onOpenViewer; // YENİ: onOpenViewer parametresi eklendi
 
   const ToolsScreen({
     super.key, 
     required this.onPickFile,
+    required this.onOpenViewer, // YENİ: onOpenViewer parametresi eklendi
   });
 
   @override
