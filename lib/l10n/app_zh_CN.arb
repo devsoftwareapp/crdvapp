@@ -1,0 +1,213 @@
+{
+  "@@locale": "zh_CN",
+  
+  // App & General
+  "appTitle": "PDF阅读器",
+  "appSubtitle": "查看器和编辑器",
+  "devSoftware": "Dev Software",
+  "version": "版本",
+  "close": "关闭",
+  "cancel": "取消",
+  "save": "保存",
+  "delete": "删除",
+  "share": "分享",
+  "print": "打印",
+  "rename": "重命名",
+  "search": "搜索",
+  "loading": "加载中...",
+  "error": "错误",
+  "success": "成功",
+  "warning": "警告",
+  "info": "信息",
+  
+  // Main Tabs
+  "home": "首页",
+  "tools": "工具", 
+  "files": "文件",
+  
+  // Home Sub Tabs
+  "onDevice": "设备上",
+  "recent": "最近使用",
+  "favorites": "收藏夹",
+  
+  // Drawer Menu
+  "about": "关于",
+  "helpAndSupport": "帮助和支持",
+  "languages": "语言",
+  "privacy": "隐私",
+  
+  // File Operations
+  "fileSelection": "文件选择",
+  "pickFile": "选择文件",
+  "scanAgain": "重新扫描",
+  "fileNotFound": "文件未找到",
+  "fileDeleted": "文件已删除",
+  "fileRenamed": "文件已重命名",
+  "fileShared": "文件已分享",
+  "filePrinted": "文件已打印",
+  "fileSaved": "文件已保存",
+  
+  // Search & Filter
+  "searchPdfs": "搜索PDF文件...",
+  "searchHistory": "搜索历史",
+  "clearHistory": "清除历史",
+  "noResults": "未找到结果",
+  "searchResults": "搜索结果",
+  
+  // Permissions
+  "permissionRequired": "需要权限",
+  "fileAccessPermission": "文件访问权限",
+  "grantPermission": "授予权限",
+  "goToSettings": "前往设置",
+  "permissionDenied": "权限被拒绝",
+  "permissionGranted": "权限已授予",
+  
+  // FAB Menu
+  "selectFile": "选择文件",
+  "scan": "扫描",
+  "fromImage": "从图片",
+  
+  // Cloud Services
+  "cloudStorage": "云存储",
+  "emailIntegration": "电子邮件集成",
+  "pdfsFromEmails": "来自邮件的PDF",
+  "browseForMoreFiles": "浏览更多文件",
+  
+  // Tools Screen
+  "pdfMerger": "PDF合并",
+  "pdfSigner": "PDF签名", 
+  "pdfCompressor": "PDF压缩",
+  "imageToPdf": "图片转PDF",
+  "textToSpeech": "文本转语音",
+  "ocrTextExtraction": "OCR文本提取",
+  "pdfToImage": "PDF转图片",
+  "addTextToPdf": "添加文本到PDF",
+  "organizePages": "整理页面",
+  "addImageToPdf": "添加图片到PDF",
+  
+  // Tool Loading States
+  "toolLoading": "工具加载中...",
+  "mergerLoading": "PDF合并器加载中...",
+  "signerLoading": "PDF签名器加载中...",
+  "compressorLoading": "PDF压缩器加载中...",
+  "imageConverterLoading": "图片转换器加载中...",
+  "ttsLoading": "文本转语音加载中...",
+  "ocrLoading": "OCR加载中...",
+  "pdfToImageLoading": "PDF转图片转换器加载中...",
+  "textEditorLoading": "文本编辑器加载中...",
+  "pageOrganizerLoading": "页面整理器加载中...",
+  "imageInserterLoading": "图片插入器加载中...",
+  
+  // Viewer Screen
+  "pdfViewer": "PDF查看器",
+  "pdfLoading": "PDF加载中...",
+  "page": "页",
+  "of": "/",
+  "zoomIn": "放大",
+  "zoomOut": "缩小",
+  "fitToWidth": "适应宽度",
+  "fitToPage": "适应页面",
+  "actualSize": "实际大小",
+  
+  // About Dialog
+  "aboutPdfReader": "关于PDF阅读器",
+  "advancedPdfViewing": "高级PDF查看和管理应用程序。",
+  "technologiesUsed": "使用的技术",
+  "licenseInfo": "许可证信息",
+  "openSourceTechnologies": "此应用程序使用开源技术开发。",
+  
+  // Help & Support
+  "helpSupport": "帮助和支持",
+  "describeIssue": "描述您的问题或建议：",
+  "yourEmail": "您的电子邮件地址",
+  "yourMessage": "您的消息",
+  "send": "发送",
+  "fillAllFields": "请填写所有字段",
+  "messageRedirecting": "您的消息正在重定向到电子邮件应用程序...",
+  
+  // Language Settings
+  "languageSettings": "语言设置",
+  "appLanguage": "应用程序语言",
+  "pdfViewerLanguage": "PDF查看器语言",
+  "systemLanguage": "系统语言（推荐）",
+  "deviceLanguage": "设备语言",
+  "changeLanguage": "更改语言",
+  "languageChanged": "语言已更改",
+  "restartRequired": "需要重启应用程序才能使更改生效",
+  "restartLater": "稍后",
+  "restartNow": "立即重启",
+  
+  // Privacy
+  "privacyPolicy": "隐私政策",
+  "comingSoon": "即将推出",
+  "featureComingSoon": "此功能即将推出！🚀",
+  
+  // Notifications & Alerts
+  "pdfSavedSuccess": "PDF保存成功",
+  "pdfSaveError": "保存PDF时出错",
+  "pdfOpenError": "打开PDF时出错",
+  "fileShareError": "分享文件时出错",
+  "printError": "打印错误",
+  "renameError": "重命名错误",
+  "deleteError": "删除错误",
+  "permissionError": "权限错误",
+  
+  // Empty States
+  "noPdfFiles": "未找到PDF文件",
+  "noRecentFiles": "暂无最近文件",
+  "noFavorites": "暂无收藏",
+  "noSearchResults": "未找到搜索结果",
+  
+  // File Info
+  "fileSize": "文件大小",
+  "modifiedDate": "修改日期",
+  "fileInfo": "文件信息",
+  
+  // Confirmation Dialogs
+  "confirmDelete": "确认删除",
+  "deleteConfirmation": "您确定要删除\"{fileName}\"吗？此操作无法撤销。",
+  "confirmRename": "确认重命名",
+  "newFileName": "新文件名",
+  
+  // Cloud Service Names
+  "googleDrive": "Google Drive",
+  "oneDrive": "OneDrive", 
+  "dropbox": "Dropbox",
+  "gmail": "Gmail",
+  
+  // Feature Tags
+  "premium": "高级版",
+  "new": "新",
+  "popular": "热门",
+  
+  "@appTitle": {
+    "description": "应用程序主标题"
+  },
+  "@home": {
+    "description": "首页标签标题"
+  },
+  "@tools": {
+    "description": "工具标签标题"
+  },
+  "@files": {
+    "description": "文件标签标题"
+  },
+  "@searchPdfs": {
+    "description": "搜索字段占位符文本"
+  },
+  "@pdfViewer": {
+    "description": "PDF查看器屏幕标题"
+  },
+  "@about": {
+    "description": "抽屉菜单中的关于部分"
+  },
+  "@helpAndSupport": {
+    "description": "帮助和支持部分"
+  },
+  "@languages": {
+    "description": "语言设置"
+  },
+  "@privacy": {
+    "description": "隐私政策"
+  }
+}
