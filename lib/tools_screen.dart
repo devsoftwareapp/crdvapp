@@ -38,16 +38,16 @@ class ToolsScreen extends StatelessWidget {
         'onTap': () => _openToolWebView(context, 'PDF İmzala', 'imza.html')
       },
       {
-        'icon': Icons.photo_library,
-        'name': 'Resimden\nPDF\'ye',
+        'icon': Icons.compress,
+        'name': 'PDF\'yi\nSıkıştır',
         'color': const Color(0xFFE3F2FD),
-        'onTap': () => _openToolWebView(context, 'Resimden PDF\'ye', 'res_pdf.html')
+        'onTap': () => _openToolWebView(context, 'PDF\'yi Sıkıştır', 'sikistirma.html')
       },
       {
-        'icon': Icons.layers,
-        'name': 'PDF Sayfalarını\nOrganize et',
+        'icon': Icons.photo_library,
+        'name': 'Resimden\nPDF\'ye',
         'color': const Color(0xFFFFF3E0),
-        'onTap': () => _openToolWebView(context, 'PDF Sayfalarını Organize et', 'organize.html')
+        'onTap': () => _openToolWebView(context, 'Resimden PDF\'ye', 'res_pdf.html')
       },
 
       // SAĞ TARAF - Diğer Araçlar
@@ -70,10 +70,22 @@ class ToolsScreen extends StatelessWidget {
         'onTap': () => _openToolWebView(context, 'PDF\'den Resme', 'pdf_res.html')
       },
       {
-        'icon': Icons.add_circle_outline, // DEĞİŞTİRİLDİ: add_remove yerine add_circle_outline
-        'name': 'PDF Sayfa\nEkle & Çıkar',
+        'icon': Icons.text_snippet,
+        'name': 'PDF\'ye\nMetin Ekle',
         'color': const Color(0xFFE8EAF6),
-        'onTap': () => _openToolWebView(context, 'PDF Sayfa Ekle & Çıkar', 'ekle_cikar.html')
+        'onTap': () => _openToolWebView(context, 'PDF\'ye Metin Ekle', 'pdf_metin_ekle.html')
+      },
+      {
+        'icon': Icons.layers,
+        'name': 'PDF Sayfalarını\nOrganize Et',
+        'color': const Color(0xFFE8F5E8),
+        'onTap': () => _openToolWebView(context, 'PDF Sayfalarını Organize Et', 'organize.html')
+      },
+      {
+        'icon': Icons.image,
+        'name': 'PDF\'ye\nResim Ekle',
+        'color': const Color(0xFFE3F2FD),
+        'onTap': () => _openToolWebView(context, 'PDF\'ye Resim Ekle', 'pdf_resim_ekle.html')
       },
     ];
 
