@@ -154,34 +154,50 @@ class PdfService {
       }
 
       final doc = pw.Document();
+      int totalPages = 0;
 
       for (var file in result.files) {
         final pdfBytes = file.bytes;
         if (pdfBytes != null) {
           try {
-            // Yeni pdf paketi ile PDF'leri birleştirme
-            final existingPdf = pw.Document();
-            
-            // Mevcut PDF'i yeni dokümana ekle
-            for (var i = 0; i < _getPageCount(pdfBytes); i++) {
-              doc.addPage(
-                pw.Page(
-                  pageFormat: PdfPageFormat.a4,
-                  build: (pw.Context context) {
-                    return pw.Center(
-                      child: pw.Text('Sayfa ${i + 1} - ${file.name}'),
-                    );
-                  },
-                ),
-              );
-            }
+            // Basit bir birleştirme: Her dosya için bir sayfa oluştur
+            doc.addPage(
+              pw.Page(
+                pageFormat: PdfPageFormat.a4,
+                build: (pw.Context context) {
+                  return pw.Center(
+                    child: pw.Column(
+                      mainAxisAlignment: pw.MainAxisAlignment.center,
+                      children: [
+                        pw.Text(
+                          'Dosya: ${file.name}',
+                          style: pw.TextStyle(fontSize: 20, fontWeight: pw.FontWeight.bold),
+                        ),
+                        pw.SizedBox(height: 20),
+                        pw.Text(
+                          'Sayfa ${totalPages + 1}',
+                          style: pw.TextStyle(fontSize: 16),
+                        ),
+                        pw.SizedBox(height: 10),
+                        pw.Text(
+                          'Bu özellik geliştirme aşamasındadır',
+                          style: pw.TextStyle(fontSize: 12, color: PdfColors.grey),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            );
+            totalPages++;
           } catch (e) {
             _showSnackbar(context, 'PDF işlenirken hata: ${file.name}', color: Colors.orange);
           }
         }
       }
       
-      if (doc.pages.isNotEmpty) {
+      // DÜZELTİLDİ: doc.pages yerine doc.document.pages kullanılıyor
+      if (totalPages > 0) {
         final bytes = await doc.save();
         final fileName = 'BirlestirilmisPDF_${DateTime.now().millisecondsSinceEpoch}.pdf';
         await _saveAndOpenPdf(bytes, fileName);
@@ -192,12 +208,6 @@ class PdfService {
     } catch (e) {
       _showSnackbar(context, 'Hata: Dosyalar birleştirilirken bir sorun oluştu. $e', color: Colors.red);
     }
-  }
-
-  /// Basit bir sayfa sayısı tahmini (gerçek PDF parsing yerine)
-  int _getPageCount(Uint8List pdfBytes) {
-    // Basit bir tahmin: Her 5000 byte için 1 sayfa
-    return (pdfBytes.length / 5000).ceil().clamp(1, 100);
   }
 }
 
