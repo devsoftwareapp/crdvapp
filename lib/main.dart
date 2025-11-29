@@ -998,6 +998,64 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     }
   }
 
+  Widget _buildRecentFiles() {
+    if (_recentFiles.isEmpty) {
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.history, size: 64, color: Colors.grey),
+            SizedBox(height: 16),
+            Text(
+              'Henüz son açılan dosya yok',
+              style: TextStyle(fontSize: 18, color: Colors.grey),
+            ),
+            SizedBox(height: 8),
+            Text(
+              'PDF dosyalarını açtıkça burada görünecekler.',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.grey, fontSize: 14),
+            ),
+          ],
+        ),
+      );
+    }
+
+    return ListView.builder(
+      itemCount: _recentFiles.length,
+      itemBuilder: (_, i) => _buildFileItem(_recentFiles[i]),
+    );
+  }
+
+  Widget _buildFavorites() {
+    if (_favoriteFiles.isEmpty) {
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.star, size: 64, color: Colors.grey),
+            SizedBox(height: 16),
+            Text(
+              'Henüz favori dosyanız yok',
+              style: TextStyle(fontSize: 18, color: Colors.grey),
+            ),
+            SizedBox(height: 8),
+            Text(
+              'Beğendiğiniz dosyaları yıldız simgesine tıklayarak\nfavorilere ekleyebilirsiniz.',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.grey, fontSize: 14),
+            ),
+          ],
+        ),
+      );
+    }
+
+    return ListView.builder(
+      itemCount: _favoriteFiles.length,
+      itemBuilder: (_, i) => _buildFileItem(_favoriteFiles[i]),
+    );
+  }
+
   Widget _buildToolsTab() {
     final tools = [
       {
