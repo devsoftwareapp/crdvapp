@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class ToolsScreen extends StatelessWidget {
   final VoidCallback onPickFile;
@@ -8,11 +9,14 @@ class ToolsScreen extends StatelessWidget {
     required this.onPickFile,
   });
 
-  void _showComingSoon(BuildContext context, String feature) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('$feature - Yakında eklenecek! 🚀'),
-        backgroundColor: const Color(0xFFD32F2F),
+  void _openToolWebView(BuildContext context, String toolName, String htmlFile) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => ToolWebViewScreen(
+          toolName: toolName,
+          htmlFile: htmlFile,
+        ),
       ),
     );
   }
@@ -20,41 +24,56 @@ class ToolsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tools = [
+      // SOL TARAF - PDF İşlemleri
+      {
+        'icon': Icons.merge,
+        'name': 'PDF\nBirleştirme',
+        'color': const Color(0xFFFFEBEE),
+        'onTap': () => _openToolWebView(context, 'PDF Birleştirme', 'birlestirme.html')
+      },
       {
         'icon': Icons.edit,
-        'name': 'PDF Düzenle',
-        'color': const Color(0xFFFFEBEE),
-        'onTap': () => _showComingSoon(context, 'PDF Düzenleme')
+        'name': 'PDF\nİmzala',
+        'color': const Color(0xFFE8F5E8),
+        'onTap': () => _openToolWebView(context, 'PDF İmzala', 'imza.html')
       },
+      {
+        'icon': Icons.photo_library,
+        'name': 'Resimden\nPDF\'ye',
+        'color': const Color(0xFFE3F2FD),
+        'onTap': () => _openToolWebView(context, 'Resimden PDF\'ye', 'res_pdf.html')
+      },
+      {
+        'icon': Icons.image,
+        'name': 'PDF\'ye\nResim Ekle',
+        'color': const Color(0xFFFFF3E0),
+        'onTap': () => _openToolWebView(context, 'PDF\'ye Resim Ekle', 'pdf_resim_ekle.html')
+      },
+
+      // SAĞ TARAF - Diğer Araçlar
       {
         'icon': Icons.volume_up,
-        'name': 'Sesli okuma',
+        'name': 'Sesli\nOkuma',
         'color': const Color(0xFFF3E5F5),
-        'onTap': () => _showComingSoon(context, 'Sesli Okuma')
+        'onTap': () => _openToolWebView(context, 'Sesli Okuma', 'sesli_okuma.html')
       },
       {
-        'icon': Icons.edit_document,
-        'name': 'PDF Doldur & İmzala',
-        'color': const Color(0xFFE8F5E8),
-        'onTap': () => _showComingSoon(context, 'PDF Doldur & İmzala')
+        'icon': Icons.text_fields,
+        'name': 'OCR\nMetin Çıkarma',
+        'color': const Color(0xFFE0F2F1),
+        'onTap': () => _openToolWebView(context, 'OCR Metin Çıkarma', 'ocr.html')
       },
       {
         'icon': Icons.picture_as_pdf,
-        'name': 'PDF Oluştur',
-        'color': const Color(0xFFE3F2FD),
-        'onTap': onPickFile // Ana sayfadan gelen fonksiyonu tetikler
+        'name': 'PDF\'den\nResme',
+        'color': const Color(0xFFFCE4EC),
+        'onTap': () => _openToolWebView(context, 'PDF\'den Resme', 'pdf_res.html')
       },
       {
-        'icon': Icons.layers,
-        'name': 'Sayfaları organize et',
-        'color': const Color(0xFFFFF3E0),
-        'onTap': () => _showComingSoon(context, 'Sayfa Organizasyonu')
-      },
-      {
-        'icon': Icons.merge,
-        'name': 'Dosyaları birleştirme',
-        'color': const Color(0xFFE0F2F1),
-        'onTap': () => _showComingSoon(context, 'Dosya Birleştirme')
+        'icon': Icons.text_snippet,
+        'name': 'PDF\'ye\nMetin Ekle',
+        'color': const Color(0xFFE8EAF6),
+        'onTap': () => _openToolWebView(context, 'PDF\'ye Metin Ekle', 'pdf_metin_ekle.html')
       },
     ];
 
@@ -106,6 +125,96 @@ class ToolsScreen extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class ToolWebViewScreen extends StatefulWidget {
+  final String toolName;
+  final String htmlFile;
+
+  const ToolWebViewScreen({
+    super.key,
+    required this.toolName,
+    required this.htmlFile,
+  });
+
+  @override
+  State<ToolWebViewScreen> createState() => _ToolWebViewScreenState();
+}
+
+class _ToolWebViewScreenState extends State<ToolWebViewScreen> {
+  InAppWebViewController? _controller;
+  bool _isLoading = true;
+
+  String _getWebViewUrl() {
+    return 'file:///android_asset/flutter_assets/assets/web/${widget.htmlFile}';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.toolName),
+        backgroundColor: const Color(0xFFD32F2F),
+        foregroundColor: Colors.white,
+      ),
+      body: Stack(
+        children: [
+          InAppWebView(
+            initialUrlRequest: URLRequest(url: WebUri(_getWebViewUrl())),
+            initialSettings: InAppWebViewSettings(
+              javaScriptEnabled: true,
+              allowFileAccess: true,
+              allowFileAccessFromFileURLs: true,
+              allowUniversalAccessFromFileURLs: true,
+              supportZoom: true,
+              clearCache: true,
+              cacheMode: CacheMode.LOAD_DEFAULT,
+            ),
+            onWebViewCreated: (controller) {
+              _controller = controller;
+              print('🛠️ ${widget.toolName} WebView created: ${_getWebViewUrl()}');
+            },
+            onLoadStart: (controller, url) {
+              print('🛠️ Loading started: $url');
+              setState(() {
+                _isLoading = true;
+              });
+            },
+            onLoadStop: (controller, url) {
+              print('✅ ${widget.toolName} loaded: $url');
+              setState(() {
+                _isLoading = false;
+              });
+            },
+            onLoadError: (controller, url, code, message) {
+              print('❌ ${widget.toolName} load error: $message (code: $code)');
+              setState(() {
+                _isLoading = false;
+              });
+            },
+          ),
+          if (_isLoading)
+            const Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircularProgressIndicator(color: Color(0xFFD32F2F)),
+                  SizedBox(height: 20),
+                  Text(
+                    'Araç Yükleniyor...',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Color(0xFFD32F2F),
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+        ],
+      ),
     );
   }
 }
