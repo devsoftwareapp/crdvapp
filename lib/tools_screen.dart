@@ -41,6 +41,152 @@ void _showSnackbar(BuildContext context, String message, {Color color = const Co
   }
 }
 
+/// Sesli Okuma Kontrol Paneli
+class TtsControlPanel extends StatefulWidget {
+  final TtsService ttsService;
+  final VoidCallback onClose;
+
+  const TtsControlPanel({
+    super.key,
+    required this.ttsService,
+    required this.onClose,
+  });
+
+  @override
+  State<TtsControlPanel> createState() => _TtsControlPanelState();
+}
+
+class _TtsControlPanelState extends State<TtsControlPanel> {
+  double _speechRate = 0.5;
+  final List<double> _speechRates = [0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0];
+  final Map<double, String> _rateLabels = {
+    0.25: '0.25x',
+    0.5: '0.5x',
+    0.75: '0.75x',
+    1.0: '1x',
+    1.25: '1.25x',
+    1.5: '1.5x',
+    1.75: '1.75x',
+    2.0: '2x',
+  };
+
+  @override
+  void initState() {
+    super.initState();
+    _speechRate = widget.ttsService.flutterTts.getSpeechRate ?? 0.5;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.black.withOpacity(0.8),
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      ),
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // Kontrol Butonları
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              // Geri Sar
+              IconButton(
+                onPressed: () {
+                  _showSnackbar(context, "Geri sarma özelliği yakında eklenecek", color: Colors.orange);
+                },
+                icon: const Icon(Icons.replay_10, color: Colors.white, size: 30),
+              ),
+              
+              // Oynat/Durdur
+              Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xFFD32F2F),
+                  shape: BoxShape.circle,
+                ),
+                child: IconButton(
+                  onPressed: () {
+                    if (widget.ttsService.isPlaying) {
+                      widget.ttsService.pause();
+                    } else {
+                      widget.ttsService.resume();
+                    }
+                  },
+                  icon: Icon(
+                    widget.ttsService.isPlaying ? Icons.pause : Icons.play_arrow,
+                    color: Colors.white,
+                    size: 35,
+                  ),
+                ),
+              ),
+              
+              // İleri Sar
+              IconButton(
+                onPressed: () {
+                  _showSnackbar(context, "İleri sarma özelliği yakında eklenecek", color: Colors.orange);
+                },
+                icon: const Icon(Icons.forward_10, color: Colors.white, size: 30),
+              ),
+              
+              // Kapat
+              IconButton(
+                onPressed: widget.onClose,
+                icon: const Icon(Icons.close, color: Colors.white, size: 30),
+              ),
+            ],
+          ),
+          
+          const SizedBox(height: 16),
+          
+          // Hız Seçenekleri
+          Text(
+            'Okuma Hızı',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          
+          const SizedBox(height: 8),
+          
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: _speechRates.map((rate) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 4),
+                  child: ChoiceChip(
+                    label: Text(
+                      _rateLabels[rate]!,
+                      style: TextStyle(
+                        color: _speechRate == rate ? Colors.white : Colors.black,
+                      ),
+                    ),
+                    selected: _speechRate == rate,
+                    selectedColor: const Color(0xFFD32F2F),
+                    backgroundColor: Colors.white,
+                    onSelected: (selected) {
+                      setState(() {
+                        _speechRate = rate;
+                      });
+                      widget.ttsService.setSpeechRate(rate);
+                    },
+                  ),
+                );
+              }).toList(),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 /// PDF Dosya İşlemleri İçin Servis Sınıfı
 class PdfService {
   final BuildContext context;
@@ -196,7 +342,6 @@ class PdfService {
         }
       }
       
-      // DÜZELTİLDİ: doc.pages yerine doc.document.pages kullanılıyor
       if (totalPages > 0) {
         final bytes = await doc.save();
         final fileName = 'BirlestirilmisPDF_${DateTime.now().millisecondsSinceEpoch}.pdf';
@@ -216,6 +361,7 @@ class TtsService {
   final FlutterTts flutterTts = FlutterTts();
   final BuildContext context;
   bool isPlaying = false;
+  bool showControlPanel = false;
 
   TtsService(this.context) {
     _initTts();
@@ -229,6 +375,7 @@ class TtsService {
       if (context.mounted) {
         _updateState(() {
           isPlaying = false;
+          showControlPanel = false;
         });
       }
     });
@@ -238,6 +385,7 @@ class TtsService {
       if (context.mounted) {
         _updateState(() {
           isPlaying = false;
+          showControlPanel = false;
         });
       }
     });
@@ -250,14 +398,41 @@ class TtsService {
     }
   }
 
+  void setSpeechRate(double rate) {
+    flutterTts.setSpeechRate(rate);
+  }
+
+  Future<void> pause() async {
+    await flutterTts.pause();
+    _updateState(() {
+      isPlaying = false;
+    });
+  }
+
+  Future<void> resume() async {
+    await flutterTts.resume();
+    _updateState(() {
+      isPlaying = true;
+    });
+  }
+
+  void toggleControlPanel() {
+    _updateState(() {
+      showControlPanel = !showControlPanel;
+    });
+  }
+
+  void hideControlPanel() {
+    _updateState(() {
+      showControlPanel = false;
+    });
+  }
+
   /// PDF'ten metni çeker ve okumaya başlar.
   Future<void> speakPdf() async {
     if (isPlaying) {
-      await flutterTts.stop();
-      _updateState(() {
-        isPlaying = false;
-      });
-      _showSnackbar(context, "Sesli okuma durduruldu.", color: Colors.orange);
+      // Eğer zaten çalışıyorsa, kontrol panelini göster/gizle
+      toggleControlPanel();
       return;
     }
 
@@ -291,8 +466,9 @@ class TtsService {
       if (resultTts == 1) {
         _updateState(() {
           isPlaying = true;
+          showControlPanel = true;
         });
-        _showSnackbar(context, "Sesli okuma başlatıldı.", color: Colors.green);
+        _showSnackbar(context, "Sesli okuma başlatıldı. Kontrol paneli açıldı.", color: Colors.green);
       } else {
         _showSnackbar(context, "Sesli okuma başlatılamadı.", color: Colors.red);
       }
@@ -399,78 +575,96 @@ class _ToolsScreenState extends State<ToolsScreen> {
       },
     ];
 
-    return GridView.builder(
-      padding: const EdgeInsets.all(16),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
-        childAspectRatio: 0.8,
-      ),
-      itemCount: tools.length,
-      itemBuilder: (context, index) {
-        final tool = tools[index];
-        bool isWorking = tool['status'] == 'Çalışıyor' || tool['status'] == 'Durdur';
-        
-        return Card(
-          elevation: 4,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(16),
-            onTap: tool['onTap'] as Function(),
-            child: Container(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 64,
-                    height: 64,
-                    decoration: BoxDecoration(
-                      color: tool['color'] as Color,
-                      borderRadius: BorderRadius.circular(16),
-                      boxShadow: [
-                        BoxShadow(
-                          color: (tool['color'] as Color).withOpacity(0.5),
-                          spreadRadius: 1,
-                          blurRadius: 4,
-                          offset: const Offset(0, 2),
+    return Stack(
+      children: [
+        GridView.builder(
+          padding: const EdgeInsets.all(16),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
+            childAspectRatio: 0.8,
+          ),
+          itemCount: tools.length,
+          itemBuilder: (context, index) {
+            final tool = tools[index];
+            bool isWorking = tool['status'] == 'Çalışıyor' || tool['status'] == 'Durdur';
+            
+            return Card(
+              elevation: 4,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(16),
+                onTap: tool['onTap'] as Function(),
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 64,
+                        height: 64,
+                        decoration: BoxDecoration(
+                          color: tool['color'] as Color,
+                          borderRadius: BorderRadius.circular(16),
+                          boxShadow: [
+                            BoxShadow(
+                              color: (tool['color'] as Color).withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 4,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    child: Icon(
-                      tool['icon'] as IconData, 
-                      color: isWorking ? const Color(0xFFD32F2F) : Colors.grey,
-                      size: 36
-                    ),
+                        child: Icon(
+                          tool['icon'] as IconData, 
+                          color: isWorking ? const Color(0xFFD32F2F) : Colors.grey,
+                          size: 36
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        tool['name'] as String,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16, 
+                          fontWeight: FontWeight.w700, 
+                          color: isWorking ? const Color(0xFFD32F2F) : Colors.grey.shade700,
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        tool['status'] as String,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: isWorking ? Colors.green.shade600 : Colors.red.shade400,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 16),
-                  Text(
-                    tool['name'] as String,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 16, 
-                      fontWeight: FontWeight.w700, 
-                      color: isWorking ? const Color(0xFFD32F2F) : Colors.grey.shade700,
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    tool['status'] as String,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: isWorking ? Colors.green.shade600 : Colors.red.shade400,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+                ),
               ),
+            );
+          },
+        ),
+
+        // Sesli Okuma Kontrol Paneli
+        if (_ttsService.showControlPanel)
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: TtsControlPanel(
+              ttsService: _ttsService,
+              onClose: () {
+                _ttsService.hideControlPanel();
+              },
             ),
           ),
-        );
-      },
+      ],
     );
   }
 }
