@@ -44,10 +44,10 @@ class ToolsScreen extends StatelessWidget {
         'onTap': () => _openToolWebView(context, 'Resimden PDF\'ye', 'res_pdf.html')
       },
       {
-        'icon': Icons.image,
-        'name': 'PDF\'ye\nResim Ekle',
+        'icon': Icons.layers,
+        'name': 'PDF Sayfalarını\nOrganize et',
         'color': const Color(0xFFFFF3E0),
-        'onTap': () => _openToolWebView(context, 'PDF\'ye Resim Ekle', 'pdf_resim_ekle.html')
+        'onTap': () => _openToolWebView(context, 'PDF Sayfalarını Organize et', 'organize.html')
       },
 
       // SAĞ TARAF - Diğer Araçlar
@@ -70,10 +70,10 @@ class ToolsScreen extends StatelessWidget {
         'onTap': () => _openToolWebView(context, 'PDF\'den Resme', 'pdf_res.html')
       },
       {
-        'icon': Icons.text_snippet,
-        'name': 'PDF\'ye\nMetin Ekle',
+        'icon': Icons.add_remove,
+        'name': 'PDF Sayfa\nEkle & Çıkar',
         'color': const Color(0xFFE8EAF6),
-        'onTap': () => _openToolWebView(context, 'PDF\'ye Metin Ekle', 'pdf_metin_ekle.html')
+        'onTap': () => _openToolWebView(context, 'PDF Sayfa Ekle & Çıkar', 'ekle_cikar.html')
       },
     ];
 
